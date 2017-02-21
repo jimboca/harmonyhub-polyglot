@@ -1,0 +1,1501 @@
+
+  <nodeDef id="MasterBedroom" nodeType="139" nls="HARMONYHUB">
+    <sts>
+      <st id="ST" editor="HUBST" />
+      <st id="GV3" editor="ActMasterBedroom" />
+    </sts>
+    <cmds>
+      <sends>
+	<cmd id="DON" />
+      </sends>
+      <accepts>
+        <cmd id="SET_ACTIVITY">
+          <p id="" editor="ActMasterBedroom" init="GV3"/>
+        </cmd>
+	<cmd id="REBOOT" />
+	<cmd id="QUERY" />
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+
+ND-MasterBedroom-NAME = HarmonyHub MasterBedroom
+ND-MasterBedroom-ICON = Input
+write_profile: Initializing Client
+write_profile: Client: <pyharmony.client.HarmonyClient object at 0x7643ef10>
+write_profile: Activity: TiVo  Id: 16937126
+MASTERBEDROOM-16937126 = TiVo
+write_profile: Activity: Fire TV  Id: 23855652
+MASTERBEDROOM-23855652 = Fire TV
+write_profile: Activity: Chromecast  Id: 16937349
+MASTERBEDROOM-16937349 = Chromecast
+write_profile: Activity: PowerOff  Id: -1
+write_profile: Activity: DVD  Id: 16937238
+MASTERBEDROOM-16937238 = DVD
+
+  <editor id="ActMasterBedroom">
+    <range uom="25" subset="0,16937126,16937238,16937349,23855652" nls="MASTERBEDROOM"/>
+  </editor>
+
+
+ND-d31347323-NAME = Pioneer TV
+ND-d31347323-ICON = Input
+write_profile:   Device: Pioneer TV  Id: 31347323
+write_profile:     Function: Name: PowerOff  Label: Power Off
+BTN31347323-0 = Power Off
+write_profile:     Function: Name: PowerOn  Label: Power On
+BTN31347323-1 = Power On
+write_profile:     Function: Name: PowerToggle  Label: Power Toggle
+BTN31347323-2 = Power Toggle
+write_profile:     Function: Name: NumberEnter  Label: Number Enter
+BTN31347323-3 = Number Enter
+write_profile:     Function: Name: Dot  Label: .
+BTN31347323-4 = .
+write_profile:     Function: Name: Number0  Label: 0
+BTN31347323-5 = 0
+write_profile:     Function: Name: Number1  Label: 1
+BTN31347323-6 = 1
+write_profile:     Function: Name: Number2  Label: 2
+BTN31347323-7 = 2
+write_profile:     Function: Name: Number3  Label: 3
+BTN31347323-8 = 3
+write_profile:     Function: Name: Number4  Label: 4
+BTN31347323-9 = 4
+write_profile:     Function: Name: Number5  Label: 5
+BTN31347323-10 = 5
+write_profile:     Function: Name: Number6  Label: 6
+BTN31347323-11 = 6
+write_profile:     Function: Name: Number7  Label: 7
+BTN31347323-12 = 7
+write_profile:     Function: Name: Number8  Label: 8
+BTN31347323-13 = 8
+write_profile:     Function: Name: Number9  Label: 9
+BTN31347323-14 = 9
+write_profile:     Function: Name: Mute  Label: Mute
+BTN31347323-15 = Mute
+write_profile:     Function: Name: VolumeDown  Label: Volume Down
+BTN31347323-16 = Volume Down
+write_profile:     Function: Name: VolumeUp  Label: Volume Up
+BTN31347323-17 = Volume Up
+write_profile:     Function: Name: PrevChannel  Label: Prev Channel
+BTN31347323-18 = Prev Channel
+write_profile:     Function: Name: ChannelDown  Label: Channel Down
+BTN31347323-19 = Channel Down
+write_profile:     Function: Name: ChannelUp  Label: Channel Up
+BTN31347323-20 = Channel Up
+write_profile:     Function: Name: DirectionDown  Label: Direction Down
+BTN31347323-21 = Direction Down
+write_profile:     Function: Name: DirectionLeft  Label: Direction Left
+BTN31347323-22 = Direction Left
+write_profile:     Function: Name: DirectionRight  Label: Direction Right
+BTN31347323-23 = Direction Right
+write_profile:     Function: Name: DirectionUp  Label: Direction Up
+BTN31347323-24 = Direction Up
+write_profile:     Function: Name: Select  Label: Select
+BTN31347323-25 = Select
+write_profile:     Function: Name: Return  Label: Return
+BTN31347323-26 = Return
+write_profile:     Function: Name: Menu  Label: Menu
+BTN31347323-27 = Menu
+write_profile:     Function: Name: PipSwap  Label: Pip Swap
+BTN31347323-28 = Pip Swap
+write_profile:     Function: Name: PipToggle  Label: Pip Toggle
+BTN31347323-29 = Pip Toggle
+write_profile:     Function: Name: Sleep  Label: Sleep
+BTN31347323-30 = Sleep
+write_profile:     Function: Name: Green  Label: Green
+BTN31347323-31 = Green
+write_profile:     Function: Name: Red  Label: Red
+BTN31347323-32 = Red
+write_profile:     Function: Name: Blue  Label: Blue
+BTN31347323-33 = Blue
+write_profile:     Function: Name: Yellow  Label: Yellow
+BTN31347323-34 = Yellow
+write_profile:     Function: Name: Guide  Label: Guide
+BTN31347323-35 = Guide
+write_profile:     Function: Name: Info  Label: Info
+BTN31347323-36 = Info
+write_profile:     Function: Name: PageDown  Label: Page Down
+BTN31347323-37 = Page Down
+write_profile:     Function: Name: PageUp  Label: Page Up
+BTN31347323-38 = Page Up
+write_profile:     Function: Name: Aspect  Label: Aspect
+BTN31347323-39 = Aspect
+write_profile:     Function: Name: Display  Label: Display
+BTN31347323-40 = Display
+write_profile:     Function: Name: AvMode  Label: AvMode
+BTN31347323-41 = AvMode
+write_profile:     Function: Name: DayDown  Label: DayDown
+BTN31347323-42 = DayDown
+write_profile:     Function: Name: DayUp  Label: DayUp
+BTN31347323-43 = DayUp
+write_profile:     Function: Name: FavoriteChA  Label: FavoriteChA
+BTN31347323-44 = FavoriteChA
+write_profile:     Function: Name: FavoriteChB  Label: FavoriteChB
+BTN31347323-45 = FavoriteChB
+write_profile:     Function: Name: FavoriteChC  Label: FavoriteChC
+BTN31347323-46 = FavoriteChC
+write_profile:     Function: Name: FavoriteChD  Label: FavoriteChD
+BTN31347323-47 = FavoriteChD
+write_profile:     Function: Name: HomeMenu  Label: HomeMenu
+BTN31347323-48 = HomeMenu
+write_profile:     Function: Name: InputAntennaA/B  Label: InputAntennaA/B
+BTN31347323-49 = InputAntennaA/B
+write_profile:     Function: Name: InputPc  Label: InputPc
+BTN31347323-50 = InputPc
+write_profile:     Function: Name: InputVideo1  Label: InputVideo1
+BTN31347323-51 = InputVideo1
+write_profile:     Function: Name: InputVideo2  Label: InputVideo2
+BTN31347323-52 = InputVideo2
+write_profile:     Function: Name: InputVideo3  Label: InputVideo3
+BTN31347323-53 = InputVideo3
+write_profile:     Function: Name: InputVideo4  Label: InputVideo4
+BTN31347323-54 = InputVideo4
+write_profile:     Function: Name: InputVideo5  Label: InputVideo5
+BTN31347323-55 = InputVideo5
+write_profile:     Function: Name: InputVideo6  Label: InputVideo6
+BTN31347323-56 = InputVideo6
+write_profile:     Function: Name: MTS  Label: MTS
+BTN31347323-57 = MTS
+write_profile:     Function: Name: PipFreeze  Label: PipFreeze
+BTN31347323-58 = PipFreeze
+write_profile:     Function: Name: PipShift  Label: PipShift
+BTN31347323-59 = PipShift
+
+  <editor id="Btn31347323">
+    <range uom="25" min="0" max="59" nls="BTN31347323"/>
+  </editor>
+
+
+ND-d31347557-NAME = Sony Amp
+ND-d31347557-ICON = Input
+write_profile:   Device: Sony Amp  Id: 31347557
+write_profile:     Function: Name: PowerOff  Label: Power Off
+BTN31347557-0 = Power Off
+write_profile:     Function: Name: PowerOn  Label: Power On
+BTN31347557-1 = Power On
+write_profile:     Function: Name: PowerToggle  Label: Power Toggle
+BTN31347557-2 = Power Toggle
+write_profile:     Function: Name: Mute  Label: Mute
+BTN31347557-3 = Mute
+write_profile:     Function: Name: VolumeDown  Label: Volume Down
+BTN31347557-4 = Volume Down
+write_profile:     Function: Name: VolumeUp  Label: Volume Up
+BTN31347557-5 = Volume Up
+write_profile:     Function: Name: DirectionDown  Label: Direction Down
+BTN31347557-6 = Direction Down
+write_profile:     Function: Name: DirectionLeft  Label: Direction Left
+BTN31347557-7 = Direction Left
+write_profile:     Function: Name: DirectionRight  Label: Direction Right
+BTN31347557-8 = Direction Right
+write_profile:     Function: Name: DirectionUp  Label: Direction Up
+BTN31347557-9 = Direction Up
+write_profile:     Function: Name: Select  Label: Select
+BTN31347557-10 = Select
+write_profile:     Function: Name: Sleep  Label: Sleep
+BTN31347557-11 = Sleep
+write_profile:     Function: Name: AmpMenu  Label: AmpMenu
+BTN31347557-12 = AmpMenu
+write_profile:     Function: Name: InputBd  Label: InputBd
+BTN31347557-13 = InputBd
+write_profile:     Function: Name: InputDmPort  Label: InputDmPort
+BTN31347557-14 = InputDmPort
+write_profile:     Function: Name: InputDVD  Label: InputDVD
+BTN31347557-15 = InputDVD
+write_profile:     Function: Name: InputSa-Cd/Cd  Label: InputSa-Cd/Cd
+BTN31347557-16 = InputSa-Cd/Cd
+write_profile:     Function: Name: InputSat/Catv  Label: InputSat/Catv
+BTN31347557-17 = InputSat/Catv
+write_profile:     Function: Name: InputTv  Label: InputTv
+BTN31347557-18 = InputTv
+write_profile:     Function: Name: InputVideo  Label: InputVideo
+BTN31347557-19 = InputVideo
+write_profile:     Function: Name: NightMode  Label: NightMode
+BTN31347557-20 = NightMode
+write_profile:     Function: Name: SoundFieldDown  Label: SoundFieldDown
+BTN31347557-21 = SoundFieldDown
+write_profile:     Function: Name: SoundFieldUp  Label: SoundFieldUp
+BTN31347557-22 = SoundFieldUp
+
+  <editor id="Btn31347557">
+    <range uom="25" min="0" max="22" nls="BTN31347557"/>
+  </editor>
+
+
+ND-d41336071-NAME = Amazon Fire TV
+ND-d41336071-ICON = Input
+write_profile:   Device: Amazon Fire TV  Id: 41336071
+write_profile:     Function: Name: DirectionDown  Label: Direction Down
+BTN41336071-0 = Direction Down
+write_profile:     Function: Name: DirectionLeft  Label: Direction Left
+BTN41336071-1 = Direction Left
+write_profile:     Function: Name: DirectionRight  Label: Direction Right
+BTN41336071-2 = Direction Right
+write_profile:     Function: Name: DirectionUp  Label: Direction Up
+BTN41336071-3 = Direction Up
+write_profile:     Function: Name: Select  Label: Select
+BTN41336071-4 = Select
+write_profile:     Function: Name: Stop  Label: Stop
+BTN41336071-5 = Stop
+write_profile:     Function: Name: Play  Label: Play
+BTN41336071-6 = Play
+write_profile:     Function: Name: Rewind  Label: Rewind
+BTN41336071-7 = Rewind
+write_profile:     Function: Name: Pause  Label: Pause
+BTN41336071-8 = Pause
+write_profile:     Function: Name: FastForward  Label: Fast Forward
+BTN41336071-9 = Fast Forward
+write_profile:     Function: Name: SkipBackward  Label: Skip Backward
+BTN41336071-10 = Skip Backward
+write_profile:     Function: Name: SkipForward  Label: Skip Forward
+BTN41336071-11 = Skip Forward
+write_profile:     Function: Name: Menu  Label: Menu
+BTN41336071-12 = Menu
+write_profile:     Function: Name: Back  Label: Back
+BTN41336071-13 = Back
+write_profile:     Function: Name: Search  Label: Search
+BTN41336071-14 = Search
+write_profile:     Function: Name: Exit  Label: Exit
+BTN41336071-15 = Exit
+write_profile:     Function: Name: Delete  Label: Backspace
+BTN41336071-16 = Backspace
+write_profile:     Function: Name: Home  Label: Home
+BTN41336071-17 = Home
+
+  <editor id="Btn41336071">
+    <range uom="25" min="0" max="17" nls="BTN41336071"/>
+  </editor>
+
+
+ND-d31347379-NAME = Sony DVD
+ND-d31347379-ICON = Input
+write_profile:   Device: Sony DVD  Id: 31347379
+write_profile:     Function: Name: PowerOff  Label: Power Off
+BTN31347379-0 = Power Off
+write_profile:     Function: Name: PowerOn  Label: Power On
+BTN31347379-1 = Power On
+write_profile:     Function: Name: PowerToggle  Label: Power Toggle
+BTN31347379-2 = Power Toggle
+write_profile:     Function: Name: Number0  Label: 0
+BTN31347379-3 = 0
+write_profile:     Function: Name: Number1  Label: 1
+BTN31347379-4 = 1
+write_profile:     Function: Name: Number2  Label: 2
+BTN31347379-5 = 2
+write_profile:     Function: Name: Number3  Label: 3
+BTN31347379-6 = 3
+write_profile:     Function: Name: Number4  Label: 4
+BTN31347379-7 = 4
+write_profile:     Function: Name: Number5  Label: 5
+BTN31347379-8 = 5
+write_profile:     Function: Name: Number6  Label: 6
+BTN31347379-9 = 6
+write_profile:     Function: Name: Number7  Label: 7
+BTN31347379-10 = 7
+write_profile:     Function: Name: Number8  Label: 8
+BTN31347379-11 = 8
+write_profile:     Function: Name: Number9  Label: 9
+BTN31347379-12 = 9
+write_profile:     Function: Name: DirectionDown  Label: Direction Down
+BTN31347379-13 = Direction Down
+write_profile:     Function: Name: DirectionLeft  Label: Direction Left
+BTN31347379-14 = Direction Left
+write_profile:     Function: Name: DirectionRight  Label: Direction Right
+BTN31347379-15 = Direction Right
+write_profile:     Function: Name: DirectionUp  Label: Direction Up
+BTN31347379-16 = Direction Up
+write_profile:     Function: Name: Select  Label: Select
+BTN31347379-17 = Select
+write_profile:     Function: Name: Stop  Label: Stop
+BTN31347379-18 = Stop
+write_profile:     Function: Name: Play  Label: Play
+BTN31347379-19 = Play
+write_profile:     Function: Name: Rewind  Label: Rewind
+BTN31347379-20 = Rewind
+write_profile:     Function: Name: Eject  Label: Eject
+BTN31347379-21 = Eject
+write_profile:     Function: Name: Pause  Label: Pause
+BTN31347379-22 = Pause
+write_profile:     Function: Name: FastForward  Label: Fast Forward
+BTN31347379-23 = Fast Forward
+write_profile:     Function: Name: SkipBackward  Label: Skip Backward
+BTN31347379-24 = Skip Backward
+write_profile:     Function: Name: SkipForward  Label: Skip Forward
+BTN31347379-25 = Skip Forward
+write_profile:     Function: Name: Return  Label: Return
+BTN31347379-26 = Return
+write_profile:     Function: Name: TopMenu  Label: Top Menu
+BTN31347379-27 = Top Menu
+write_profile:     Function: Name: Menu  Label: Menu
+BTN31347379-28 = Menu
+write_profile:     Function: Name: Subtitle  Label: Subtitle
+BTN31347379-29 = Subtitle
+write_profile:     Function: Name: Audio  Label: Audio
+BTN31347379-30 = Audio
+write_profile:     Function: Name: Favorite  Label: Favorite
+BTN31347379-31 = Favorite
+write_profile:     Function: Name: Green  Label: Green
+BTN31347379-32 = Green
+write_profile:     Function: Name: Red  Label: Red
+BTN31347379-33 = Red
+write_profile:     Function: Name: Blue  Label: Blue
+BTN31347379-34 = Blue
+write_profile:     Function: Name: Yellow  Label: Yellow
+BTN31347379-35 = Yellow
+write_profile:     Function: Name: Display  Label: Display
+BTN31347379-36 = Display
+write_profile:     Function: Name: Netflix  Label: Netflix
+BTN31347379-37 = Netflix
+write_profile:     Function: Name: Home  Label: Home
+BTN31347379-38 = Home
+write_profile:     Function: Name: Options  Label: Options
+BTN31347379-39 = Options
+write_profile:     Function: Name: PopUp  Label: PopUp
+BTN31347379-40 = PopUp
+write_profile:     Function: Name: Qriocity  Label: Qriocity
+BTN31347379-41 = Qriocity
+
+  <editor id="Btn31347379">
+    <range uom="25" min="0" max="41" nls="BTN31347379"/>
+  </editor>
+
+
+ND-d34201219-NAME = IQAir Climate Control
+ND-d34201219-ICON = Input
+write_profile:   Device: IQAir Climate Control  Id: 34201219
+write_profile:     Function: Name: PowerOff  Label: Power Off
+BTN34201219-0 = Power Off
+write_profile:     Function: Name: PowerOn  Label: Power On
+BTN34201219-1 = Power On
+write_profile:     Function: Name: Speed 1  Label: Speed 1
+BTN34201219-2 = Speed 1
+write_profile:     Function: Name: Speed 2  Label: Speed 2
+BTN34201219-3 = Speed 2
+write_profile:     Function: Name: Speed 3  Label: Speed 3
+BTN34201219-4 = Speed 3
+write_profile:     Function: Name: Speed 4  Label: Speed 4
+BTN34201219-5 = Speed 4
+
+  <editor id="Btn34201219">
+    <range uom="25" min="0" max="5" nls="BTN34201219"/>
+  </editor>
+
+
+ND-d33416282-NAME = Kinivo AV Switch
+ND-d33416282-ICON = Input
+write_profile:   Device: Kinivo AV Switch  Id: 33416282
+write_profile:     Function: Name: PowerToggle  Label: Power Toggle
+BTN33416282-0 = Power Toggle
+write_profile:     Function: Name: Number1  Label: 1
+BTN33416282-1 = 1
+write_profile:     Function: Name: Number2  Label: 2
+BTN33416282-2 = 2
+write_profile:     Function: Name: Number3  Label: 3
+BTN33416282-3 = 3
+write_profile:     Function: Name: Number4  Label: 4
+BTN33416282-4 = 4
+write_profile:     Function: Name: Number5  Label: 5
+BTN33416282-5 = 5
+write_profile:     Function: Name: Input1  Label: Input1
+BTN33416282-6 = Input1
+write_profile:     Function: Name: Input2  Label: Input2
+BTN33416282-7 = Input2
+write_profile:     Function: Name: Input3  Label: Input3
+BTN33416282-8 = Input3
+write_profile:     Function: Name: Input4  Label: Input4
+BTN33416282-9 = Input4
+write_profile:     Function: Name: Input5  Label: Input5
+BTN33416282-10 = Input5
+
+  <editor id="Btn33416282">
+    <range uom="25" min="0" max="10" nls="BTN33416282"/>
+  </editor>
+
+
+ND-d31347642-NAME = Google Media Player
+ND-d31347642-ICON = Input
+write_profile:   Device: Google Media Player  Id: 31347642
+
+  <editor id="Btn31347642">
+    <range uom="25" min="0" max="-1" nls="BTN31347642"/>
+  </editor>
+
+
+ND-d31347608-NAME = TiVo DVR
+ND-d31347608-ICON = Input
+write_profile:   Device: TiVo DVR  Id: 31347608
+write_profile:     Function: Name: PowerToggle  Label: Power Toggle
+BTN31347608-0 = Power Toggle
+write_profile:     Function: Name: NumberEnter  Label: Number Enter
+BTN31347608-1 = Number Enter
+write_profile:     Function: Name: Hyphen  Label: -
+BTN31347608-2 = -
+write_profile:     Function: Name: Number0  Label: 0
+BTN31347608-3 = 0
+write_profile:     Function: Name: Number1  Label: 1
+BTN31347608-4 = 1
+write_profile:     Function: Name: Number2  Label: 2
+BTN31347608-5 = 2
+write_profile:     Function: Name: Number3  Label: 3
+BTN31347608-6 = 3
+write_profile:     Function: Name: Number4  Label: 4
+BTN31347608-7 = 4
+write_profile:     Function: Name: Number5  Label: 5
+BTN31347608-8 = 5
+write_profile:     Function: Name: Number6  Label: 6
+BTN31347608-9 = 6
+write_profile:     Function: Name: Number7  Label: 7
+BTN31347608-10 = 7
+write_profile:     Function: Name: Number8  Label: 8
+BTN31347608-11 = 8
+write_profile:     Function: Name: Number9  Label: 9
+BTN31347608-12 = 9
+write_profile:     Function: Name: Clear  Label: Clear
+BTN31347608-13 = Clear
+write_profile:     Function: Name: Mute  Label: Mute
+BTN31347608-14 = Mute
+write_profile:     Function: Name: VolumeDown  Label: Volume Down
+BTN31347608-15 = Volume Down
+write_profile:     Function: Name: VolumeUp  Label: Volume Up
+BTN31347608-16 = Volume Up
+write_profile:     Function: Name: PrevChannel  Label: Prev Channel
+BTN31347608-17 = Prev Channel
+write_profile:     Function: Name: ChannelDown  Label: Channel Down
+BTN31347608-18 = Channel Down
+write_profile:     Function: Name: ChannelUp  Label: Channel Up
+BTN31347608-19 = Channel Up
+write_profile:     Function: Name: DirectionDown  Label: Direction Down
+BTN31347608-20 = Direction Down
+write_profile:     Function: Name: DirectionLeft  Label: Direction Left
+BTN31347608-21 = Direction Left
+write_profile:     Function: Name: DirectionRight  Label: Direction Right
+BTN31347608-22 = Direction Right
+write_profile:     Function: Name: DirectionUp  Label: Direction Up
+BTN31347608-23 = Direction Up
+write_profile:     Function: Name: Select  Label: Select
+BTN31347608-24 = Select
+write_profile:     Function: Name: Play  Label: Play
+BTN31347608-25 = Play
+write_profile:     Function: Name: Rewind  Label: Rewind
+BTN31347608-26 = Rewind
+write_profile:     Function: Name: Pause  Label: Pause
+BTN31347608-27 = Pause
+write_profile:     Function: Name: FastForward  Label: Fast Forward
+BTN31347608-28 = Fast Forward
+write_profile:     Function: Name: Record  Label: Record
+BTN31347608-29 = Record
+write_profile:     Function: Name: FrameAdvance  Label: Frame Advance
+BTN31347608-30 = Frame Advance
+write_profile:     Function: Name: SkipBackward  Label: Skip Backward
+BTN31347608-31 = Skip Backward
+write_profile:     Function: Name: SkipForward  Label: Skip Forward
+BTN31347608-32 = Skip Forward
+write_profile:     Function: Name: Back  Label: Back
+BTN31347608-33 = Back
+write_profile:     Function: Name: C  Label: C
+BTN31347608-34 = C
+write_profile:     Function: Name: B  Label: B
+BTN31347608-35 = B
+write_profile:     Function: Name: D  Label: D
+BTN31347608-36 = D
+write_profile:     Function: Name: A  Label: A
+BTN31347608-37 = A
+write_profile:     Function: Name: Live  Label: Live
+BTN31347608-38 = Live
+write_profile:     Function: Name: ThumbsDown  Label: Thumbs Down
+BTN31347608-39 = Thumbs Down
+write_profile:     Function: Name: ThumbsUp  Label: Thumbs Up
+BTN31347608-40 = Thumbs Up
+write_profile:     Function: Name: TiVo  Label: TiVo
+BTN31347608-41 = TiVo
+write_profile:     Function: Name: Green  Label: Green
+BTN31347608-42 = Green
+write_profile:     Function: Name: Red  Label: Red
+BTN31347608-43 = Red
+write_profile:     Function: Name: Blue  Label: Blue
+BTN31347608-44 = Blue
+write_profile:     Function: Name: Yellow  Label: Yellow
+BTN31347608-45 = Yellow
+write_profile:     Function: Name: Guide  Label: Guide
+BTN31347608-46 = Guide
+write_profile:     Function: Name: Info  Label: Info
+BTN31347608-47 = Info
+write_profile:     Function: Name: Zoom  Label: Zoom
+BTN31347608-48 = Zoom
+write_profile:     Function: Name: Input  Label: Input
+BTN31347608-49 = Input
+write_profile:     Function: Name: Swap  Label: Swap
+BTN31347608-50 = Swap
+
+  <editor id="Btn31347608">
+    <range uom="25" min="0" max="50" nls="BTN31347608"/>
+  </editor>
+
+
+  <nodeDef id="FamilyRoom" nodeType="139" nls="HARMONYHUB">
+    <sts>
+      <st id="ST" editor="HUBST" />
+      <st id="GV3" editor="ActFamilyRoom" />
+    </sts>
+    <cmds>
+      <sends>
+	<cmd id="DON" />
+      </sends>
+      <accepts>
+        <cmd id="SET_ACTIVITY">
+          <p id="" editor="ActFamilyRoom" init="GV3"/>
+        </cmd>
+	<cmd id="REBOOT" />
+	<cmd id="QUERY" />
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+
+ND-FamilyRoom-NAME = HarmonyHub FamilyRoom
+ND-FamilyRoom-ICON = Input
+write_profile: Initializing Client
+write_profile: Client: <pyharmony.client.HarmonyClient object at 0x752c4670>
+write_profile: Activity: Outside Chromecast Audio  Id: 20835589
+FAMILYROOM-20835589 = Outside Chromecast Audio
+write_profile: Activity: Watch a DVD  Id: 12827545
+FAMILYROOM-12827545 = Watch a DVD
+write_profile: Activity: Listen To iPod  Id: 12827546
+FAMILYROOM-12827546 = Listen To iPod
+write_profile: Activity: Play Wii  Id: 12827548
+FAMILYROOM-12827548 = Play Wii
+write_profile: Activity: Play PS3  Id: 12827549
+FAMILYROOM-12827549 = Play PS3
+write_profile: Activity: PowerOff  Id: -1
+write_profile: Activity: Chromecast Video  Id: 12829374
+FAMILYROOM-12829374 = Chromecast Video
+write_profile: Activity: Tivo  Id: 12827544
+FAMILYROOM-12827544 = Tivo
+write_profile: Activity: Chromecast Audio  Id: 20835552
+FAMILYROOM-20835552 = Chromecast Audio
+write_profile: Activity: Listen to Radio  Id: 12827547
+FAMILYROOM-12827547 = Listen to Radio
+
+  <editor id="ActFamilyRoom">
+    <range uom="25" subset="0,12827544,12827545,12827546,12827547,12827548,12827549,12829374,20835552,20835589" nls="FAMILYROOM"/>
+  </editor>
+
+
+ND-d25080145-NAME = TV
+ND-d25080145-ICON = Input
+write_profile:   Device: TV  Id: 25080145
+write_profile:     Function: Name: PowerOff  Label: Power Off
+BTN25080145-0 = Power Off
+write_profile:     Function: Name: PowerOn  Label: Power On
+BTN25080145-1 = Power On
+write_profile:     Function: Name: PowerToggle  Label: Power Toggle
+BTN25080145-2 = Power Toggle
+write_profile:     Function: Name: NumberEnter  Label: Number Enter
+BTN25080145-3 = Number Enter
+write_profile:     Function: Name: Star  Label: *
+BTN25080145-4 = *
+write_profile:     Function: Name: Number0  Label: 0
+BTN25080145-5 = 0
+write_profile:     Function: Name: Number1  Label: 1
+BTN25080145-6 = 1
+write_profile:     Function: Name: Number2  Label: 2
+BTN25080145-7 = 2
+write_profile:     Function: Name: Number3  Label: 3
+BTN25080145-8 = 3
+write_profile:     Function: Name: Number4  Label: 4
+BTN25080145-9 = 4
+write_profile:     Function: Name: Number5  Label: 5
+BTN25080145-10 = 5
+write_profile:     Function: Name: Number6  Label: 6
+BTN25080145-11 = 6
+write_profile:     Function: Name: Number7  Label: 7
+BTN25080145-12 = 7
+write_profile:     Function: Name: Number8  Label: 8
+BTN25080145-13 = 8
+write_profile:     Function: Name: Number9  Label: 9
+BTN25080145-14 = 9
+write_profile:     Function: Name: Mute  Label: Mute
+BTN25080145-15 = Mute
+write_profile:     Function: Name: VolumeDown  Label: Volume Down
+BTN25080145-16 = Volume Down
+write_profile:     Function: Name: VolumeUp  Label: Volume Up
+BTN25080145-17 = Volume Up
+write_profile:     Function: Name: PrevChannel  Label: Prev Channel
+BTN25080145-18 = Prev Channel
+write_profile:     Function: Name: ChannelDown  Label: Channel Down
+BTN25080145-19 = Channel Down
+write_profile:     Function: Name: ChannelUp  Label: Channel Up
+BTN25080145-20 = Channel Up
+write_profile:     Function: Name: DirectionDown  Label: Direction Down
+BTN25080145-21 = Direction Down
+write_profile:     Function: Name: DirectionLeft  Label: Direction Left
+BTN25080145-22 = Direction Left
+write_profile:     Function: Name: DirectionRight  Label: Direction Right
+BTN25080145-23 = Direction Right
+write_profile:     Function: Name: DirectionUp  Label: Direction Up
+BTN25080145-24 = Direction Up
+write_profile:     Function: Name: Select  Label: Select
+BTN25080145-25 = Select
+write_profile:     Function: Name: Stop  Label: Stop
+BTN25080145-26 = Stop
+write_profile:     Function: Name: Play  Label: Play
+BTN25080145-27 = Play
+write_profile:     Function: Name: Rewind  Label: Rewind
+BTN25080145-28 = Rewind
+write_profile:     Function: Name: Pause  Label: Pause
+BTN25080145-29 = Pause
+write_profile:     Function: Name: FastForward  Label: Fast Forward
+BTN25080145-30 = Fast Forward
+write_profile:     Function: Name: Record  Label: Record
+BTN25080145-31 = Record
+write_profile:     Function: Name: SkipBackward  Label: Skip Backward
+BTN25080145-32 = Skip Backward
+write_profile:     Function: Name: SkipForward  Label: Skip Forward
+BTN25080145-33 = Skip Forward
+write_profile:     Function: Name: Return  Label: Return
+BTN25080145-34 = Return
+write_profile:     Function: Name: Menu  Label: Menu
+BTN25080145-35 = Menu
+write_profile:     Function: Name: Audio  Label: Audio
+BTN25080145-36 = Audio
+write_profile:     Function: Name: Favorite  Label: Favorite
+BTN25080145-37 = Favorite
+write_profile:     Function: Name: Sleep  Label: Sleep
+BTN25080145-38 = Sleep
+write_profile:     Function: Name: Green  Label: Green
+BTN25080145-39 = Green
+write_profile:     Function: Name: Red  Label: Red
+BTN25080145-40 = Red
+write_profile:     Function: Name: Blue  Label: Blue
+BTN25080145-41 = Blue
+write_profile:     Function: Name: Yellow  Label: Yellow
+BTN25080145-42 = Yellow
+write_profile:     Function: Name: Exit  Label: Exit
+BTN25080145-43 = Exit
+write_profile:     Function: Name: Aspect  Label: Aspect
+BTN25080145-44 = Aspect
+write_profile:     Function: Name: Display  Label: Display
+BTN25080145-45 = Display
+write_profile:     Function: Name: Netflix  Label: Netflix
+BTN25080145-46 = Netflix
+write_profile:     Function: Name: 3D  Label: 3D
+BTN25080145-47 = 3D
+write_profile:     Function: Name: Apps  Label: Apps
+BTN25080145-48 = Apps
+write_profile:     Function: Name: AvMode  Label: AvMode
+BTN25080145-49 = AvMode
+write_profile:     Function: Name: ClosedCaption  Label: ClosedCaption
+BTN25080145-50 = ClosedCaption
+write_profile:     Function: Name: FavoriteA  Label: FavoriteA
+BTN25080145-51 = FavoriteA
+write_profile:     Function: Name: FavoriteApp1  Label: FavoriteApp1
+BTN25080145-52 = FavoriteApp1
+write_profile:     Function: Name: FavoriteApp2  Label: FavoriteApp2
+BTN25080145-53 = FavoriteApp2
+write_profile:     Function: Name: FavoriteApp3  Label: FavoriteApp3
+BTN25080145-54 = FavoriteApp3
+write_profile:     Function: Name: FavoriteB  Label: FavoriteB
+BTN25080145-55 = FavoriteB
+write_profile:     Function: Name: FavoriteC  Label: FavoriteC
+BTN25080145-56 = FavoriteC
+write_profile:     Function: Name: FavoriteD  Label: FavoriteD
+BTN25080145-57 = FavoriteD
+write_profile:     Function: Name: Freeze  Label: Freeze
+BTN25080145-58 = Freeze
+write_profile:     Function: Name: Input  Label: Input
+BTN25080145-59 = Input
+write_profile:     Function: Name: Input1  Label: Input1
+BTN25080145-60 = Input1
+write_profile:     Function: Name: Input2  Label: Input2
+BTN25080145-61 = Input2
+write_profile:     Function: Name: Input3  Label: Input3
+BTN25080145-62 = Input3
+write_profile:     Function: Name: Input4  Label: Input4
+BTN25080145-63 = Input4
+write_profile:     Function: Name: Input5  Label: Input5
+BTN25080145-64 = Input5
+write_profile:     Function: Name: Input6  Label: Input6
+BTN25080145-65 = Input6
+write_profile:     Function: Name: Input7  Label: Input7
+BTN25080145-66 = Input7
+write_profile:     Function: Name: Input8  Label: Input8
+BTN25080145-67 = Input8
+write_profile:     Function: Name: InputTV  Label: InputTV
+BTN25080145-68 = InputTV
+write_profile:     Function: Name: Option  Label: Option
+BTN25080145-69 = Option
+
+  <editor id="Btn25080145">
+    <range uom="25" min="0" max="69" nls="BTN25080145"/>
+  </editor>
+
+
+ND-d25399622-NAME = ISY
+ND-d25399622-ICON = Input
+write_profile:   Device: ISY  Id: 25399622
+
+  <editor id="Btn25399622">
+    <range uom="25" min="0" max="-1" nls="BTN25399622"/>
+  </editor>
+
+
+ND-d25082844-NAME = Google Chromecast
+ND-d25082844-ICON = Input
+write_profile:   Device: Google Chromecast  Id: 25082844
+
+  <editor id="Btn25082844">
+    <range uom="25" min="0" max="-1" nls="BTN25082844"/>
+  </editor>
+
+
+ND-d25080140-NAME = iPod
+ND-d25080140-ICON = Input
+write_profile:   Device: iPod  Id: 25080140
+write_profile:     Function: Name: Star  Label: *
+BTN25080140-0 = *
+write_profile:     Function: Name: Mute  Label: Mute
+BTN25080140-1 = Mute
+write_profile:     Function: Name: VolumeDown  Label: Volume Down
+BTN25080140-2 = Volume Down
+write_profile:     Function: Name: VolumeUp  Label: Volume Up
+BTN25080140-3 = Volume Up
+write_profile:     Function: Name: DirectionDown  Label: Direction Down
+BTN25080140-4 = Direction Down
+write_profile:     Function: Name: DirectionLeft  Label: Direction Left
+BTN25080140-5 = Direction Left
+write_profile:     Function: Name: DirectionRight  Label: Direction Right
+BTN25080140-6 = Direction Right
+write_profile:     Function: Name: DirectionUp  Label: Direction Up
+BTN25080140-7 = Direction Up
+write_profile:     Function: Name: Select  Label: Select
+BTN25080140-8 = Select
+write_profile:     Function: Name: Stop  Label: Stop
+BTN25080140-9 = Stop
+write_profile:     Function: Name: Play  Label: Play
+BTN25080140-10 = Play
+write_profile:     Function: Name: Rewind  Label: Rewind
+BTN25080140-11 = Rewind
+write_profile:     Function: Name: Pause  Label: Pause
+BTN25080140-12 = Pause
+write_profile:     Function: Name: FastForward  Label: Fast Forward
+BTN25080140-13 = Fast Forward
+write_profile:     Function: Name: SkipBackward  Label: Skip Backward
+BTN25080140-14 = Skip Backward
+write_profile:     Function: Name: SkipForward  Label: Skip Forward
+BTN25080140-15 = Skip Forward
+write_profile:     Function: Name: Menu  Label: Menu
+BTN25080140-16 = Menu
+
+  <editor id="Btn25080140">
+    <range uom="25" min="0" max="16" nls="BTN25080140"/>
+  </editor>
+
+
+ND-d37069819-NAME = Denon AV Receiver 2
+ND-d37069819-ICON = Input
+write_profile:   Device: Denon AV Receiver 2  Id: 37069819
+write_profile:     Function: Name: PowerOff  Label: Power Off
+BTN37069819-0 = Power Off
+write_profile:     Function: Name: PowerOn  Label: Power On
+BTN37069819-1 = Power On
+write_profile:     Function: Name: Mute  Label: Mute
+BTN37069819-2 = Mute
+write_profile:     Function: Name: VolumeDown  Label: Volume Down
+BTN37069819-3 = Volume Down
+write_profile:     Function: Name: VolumeUp  Label: Volume Up
+BTN37069819-4 = Volume Up
+write_profile:     Function: Name: InputAux  Label: InputAux
+BTN37069819-5 = InputAux
+write_profile:     Function: Name: InputCd  Label: InputCd
+BTN37069819-6 = InputCd
+write_profile:     Function: Name: InputDbs  Label: InputDbs
+BTN37069819-7 = InputDbs
+write_profile:     Function: Name: InputDvd  Label: InputDvd
+BTN37069819-8 = InputDvd
+write_profile:     Function: Name: InputPhono  Label: InputPhono
+BTN37069819-9 = InputPhono
+write_profile:     Function: Name: InputTape  Label: InputTape
+BTN37069819-10 = InputTape
+write_profile:     Function: Name: InputTuner  Label: InputTuner
+BTN37069819-11 = InputTuner
+write_profile:     Function: Name: InputTv  Label: InputTv
+BTN37069819-12 = InputTv
+write_profile:     Function: Name: InputVAux  Label: InputVAux
+BTN37069819-13 = InputVAux
+write_profile:     Function: Name: InputVcr1  Label: InputVcr1
+BTN37069819-14 = InputVcr1
+write_profile:     Function: Name: InputVcr2  Label: InputVcr2
+BTN37069819-15 = InputVcr2
+write_profile:     Function: Name: InputVdp  Label: InputVdp
+BTN37069819-16 = InputVdp
+write_profile:     Function: Name: PowerOff-MainZone  Label: PowerOff-MainZone
+BTN37069819-17 = PowerOff-MainZone
+write_profile:     Function: Name: PowerOn-MainZone  Label: PowerOn-MainZone
+BTN37069819-18 = PowerOn-MainZone
+
+  <editor id="Btn37069819">
+    <range uom="25" min="0" max="18" nls="BTN37069819"/>
+  </editor>
+
+
+ND-d37069909-NAME = Google Media Player
+ND-d37069909-ICON = Input
+write_profile:   Device: Google Media Player  Id: 37069909
+
+  <editor id="Btn37069909">
+    <range uom="25" min="0" max="-1" nls="BTN37069909"/>
+  </editor>
+
+
+ND-d25080143-NAME = Game Console (With DVD)
+ND-d25080143-ICON = Input
+write_profile:   Device: Game Console (With DVD)  Id: 25080143
+write_profile:     Function: Name: PowerOff  Label: Power Off
+BTN25080143-0 = Power Off
+write_profile:     Function: Name: PowerOn  Label: Power On
+BTN25080143-1 = Power On
+write_profile:     Function: Name: Plus  Label: +
+BTN25080143-2 = +
+write_profile:     Function: Name: Dot  Label: .
+BTN25080143-3 = .
+write_profile:     Function: Name: Number0  Label: 0
+BTN25080143-4 = 0
+write_profile:     Function: Name: Number1  Label: 1
+BTN25080143-5 = 1
+write_profile:     Function: Name: Number2  Label: 2
+BTN25080143-6 = 2
+write_profile:     Function: Name: Number3  Label: 3
+BTN25080143-7 = 3
+write_profile:     Function: Name: Number4  Label: 4
+BTN25080143-8 = 4
+write_profile:     Function: Name: Number5  Label: 5
+BTN25080143-9 = 5
+write_profile:     Function: Name: Number6  Label: 6
+BTN25080143-10 = 6
+write_profile:     Function: Name: Number7  Label: 7
+BTN25080143-11 = 7
+write_profile:     Function: Name: Number8  Label: 8
+BTN25080143-12 = 8
+write_profile:     Function: Name: Number9  Label: 9
+BTN25080143-13 = 9
+write_profile:     Function: Name: ChannelDown  Label: Channel Down
+BTN25080143-14 = Channel Down
+write_profile:     Function: Name: ChannelUp  Label: Channel Up
+BTN25080143-15 = Channel Up
+write_profile:     Function: Name: DirectionDown  Label: Direction Down
+BTN25080143-16 = Direction Down
+write_profile:     Function: Name: DirectionLeft  Label: Direction Left
+BTN25080143-17 = Direction Left
+write_profile:     Function: Name: DirectionRight  Label: Direction Right
+BTN25080143-18 = Direction Right
+write_profile:     Function: Name: DirectionUp  Label: Direction Up
+BTN25080143-19 = Direction Up
+write_profile:     Function: Name: Select  Label: Select
+BTN25080143-20 = Select
+write_profile:     Function: Name: Stop  Label: Stop
+BTN25080143-21 = Stop
+write_profile:     Function: Name: Play  Label: Play
+BTN25080143-22 = Play
+write_profile:     Function: Name: Rewind  Label: Rewind
+BTN25080143-23 = Rewind
+write_profile:     Function: Name: Eject  Label: Eject
+BTN25080143-24 = Eject
+write_profile:     Function: Name: Pause  Label: Pause
+BTN25080143-25 = Pause
+write_profile:     Function: Name: FastForward  Label: Fast Forward
+BTN25080143-26 = Fast Forward
+write_profile:     Function: Name: SkipBackward  Label: Skip Backward
+BTN25080143-27 = Skip Backward
+write_profile:     Function: Name: SkipForward  Label: Skip Forward
+BTN25080143-28 = Skip Forward
+write_profile:     Function: Name: Return  Label: Return
+BTN25080143-29 = Return
+write_profile:     Function: Name: TopMenu  Label: Top Menu
+BTN25080143-30 = Top Menu
+write_profile:     Function: Name: Menu  Label: Menu
+BTN25080143-31 = Menu
+write_profile:     Function: Name: Subtitle  Label: Subtitle
+BTN25080143-32 = Subtitle
+write_profile:     Function: Name: Audio  Label: Audio
+BTN25080143-33 = Audio
+write_profile:     Function: Name: Angle  Label: Angle
+BTN25080143-34 = Angle
+write_profile:     Function: Name: Cross  Label: Cross
+BTN25080143-35 = Cross
+write_profile:     Function: Name: Circle  Label: Circle
+BTN25080143-36 = Circle
+write_profile:     Function: Name: Square  Label: Square
+BTN25080143-37 = Square
+write_profile:     Function: Name: Triangle  Label: Triangle
+BTN25080143-38 = Triangle
+write_profile:     Function: Name: Green  Label: Green
+BTN25080143-39 = Green
+write_profile:     Function: Name: Red  Label: Red
+BTN25080143-40 = Red
+write_profile:     Function: Name: Blue  Label: Blue
+BTN25080143-41 = Blue
+write_profile:     Function: Name: Yellow  Label: Yellow
+BTN25080143-42 = Yellow
+write_profile:     Function: Name: Display  Label: Display
+BTN25080143-43 = Display
+write_profile:     Function: Name: InstantLeft  Label: InstantLeft
+BTN25080143-44 = InstantLeft
+write_profile:     Function: Name: InstantRight  Label: InstantRight
+BTN25080143-45 = InstantRight
+write_profile:     Function: Name: L1  Label: L1
+BTN25080143-46 = L1
+write_profile:     Function: Name: L2  Label: L2
+BTN25080143-47 = L2
+write_profile:     Function: Name: L3  Label: L3
+BTN25080143-48 = L3
+write_profile:     Function: Name: PS  Label: PS
+BTN25080143-49 = PS
+write_profile:     Function: Name: PSHold  Label: PSHold
+BTN25080143-50 = PSHold
+write_profile:     Function: Name: R1  Label: R1
+BTN25080143-51 = R1
+write_profile:     Function: Name: R2  Label: R2
+BTN25080143-52 = R2
+write_profile:     Function: Name: R3  Label: R3
+BTN25080143-53 = R3
+write_profile:     Function: Name: Select  Label: Select
+BTN25080143-54 = Select
+write_profile:     Function: Name: SlowNext  Label: SlowNext
+BTN25080143-55 = SlowNext
+write_profile:     Function: Name: SlowPrev  Label: SlowPrev
+BTN25080143-56 = SlowPrev
+write_profile:     Function: Name: Start  Label: Start
+BTN25080143-57 = Start
+write_profile:     Function: Name: Time  Label: Time
+BTN25080143-58 = Time
+
+  <editor id="Btn25080143">
+    <range uom="25" min="0" max="58" nls="BTN25080143"/>
+  </editor>
+
+
+ND-d28519632-NAME = TiVo Roamio Pro
+ND-d28519632-ICON = Input
+write_profile:   Device: TiVo Roamio Pro  Id: 28519632
+write_profile:     Function: Name: PowerToggle  Label: Power Toggle
+BTN28519632-0 = Power Toggle
+write_profile:     Function: Name: NumberEnter  Label: Number Enter
+BTN28519632-1 = Number Enter
+write_profile:     Function: Name: Number0  Label: 0
+BTN28519632-2 = 0
+write_profile:     Function: Name: Number1  Label: 1
+BTN28519632-3 = 1
+write_profile:     Function: Name: Number2  Label: 2
+BTN28519632-4 = 2
+write_profile:     Function: Name: Number3  Label: 3
+BTN28519632-5 = 3
+write_profile:     Function: Name: Number4  Label: 4
+BTN28519632-6 = 4
+write_profile:     Function: Name: Number5  Label: 5
+BTN28519632-7 = 5
+write_profile:     Function: Name: Number6  Label: 6
+BTN28519632-8 = 6
+write_profile:     Function: Name: Number7  Label: 7
+BTN28519632-9 = 7
+write_profile:     Function: Name: Number8  Label: 8
+BTN28519632-10 = 8
+write_profile:     Function: Name: Number9  Label: 9
+BTN28519632-11 = 9
+write_profile:     Function: Name: Clear  Label: Clear
+BTN28519632-12 = Clear
+write_profile:     Function: Name: PrevChannel  Label: Prev Channel
+BTN28519632-13 = Prev Channel
+write_profile:     Function: Name: ChannelDown  Label: Channel Down
+BTN28519632-14 = Channel Down
+write_profile:     Function: Name: ChannelUp  Label: Channel Up
+BTN28519632-15 = Channel Up
+write_profile:     Function: Name: DirectionDown  Label: Direction Down
+BTN28519632-16 = Direction Down
+write_profile:     Function: Name: DirectionLeft  Label: Direction Left
+BTN28519632-17 = Direction Left
+write_profile:     Function: Name: DirectionRight  Label: Direction Right
+BTN28519632-18 = Direction Right
+write_profile:     Function: Name: DirectionUp  Label: Direction Up
+BTN28519632-19 = Direction Up
+write_profile:     Function: Name: Select  Label: Select
+BTN28519632-20 = Select
+write_profile:     Function: Name: Play  Label: Play
+BTN28519632-21 = Play
+write_profile:     Function: Name: Rewind  Label: Rewind
+BTN28519632-22 = Rewind
+write_profile:     Function: Name: Pause  Label: Pause
+BTN28519632-23 = Pause
+write_profile:     Function: Name: FastForward  Label: Fast Forward
+BTN28519632-24 = Fast Forward
+write_profile:     Function: Name: Record  Label: Record
+BTN28519632-25 = Record
+write_profile:     Function: Name: FrameAdvance  Label: Frame Advance
+BTN28519632-26 = Frame Advance
+write_profile:     Function: Name: SkipBackward  Label: Skip Backward
+BTN28519632-27 = Skip Backward
+write_profile:     Function: Name: SkipForward  Label: Skip Forward
+BTN28519632-28 = Skip Forward
+write_profile:     Function: Name: Live  Label: Live
+BTN28519632-29 = Live
+write_profile:     Function: Name: ThumbsDown  Label: Thumbs Down
+BTN28519632-30 = Thumbs Down
+write_profile:     Function: Name: ThumbsUp  Label: Thumbs Up
+BTN28519632-31 = Thumbs Up
+write_profile:     Function: Name: TiVo  Label: TiVo
+BTN28519632-32 = TiVo
+write_profile:     Function: Name: Green  Label: Green
+BTN28519632-33 = Green
+write_profile:     Function: Name: Red  Label: Red
+BTN28519632-34 = Red
+write_profile:     Function: Name: Blue  Label: Blue
+BTN28519632-35 = Blue
+write_profile:     Function: Name: Yellow  Label: Yellow
+BTN28519632-36 = Yellow
+write_profile:     Function: Name: Guide  Label: Guide
+BTN28519632-37 = Guide
+write_profile:     Function: Name: Info  Label: Info
+BTN28519632-38 = Info
+write_profile:     Function: Name: PageDown  Label: Page Down
+BTN28519632-39 = Page Down
+write_profile:     Function: Name: PageUp  Label: Page Up
+BTN28519632-40 = Page Up
+write_profile:     Function: Name: Aspect  Label: Aspect
+BTN28519632-41 = Aspect
+
+  <editor id="Btn28519632">
+    <range uom="25" min="0" max="41" nls="BTN28519632"/>
+  </editor>
+
+
+ND-d31595151-NAME = Kinivo AV Switch
+ND-d31595151-ICON = Input
+write_profile:   Device: Kinivo AV Switch  Id: 31595151
+write_profile:     Function: Name: PowerToggle  Label: Power Toggle
+BTN31595151-0 = Power Toggle
+write_profile:     Function: Name: Number1  Label: 1
+BTN31595151-1 = 1
+write_profile:     Function: Name: Number2  Label: 2
+BTN31595151-2 = 2
+write_profile:     Function: Name: Number3  Label: 3
+BTN31595151-3 = 3
+write_profile:     Function: Name: Number4  Label: 4
+BTN31595151-4 = 4
+write_profile:     Function: Name: Number5  Label: 5
+BTN31595151-5 = 5
+write_profile:     Function: Name: Input1  Label: Input1
+BTN31595151-6 = Input1
+write_profile:     Function: Name: Input2  Label: Input2
+BTN31595151-7 = Input2
+write_profile:     Function: Name: Input3  Label: Input3
+BTN31595151-8 = Input3
+write_profile:     Function: Name: Input4  Label: Input4
+BTN31595151-9 = Input4
+write_profile:     Function: Name: Input5  Label: Input5
+BTN31595151-10 = Input5
+
+  <editor id="Btn31595151">
+    <range uom="25" min="0" max="10" nls="BTN31595151"/>
+  </editor>
+
+
+ND-d25080142-NAME = DVD
+ND-d25080142-ICON = Input
+write_profile:   Device: DVD  Id: 25080142
+write_profile:     Function: Name: PowerToggle  Label: Power Toggle
+BTN25080142-0 = Power Toggle
+write_profile:     Function: Name: Number0  Label: 0
+BTN25080142-1 = 0
+write_profile:     Function: Name: Number1  Label: 1
+BTN25080142-2 = 1
+write_profile:     Function: Name: Number2  Label: 2
+BTN25080142-3 = 2
+write_profile:     Function: Name: Number3  Label: 3
+BTN25080142-4 = 3
+write_profile:     Function: Name: Number4  Label: 4
+BTN25080142-5 = 4
+write_profile:     Function: Name: Number5  Label: 5
+BTN25080142-6 = 5
+write_profile:     Function: Name: Number6  Label: 6
+BTN25080142-7 = 6
+write_profile:     Function: Name: Number7  Label: 7
+BTN25080142-8 = 7
+write_profile:     Function: Name: Number8  Label: 8
+BTN25080142-9 = 8
+write_profile:     Function: Name: Number9  Label: 9
+BTN25080142-10 = 9
+write_profile:     Function: Name: DirectionDown  Label: Direction Down
+BTN25080142-11 = Direction Down
+write_profile:     Function: Name: DirectionLeft  Label: Direction Left
+BTN25080142-12 = Direction Left
+write_profile:     Function: Name: DirectionRight  Label: Direction Right
+BTN25080142-13 = Direction Right
+write_profile:     Function: Name: DirectionUp  Label: Direction Up
+BTN25080142-14 = Direction Up
+write_profile:     Function: Name: Select  Label: Select
+BTN25080142-15 = Select
+write_profile:     Function: Name: Stop  Label: Stop
+BTN25080142-16 = Stop
+write_profile:     Function: Name: Play  Label: Play
+BTN25080142-17 = Play
+write_profile:     Function: Name: Rewind  Label: Rewind
+BTN25080142-18 = Rewind
+write_profile:     Function: Name: Eject  Label: Eject
+BTN25080142-19 = Eject
+write_profile:     Function: Name: Pause  Label: Pause
+BTN25080142-20 = Pause
+write_profile:     Function: Name: FastForward  Label: Fast Forward
+BTN25080142-21 = Fast Forward
+write_profile:     Function: Name: SkipBackward  Label: Skip Backward
+BTN25080142-22 = Skip Backward
+write_profile:     Function: Name: SkipForward  Label: Skip Forward
+BTN25080142-23 = Skip Forward
+write_profile:     Function: Name: Return  Label: Return
+BTN25080142-24 = Return
+write_profile:     Function: Name: TopMenu  Label: Top Menu
+BTN25080142-25 = Top Menu
+write_profile:     Function: Name: Menu  Label: Menu
+BTN25080142-26 = Menu
+write_profile:     Function: Name: Subtitle  Label: Subtitle
+BTN25080142-27 = Subtitle
+write_profile:     Function: Name: Audio  Label: Audio
+BTN25080142-28 = Audio
+write_profile:     Function: Name: C  Label: C
+BTN25080142-29 = C
+write_profile:     Function: Name: B  Label: B
+BTN25080142-30 = B
+write_profile:     Function: Name: D  Label: D
+BTN25080142-31 = D
+write_profile:     Function: Name: A  Label: A
+BTN25080142-32 = A
+write_profile:     Function: Name: Green  Label: Green
+BTN25080142-33 = Green
+write_profile:     Function: Name: Red  Label: Red
+BTN25080142-34 = Red
+write_profile:     Function: Name: Blue  Label: Blue
+BTN25080142-35 = Blue
+write_profile:     Function: Name: Yellow  Label: Yellow
+BTN25080142-36 = Yellow
+write_profile:     Function: Name: Info  Label: Info
+BTN25080142-37 = Info
+write_profile:     Function: Name: Exit  Label: Exit
+BTN25080142-38 = Exit
+write_profile:     Function: Name: Netflix  Label: Netflix
+BTN25080142-39 = Netflix
+write_profile:     Function: Name: Pandora  Label: Pandora
+BTN25080142-40 = Pandora
+write_profile:     Function: Name: Disc2Digital  Label: Disc2Digital
+BTN25080142-41 = Disc2Digital
+write_profile:     Function: Name: FullScreen  Label: FullScreen
+BTN25080142-42 = FullScreen
+write_profile:     Function: Name: Home  Label: Home
+BTN25080142-43 = Home
+write_profile:     Function: Name: PopUp  Label: PopUp
+BTN25080142-44 = PopUp
+write_profile:     Function: Name: SmartHub  Label: SmartHub
+BTN25080142-45 = SmartHub
+write_profile:     Function: Name: Tools  Label: Tools
+BTN25080142-46 = Tools
+
+  <editor id="Btn25080142">
+    <range uom="25" min="0" max="46" nls="BTN25080142"/>
+  </editor>
+
+
+ND-d25080141-NAME = Game Console
+ND-d25080141-ICON = Input
+write_profile:   Device: Game Console  Id: 25080141
+write_profile:     Function: Name: PowerToggle  Label: Power Toggle
+BTN25080141-0 = Power Toggle
+write_profile:     Function: Name: DirectionDown  Label: Direction Down
+BTN25080141-1 = Direction Down
+write_profile:     Function: Name: DirectionLeft  Label: Direction Left
+BTN25080141-2 = Direction Left
+write_profile:     Function: Name: DirectionRight  Label: Direction Right
+BTN25080141-3 = Direction Right
+write_profile:     Function: Name: DirectionUp  Label: Direction Up
+BTN25080141-4 = Direction Up
+write_profile:     Function: Name: WiiA  Label: A
+BTN25080141-5 = A
+write_profile:     Function: Name: WiiB  Label: B
+BTN25080141-6 = B
+write_profile:     Function: Name: WiiPlus  Label: +
+BTN25080141-7 = +
+write_profile:     Function: Name: WiiMinus  Label: -
+BTN25080141-8 = -
+write_profile:     Function: Name: Wii1  Label: 1
+BTN25080141-9 = 1
+write_profile:     Function: Name: Wii2  Label: 2
+BTN25080141-10 = 2
+write_profile:     Function: Name: Disconnect Wii  Label: Disconnect Wii
+BTN25080141-11 = Disconnect Wii
+write_profile:     Function: Name: Home  Label: Home
+BTN25080141-12 = Home
+write_profile:     Function: Name: Trackpad  Label: Trackpad
+BTN25080141-13 = Trackpad
+
+  <editor id="Btn25080141">
+    <range uom="25" min="0" max="13" nls="BTN25080141"/>
+  </editor>
+
+
+ND-d25080146-NAME = AV Receiver
+ND-d25080146-ICON = Input
+write_profile:   Device: AV Receiver  Id: 25080146
+write_profile:     Function: Name: PowerOff  Label: Power Off
+BTN25080146-0 = Power Off
+write_profile:     Function: Name: PowerOn  Label: Power On
+BTN25080146-1 = Power On
+write_profile:     Function: Name: Number0  Label: 0
+BTN25080146-2 = 0
+write_profile:     Function: Name: Number1  Label: 1
+BTN25080146-3 = 1
+write_profile:     Function: Name: Number2  Label: 2
+BTN25080146-4 = 2
+write_profile:     Function: Name: Number3  Label: 3
+BTN25080146-5 = 3
+write_profile:     Function: Name: Number4  Label: 4
+BTN25080146-6 = 4
+write_profile:     Function: Name: Number5  Label: 5
+BTN25080146-7 = 5
+write_profile:     Function: Name: Number6  Label: 6
+BTN25080146-8 = 6
+write_profile:     Function: Name: Number7  Label: 7
+BTN25080146-9 = 7
+write_profile:     Function: Name: Number8  Label: 8
+BTN25080146-10 = 8
+write_profile:     Function: Name: Number9  Label: 9
+BTN25080146-11 = 9
+write_profile:     Function: Name: Mute  Label: Mute
+BTN25080146-12 = Mute
+write_profile:     Function: Name: VolumeDown  Label: Volume Down
+BTN25080146-13 = Volume Down
+write_profile:     Function: Name: VolumeUp  Label: Volume Up
+BTN25080146-14 = Volume Up
+write_profile:     Function: Name: DirectionDown  Label: Direction Down
+BTN25080146-15 = Direction Down
+write_profile:     Function: Name: DirectionLeft  Label: Direction Left
+BTN25080146-16 = Direction Left
+write_profile:     Function: Name: DirectionRight  Label: Direction Right
+BTN25080146-17 = Direction Right
+write_profile:     Function: Name: DirectionUp  Label: Direction Up
+BTN25080146-18 = Direction Up
+write_profile:     Function: Name: Select  Label: Select
+BTN25080146-19 = Select
+write_profile:     Function: Name: Menu  Label: Menu
+BTN25080146-20 = Menu
+write_profile:     Function: Name: Search  Label: Search
+BTN25080146-21 = Search
+write_profile:     Function: Name: PrevPreset  Label: Prev Preset
+BTN25080146-22 = Prev Preset
+write_profile:     Function: Name: ScanDown  Label: Scan Down
+BTN25080146-23 = Scan Down
+write_profile:     Function: Name: ScanUp  Label: Scan Up
+BTN25080146-24 = Scan Up
+write_profile:     Function: Name: NextPreset  Label: Next Preset
+BTN25080146-25 = Next Preset
+write_profile:     Function: Name: Setup  Label: Setup
+BTN25080146-26 = Setup
+write_profile:     Function: Name: Display  Label: Display
+BTN25080146-27 = Display
+write_profile:     Function: Name: Dtu1  Label: Dtu1
+BTN25080146-28 = Dtu1
+write_profile:     Function: Name: Dtu2  Label: Dtu2
+BTN25080146-29 = Dtu2
+write_profile:     Function: Name: Dtu3  Label: Dtu3
+BTN25080146-30 = Dtu3
+write_profile:     Function: Name: Dtu4  Label: Dtu4
+BTN25080146-31 = Dtu4
+write_profile:     Function: Name: Dtu5  Label: Dtu5
+BTN25080146-32 = Dtu5
+write_profile:     Function: Name: Dtu6  Label: Dtu6
+BTN25080146-33 = Dtu6
+write_profile:     Function: Name: Dtu7  Label: Dtu7
+BTN25080146-34 = Dtu7
+write_profile:     Function: Name: Dtu8  Label: Dtu8
+BTN25080146-35 = Dtu8
+write_profile:     Function: Name: DtuA  Label: DtuA
+BTN25080146-36 = DtuA
+write_profile:     Function: Name: DtuB  Label: DtuB
+BTN25080146-37 = DtuB
+write_profile:     Function: Name: DtuC  Label: DtuC
+BTN25080146-38 = DtuC
+write_profile:     Function: Name: DtuD  Label: DtuD
+BTN25080146-39 = DtuD
+write_profile:     Function: Name: DtuDown  Label: DtuDown
+BTN25080146-40 = DtuDown
+write_profile:     Function: Name: DtuE  Label: DtuE
+BTN25080146-41 = DtuE
+write_profile:     Function: Name: DtuF  Label: DtuF
+BTN25080146-42 = DtuF
+write_profile:     Function: Name: DtuG  Label: DtuG
+BTN25080146-43 = DtuG
+write_profile:     Function: Name: DtuLeft  Label: DtuLeft
+BTN25080146-44 = DtuLeft
+write_profile:     Function: Name: DtuMemory  Label: DtuMemory
+BTN25080146-45 = DtuMemory
+write_profile:     Function: Name: DtuMode  Label: DtuMode
+BTN25080146-46 = DtuMode
+write_profile:     Function: Name: DtuPresetNext  Label: DtuPresetNext
+BTN25080146-47 = DtuPresetNext
+write_profile:     Function: Name: DtuPresetPrev  Label: DtuPresetPrev
+BTN25080146-48 = DtuPresetPrev
+write_profile:     Function: Name: DtuRight  Label: DtuRight
+BTN25080146-49 = DtuRight
+write_profile:     Function: Name: DtuSearch  Label: DtuSearch
+BTN25080146-50 = DtuSearch
+write_profile:     Function: Name: DtuSearchDown  Label: DtuSearchDown
+BTN25080146-51 = DtuSearchDown
+write_profile:     Function: Name: DtuSearchUp  Label: DtuSearchUp
+BTN25080146-52 = DtuSearchUp
+write_profile:     Function: Name: DtuUp  Label: DtuUp
+BTN25080146-53 = DtuUp
+write_profile:     Function: Name: Eq  Label: Eq
+BTN25080146-54 = Eq
+write_profile:     Function: Name: InputAux  Label: InputAux
+BTN25080146-55 = InputAux
+write_profile:     Function: Name: InputAux/iPod  Label: InputAux/iPod
+BTN25080146-56 = InputAux/iPod
+write_profile:     Function: Name: InputCd  Label: InputCd
+BTN25080146-57 = InputCd
+write_profile:     Function: Name: InputCdr/Tape  Label: InputCdr/Tape
+BTN25080146-58 = InputCdr/Tape
+write_profile:     Function: Name: InputDbs  Label: InputDbs
+BTN25080146-59 = InputDbs
+write_profile:     Function: Name: InputDvd  Label: InputDvd
+BTN25080146-60 = InputDvd
+write_profile:     Function: Name: InputMode  Label: InputMode
+BTN25080146-61 = InputMode
+write_profile:     Function: Name: InputModeAnalog  Label: InputModeAnalog
+BTN25080146-62 = InputModeAnalog
+write_profile:     Function: Name: InputModeExtIn  Label: InputModeExtIn
+BTN25080146-63 = InputModeExtIn
+write_profile:     Function: Name: InputPhono  Label: InputPhono
+BTN25080146-64 = InputPhono
+write_profile:     Function: Name: InputTuner  Label: InputTuner
+BTN25080146-65 = InputTuner
+write_profile:     Function: Name: InputTv  Label: InputTv
+BTN25080146-66 = InputTv
+write_profile:     Function: Name: InputV-Aux  Label: InputV-Aux
+BTN25080146-67 = InputV-Aux
+write_profile:     Function: Name: InputVcr1  Label: InputVcr1
+BTN25080146-68 = InputVcr1
+write_profile:     Function: Name: InputVcr2  Label: InputVcr2
+BTN25080146-69 = InputVcr2
+write_profile:     Function: Name: InputVdp  Label: InputVdp
+BTN25080146-70 = InputVdp
+write_profile:     Function: Name: InputXM  Label: InputXM
+BTN25080146-71 = InputXM
+write_profile:     Function: Name: Mode7Ch  Label: Mode7Ch
+BTN25080146-72 = Mode7Ch
+write_profile:     Function: Name: ModeCinema  Label: ModeCinema
+BTN25080146-73 = ModeCinema
+write_profile:     Function: Name: ModeDirect/Stereo  Label: ModeDirect/Stereo
+BTN25080146-74 = ModeDirect/Stereo
+write_profile:     Function: Name: ModeDolbyPLII  Label: ModeDolbyPLII
+BTN25080146-75 = ModeDolbyPLII
+write_profile:     Function: Name: ModeDolbyPLIICinema  Label: ModeDolbyPLIICinema
+BTN25080146-76 = ModeDolbyPLIICinema
+write_profile:     Function: Name: ModeDolbyPLIIMusic  Label: ModeDolbyPLIIMusic
+BTN25080146-77 = ModeDolbyPLIIMusic
+write_profile:     Function: Name: ModeDSPSimulation  Label: ModeDSPSimulation
+BTN25080146-78 = ModeDSPSimulation
+write_profile:     Function: Name: ModeDTSNeo6Cinema  Label: ModeDTSNeo6Cinema
+BTN25080146-79 = ModeDTSNeo6Cinema
+write_profile:     Function: Name: ModeDTSNeo6Music  Label: ModeDTSNeo6Music
+BTN25080146-80 = ModeDTSNeo6Music
+write_profile:     Function: Name: ModeGame  Label: ModeGame
+BTN25080146-81 = ModeGame
+write_profile:     Function: Name: ModeMusic  Label: ModeMusic
+BTN25080146-82 = ModeMusic
+write_profile:     Function: Name: ModePureDirect  Label: ModePureDirect
+BTN25080146-83 = ModePureDirect
+write_profile:     Function: Name: ModeStandard  Label: ModeStandard
+BTN25080146-84 = ModeStandard
+write_profile:     Function: Name: ModeVideoGame  Label: ModeVideoGame
+BTN25080146-85 = ModeVideoGame
+write_profile:     Function: Name: ModeVirtual  Label: ModeVirtual
+BTN25080146-86 = ModeVirtual
+write_profile:     Function: Name: MPreset1(-0db)  Label: MPreset1(-0db)
+BTN25080146-87 = MPreset1(-0db)
+write_profile:     Function: Name: MPreset2(-20db)  Label: MPreset2(-20db)
+BTN25080146-88 = MPreset2(-20db)
+write_profile:     Function: Name: MPreset3(-40db)  Label: MPreset3(-40db)
+BTN25080146-89 = MPreset3(-40db)
+write_profile:     Function: Name: Night  Label: Night
+BTN25080146-90 = Night
+write_profile:     Function: Name: PowerOff(Zone-1)  Label: PowerOff(Zone-1)
+BTN25080146-91 = PowerOff(Zone-1)
+write_profile:     Function: Name: PowerOn(Zone-1)  Label: PowerOn(Zone-1)
+BTN25080146-92 = PowerOn(Zone-1)
+write_profile:     Function: Name: Speaker  Label: Speaker
+BTN25080146-93 = Speaker
+write_profile:     Function: Name: SpeakerCenter-LevelDown  Label: SpeakerCenter-LevelDown
+BTN25080146-94 = SpeakerCenter-LevelDown
+write_profile:     Function: Name: SpeakerCenter-LevelUp  Label: SpeakerCenter-LevelUp
+BTN25080146-95 = SpeakerCenter-LevelUp
+write_profile:     Function: Name: SpeakerFL-LevelDown  Label: SpeakerFL-LevelDown
+BTN25080146-96 = SpeakerFL-LevelDown
+write_profile:     Function: Name: SpeakerFL-LevelUp  Label: SpeakerFL-LevelUp
+BTN25080146-97 = SpeakerFL-LevelUp
+write_profile:     Function: Name: SpeakerSBL-LevelDown  Label: SpeakerSBL-LevelDown
+BTN25080146-98 = SpeakerSBL-LevelDown
+write_profile:     Function: Name: SpeakerSBL-LevelUp  Label: SpeakerSBL-LevelUp
+BTN25080146-99 = SpeakerSBL-LevelUp
+write_profile:     Function: Name: SpeakerSL-LevelDown  Label: SpeakerSL-LevelDown
+BTN25080146-100 = SpeakerSL-LevelDown
+write_profile:     Function: Name: SpeakerSL-LevelUp  Label: SpeakerSL-LevelUp
+BTN25080146-101 = SpeakerSL-LevelUp
+write_profile:     Function: Name: SpeakerSR-LevelDown  Label: SpeakerSR-LevelDown
+BTN25080146-102 = SpeakerSR-LevelDown
+write_profile:     Function: Name: SpeakerSR-LevelUp  Label: SpeakerSR-LevelUp
+BTN25080146-103 = SpeakerSR-LevelUp
+write_profile:     Function: Name: SpeakerSW-LevelDown  Label: SpeakerSW-LevelDown
+BTN25080146-104 = SpeakerSW-LevelDown
+write_profile:     Function: Name: SpeakerSW-LevelUp  Label: SpeakerSW-LevelUp
+BTN25080146-105 = SpeakerSW-LevelUp
+write_profile:     Function: Name: Stereo  Label: Stereo
+BTN25080146-106 = Stereo
+write_profile:     Function: Name: TestTone  Label: TestTone
+BTN25080146-107 = TestTone
+write_profile:     Function: Name: TunerBand  Label: TunerBand
+BTN25080146-108 = TunerBand
+write_profile:     Function: Name: TunerBankA  Label: TunerBankA
+BTN25080146-109 = TunerBankA
+write_profile:     Function: Name: TunerBankB  Label: TunerBankB
+BTN25080146-110 = TunerBankB
+write_profile:     Function: Name: TunerBankC  Label: TunerBankC
+BTN25080146-111 = TunerBankC
+write_profile:     Function: Name: TunerBankD  Label: TunerBankD
+BTN25080146-112 = TunerBankD
+write_profile:     Function: Name: TunerBankE  Label: TunerBankE
+BTN25080146-113 = TunerBankE
+write_profile:     Function: Name: TunerBankF  Label: TunerBankF
+BTN25080146-114 = TunerBankF
+write_profile:     Function: Name: TunerBankG  Label: TunerBankG
+BTN25080146-115 = TunerBankG
+write_profile:     Function: Name: TunerMemory  Label: TunerMemory
+BTN25080146-116 = TunerMemory
+write_profile:     Function: Name: TunerMode  Label: TunerMode
+BTN25080146-117 = TunerMode
+write_profile:     Function: Name: VideoSelect  Label: VideoSelect
+BTN25080146-118 = VideoSelect
+write_profile:     Function: Name: Zone2InputCD  Label: Zone2InputCD
+BTN25080146-119 = Zone2InputCD
+write_profile:     Function: Name: Zone2InputDBS  Label: Zone2InputDBS
+BTN25080146-120 = Zone2InputDBS
+write_profile:     Function: Name: Zone2InputVCR2  Label: Zone2InputVCR2
+BTN25080146-121 = Zone2InputVCR2
+write_profile:     Function: Name: Zone2PowerOff  Label: Zone2PowerOff
+BTN25080146-122 = Zone2PowerOff
+write_profile:     Function: Name: Zone2PowerOn  Label: Zone2PowerOn
+BTN25080146-123 = Zone2PowerOn
+write_profile:     Function: Name: Zone2VolumeDown  Label: Zone2VolumeDown
+BTN25080146-124 = Zone2VolumeDown
+write_profile:     Function: Name: Zone2VolumeUp  Label: Zone2VolumeUp
+BTN25080146-125 = Zone2VolumeUp
+
+  <editor id="Btn25080146">
+    <range uom="25" min="0" max="125" nls="BTN25080146"/>
+  </editor>
+
+write_profile: done.

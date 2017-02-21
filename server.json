@@ -1,0 +1,18 @@
+{
+    "name": "Harmony Hub",
+    "docs": "https://www.google.com",
+    "type": "python",
+    "executable": "harmony_hub.py",
+    "description": "Connect Harmony Hub's to the ISY994.",
+    "notice": "Put a notice here",
+    "credits": [
+        {
+            "title": "Libary: Library Name",
+            "author": "Author",
+            "version": "0.0",
+            "date": "Feb 18, 2017",
+            "source": "https://github.com/",
+            "license": "MIT"
+        }
+    ]
+}

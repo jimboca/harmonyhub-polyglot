@@ -1,0 +1,37 @@
+
+<editors>
+
+  <editor id="HUBST">
+    <range uom="2" subset="0,1" nls="HUBST"/>
+  </editor>
+  
+  <editor id="INTEGER">
+    <range uom="25" min="0" max="1000" prec="0" />
+  </editor>
+
+  <editor id="FLOAT">
+    <range uom="56" min="0.1" max="999.999"/>
+  </editor>
+
+  <!-- Log Debug Mode -->
+  <editor id="DEBUGMODE">
+    <range uom="25" subset="0,10,20,30,40,50" nls="CDM" />
+  </editor>
+
+  <editor id="ActFamilyRoom">
+    <range uom="25" subset="0,12827544,12827545,12827546,12827547,12827548,12827549,12829374,20835552,20835589" nls="ACTFAMILYROOM"/>
+  </editor>
+
+  <editor id="ActMaster">
+    <range uom="25" subset="0,16937126,16937238,16937349,23855652" nls="ACTMASTER"/>
+  </editor>
+  
+  <editor id="Btn25080146">
+    <range uom="25" min="0" max="1" nls="BTN25080146"/>
+  </editor>
+  
+  <editor id="Btn25080145">
+    <range uom="25" min="0" max="1" nls="BTN25080145"/>
+  </editor>
+  
+</editors>
