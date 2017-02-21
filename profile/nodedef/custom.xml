@@ -21,8 +21,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'MasterBedroom' Device 'Pioneer TV' (Type=Television, Manufacturer=Pioneer, Model=PDP-5070HD)-->
-
+  <!-- === Device 'Pioneer TV', Type=Television, Manufacturer=Pioneer, Model=PDP-5070HD -->
   <nodeDef id="d31347323" nodeType="139" nls="D31347323">
     <sts />
     <cmds>
@@ -35,8 +34,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'MasterBedroom' Device 'Sony Amp' (Type=Amplifier, Manufacturer=Sony, Model=HT-CT150)-->
-
+  <!-- === Device 'Sony Amp', Type=Amplifier, Manufacturer=Sony, Model=HT-CT150 -->
   <nodeDef id="d31347557" nodeType="139" nls="D31347557">
     <sts />
     <cmds>
@@ -49,8 +47,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'MasterBedroom' Device 'Amazon Fire TV' (Type=Default, Manufacturer=Amazon, Model=Fire TV)-->
-
+  <!-- === Device 'Amazon Fire TV', Type=Default, Manufacturer=Amazon, Model=Fire TV -->
   <nodeDef id="d41336071" nodeType="139" nls="D41336071">
     <sts />
     <cmds>
@@ -63,8 +60,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'MasterBedroom' Device 'Sony DVD' (Type=DVD, Manufacturer=Sony, Model=BDP-S580)-->
-
+  <!-- === Device 'Sony DVD', Type=DVD, Manufacturer=Sony, Model=BDP-S580 -->
   <nodeDef id="d31347379" nodeType="139" nls="D31347379">
     <sts />
     <cmds>
@@ -77,8 +73,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'MasterBedroom' Device 'IQAir Climate Control' (Type=ClimateControl, Manufacturer=IQAir, Model=HealthPro)-->
-
+  <!-- === Device 'IQAir Climate Control', Type=ClimateControl, Manufacturer=IQAir, Model=HealthPro -->
   <nodeDef id="d34201219" nodeType="139" nls="D34201219">
     <sts />
     <cmds>
@@ -91,8 +86,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'MasterBedroom' Device 'Kinivo AV Switch' (Type=AudioVideoSwitch, Manufacturer=Kinivo, Model=K500)-->
-
+  <!-- === Device 'Kinivo AV Switch', Type=AudioVideoSwitch, Manufacturer=Kinivo, Model=K500 -->
   <nodeDef id="d33416282" nodeType="139" nls="D33416282">
     <sts />
     <cmds>
@@ -105,8 +99,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'MasterBedroom' Device 'Google Media Player' (Type=MediaCenterPC, Manufacturer=Google, Model=Chromecast)-->
-
+  <!-- === Device 'Google Media Player', Type=MediaCenterPC, Manufacturer=Google, Model=Chromecast -->
   <nodeDef id="d31347642" nodeType="139" nls="D31347642">
     <sts />
     <cmds>
@@ -119,8 +112,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'MasterBedroom' Device 'TiVo DVR' (Type=PVR, Manufacturer=TiVo, Model=TCDA93000)-->
-
+  <!-- === Device 'TiVo DVR', Type=PVR, Manufacturer=TiVo, Model=TCDA93000 -->
   <nodeDef id="d31347608" nodeType="139" nls="D31347608">
     <sts />
     <cmds>
@@ -154,8 +146,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'FamilyRoom' Device 'TV' (Type=Television, Manufacturer=Sharp, Model=LC-70C8470U)-->
-
+  <!-- === Device 'TV', Type=Television, Manufacturer=Sharp, Model=LC-70C8470U -->
   <nodeDef id="d25080145" nodeType="139" nls="D25080145">
     <sts />
     <cmds>
@@ -168,8 +159,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'FamilyRoom' Device 'ISY' (Type=LightController, Manufacturer=Universal Devices, Model=ISY994i)-->
-
+  <!-- === Device 'ISY', Type=LightController, Manufacturer=Universal Devices, Model=ISY994i -->
   <nodeDef id="d25399622" nodeType="139" nls="D25399622">
     <sts />
     <cmds>
@@ -182,8 +172,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'FamilyRoom' Device 'Google Chromecast' (Type=MediaCenterPC, Manufacturer=Google, Model=Chromecast)-->
-
+  <!-- === Device 'Google Chromecast', Type=MediaCenterPC, Manufacturer=Google, Model=Chromecast -->
   <nodeDef id="d25082844" nodeType="139" nls="D25082844">
     <sts />
     <cmds>
@@ -196,8 +185,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'FamilyRoom' Device 'iPod' (Type=DigitalMusicServer, Manufacturer=Apple, Model=Apple Universal Dock)-->
-
+  <!-- === Device 'iPod', Type=DigitalMusicServer, Manufacturer=Apple, Model=Apple Universal Dock -->
   <nodeDef id="d25080140" nodeType="139" nls="D25080140">
     <sts />
     <cmds>
@@ -210,8 +198,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'FamilyRoom' Device 'Denon AV Receiver 2' (Type=StereoReceiver, Manufacturer=Denon, Model=AVR-4306 (Zone 2))-->
-
+  <!-- === Device 'Denon AV Receiver 2', Type=StereoReceiver, Manufacturer=Denon, Model=AVR-4306 (Zone 2) -->
   <nodeDef id="d37069819" nodeType="139" nls="D37069819">
     <sts />
     <cmds>
@@ -224,8 +211,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'FamilyRoom' Device 'Google Media Player' (Type=MediaCenterPC, Manufacturer=Google, Model=Chromecast Audio)-->
-
+  <!-- === Device 'Google Media Player', Type=MediaCenterPC, Manufacturer=Google, Model=Chromecast Audio -->
   <nodeDef id="d37069909" nodeType="139" nls="D37069909">
     <sts />
     <cmds>
@@ -238,8 +224,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'FamilyRoom' Device 'Game Console (With DVD)' (Type=GameConsoleWithDvd, Manufacturer=Sony, Model=Playstation 3)-->
-
+  <!-- === Device 'Game Console (With DVD)', Type=GameConsoleWithDvd, Manufacturer=Sony, Model=Playstation 3 -->
   <nodeDef id="d25080143" nodeType="139" nls="D25080143">
     <sts />
     <cmds>
@@ -252,8 +237,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'FamilyRoom' Device 'TiVo Roamio Pro' (Type=PVR, Manufacturer=TiVo, Model=Roamio Pro)-->
-
+  <!-- === Device 'TiVo Roamio Pro', Type=PVR, Manufacturer=TiVo, Model=Roamio Pro -->
   <nodeDef id="d28519632" nodeType="139" nls="D28519632">
     <sts />
     <cmds>
@@ -266,8 +250,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'FamilyRoom' Device 'Kinivo AV Switch' (Type=AudioVideoSwitch, Manufacturer=Kinivo, Model=K500)-->
-
+  <!-- === Device 'Kinivo AV Switch', Type=AudioVideoSwitch, Manufacturer=Kinivo, Model=K500 -->
   <nodeDef id="d31595151" nodeType="139" nls="D31595151">
     <sts />
     <cmds>
@@ -280,8 +263,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'FamilyRoom' Device 'DVD' (Type=DVD, Manufacturer=Samsung, Model=bdem59c)-->
-
+  <!-- === Device 'DVD', Type=DVD, Manufacturer=Samsung, Model=bdem59c -->
   <nodeDef id="d25080142" nodeType="139" nls="D25080142">
     <sts />
     <cmds>
@@ -294,8 +276,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'FamilyRoom' Device 'Game Console' (Type=GameConsole, Manufacturer=Nintendo, Model=Wii)-->
-
+  <!-- === Device 'Game Console', Type=GameConsole, Manufacturer=Nintendo, Model=Wii -->
   <nodeDef id="d25080141" nodeType="139" nls="D25080141">
     <sts />
     <cmds>
@@ -308,8 +289,7 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Harmony Hub 'FamilyRoom' Device 'AV Receiver' (Type=StereoReceiver, Manufacturer=Denon, Model=AVR-4306)-->
-
+  <!-- === Device 'AV Receiver', Type=StereoReceiver, Manufacturer=Denon, Model=AVR-4306 -->
   <nodeDef id="d25080146" nodeType="139" nls="D25080146">
     <sts />
     <cmds>

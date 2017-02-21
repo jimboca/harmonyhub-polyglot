@@ -61,6 +61,7 @@ EDITOR_TMPL_MM = """
 NLS_NODE_TMPL = """
 ND-%s-NAME = %s
 ND-%s-ICON = Input
+
 """
 # The NLS entry for each indexed item
 NLS_TMPL = "%s-%d = %s\n"
@@ -76,8 +77,10 @@ for key in config_data:
     if key != "server":
         host = config_data[key]['host']
         name = config_data[key]['name']
-        nodedef.write("\n  <!-- === Hub: %s '%s' -->\n" % (key,name))
+        info = "Hub: %s '%s'" % (key,name)
+        nodedef.write("\n  <!-- === %s -->\n" % (info))
         nodedef.write(NODEDEF_TMPL_A % (key, 'HARMONYHUB', 'Act' + key, 'Act' + key, 'GV3'))
+        nls.write("\n# %s\n" % (info))
         nls.write(NLS_NODE_TMPL % (key, name, key))
         print(pfx + " Initializing Client")
         port = 5222;
@@ -96,9 +99,10 @@ for key in config_data:
         ids.sort()                
         editor.write(EDITOR_TMPL_S % ('Act'+key,",".join(map(str,ids)),key.upper()))
         for d in harmony_config['device']:
-            nodedef.write("\n  <!-- === Harmony Hub '%s' Device '%s' (Type=%s, Manufacturer=%s, Model=%s)-->\n" %
-                          (key,d['label'],d['type'],d['manufacturer'],d['model']))
+            info = "Device '%s', Type=%s, Manufacturer=%s, Model=%s" % (d['label'],d['type'],d['manufacturer'],d['model'])
+            nodedef.write("\n  <!-- === %s -->" % info)
             nodedef.write(NODEDEF_TMPL_D % ('d' + d['id'], 'D' + d['id'], 'Btn' + d['id']))
+            nls.write("\n# %s" % info)
             nls.write(NLS_NODE_TMPL % ('d' + d['id'], d['label'], 'd' + d['id']))
             print("%s   Device: %s  Id: %s" % (pfx, d['label'], d['id']))
             i = -1
@@ -106,7 +110,8 @@ for key in config_data:
                 for f in cg['function']:
                     i += 1
                     print("%s     Function: Name: %s  Label: %s" % (pfx, f['name'], f['label']))
-                    nls.write(NLS_TMPL % ('BTN' + d['id'], i, f['label']))
+                    #nls.write("# Button name: %s, label: %s\n" % (f['name'], f['label']))
+                    nls.write(NLS_TMPL % ('BTN' + d['id'], i, f['name']))
             editor.write(EDITOR_TMPL_MM % ('Btn' + d['id'], 0, i, 'BTN' + d['id']))
 
 editor.write("</editors>")

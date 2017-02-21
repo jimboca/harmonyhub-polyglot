@@ -3,10 +3,10 @@ server:
     node: harmonyhub
     name: HarmonyHub Server
 
-MasterBedroom:
-    name: HarmonyHub MasterBedroom
-    host: 192.168.86.80
-
 FamilyRoom:
     name: HarmonyHub FamilyRoom
     host: 192.168.86.75
+
+MasterBedroom:
+    name: HarmonyHub MasterBedroom
+    host: 192.168.86.80
