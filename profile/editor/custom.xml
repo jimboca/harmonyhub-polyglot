@@ -1,0 +1,90 @@
+<editors>
+
+  <editor id="ActMasterBedroom">
+    <range uom="25" subset="0,16937126,16937238,16937349,23855652" nls="MASTERBEDROOM"/>
+  </editor>
+
+  <editor id="Btn31347323">
+    <range uom="25" min="0" max="59" nls="BTN31347323"/>
+  </editor>
+
+  <editor id="Btn31347557">
+    <range uom="25" min="0" max="22" nls="BTN31347557"/>
+  </editor>
+
+  <editor id="Btn41336071">
+    <range uom="25" min="0" max="17" nls="BTN41336071"/>
+  </editor>
+
+  <editor id="Btn31347379">
+    <range uom="25" min="0" max="41" nls="BTN31347379"/>
+  </editor>
+
+  <editor id="Btn34201219">
+    <range uom="25" min="0" max="5" nls="BTN34201219"/>
+  </editor>
+
+  <editor id="Btn33416282">
+    <range uom="25" min="0" max="10" nls="BTN33416282"/>
+  </editor>
+
+  <editor id="Btn31347642">
+    <range uom="25" min="0" max="-1" nls="BTN31347642"/>
+  </editor>
+
+  <editor id="Btn31347608">
+    <range uom="25" min="0" max="50" nls="BTN31347608"/>
+  </editor>
+
+  <editor id="ActFamilyRoom">
+    <range uom="25" subset="0,12827544,12827545,12827546,12827547,12827548,12827549,12829374,20835552,20835589" nls="FAMILYROOM"/>
+  </editor>
+
+  <editor id="Btn25080145">
+    <range uom="25" min="0" max="69" nls="BTN25080145"/>
+  </editor>
+
+  <editor id="Btn25399622">
+    <range uom="25" min="0" max="-1" nls="BTN25399622"/>
+  </editor>
+
+  <editor id="Btn25082844">
+    <range uom="25" min="0" max="-1" nls="BTN25082844"/>
+  </editor>
+
+  <editor id="Btn25080140">
+    <range uom="25" min="0" max="16" nls="BTN25080140"/>
+  </editor>
+
+  <editor id="Btn37069819">
+    <range uom="25" min="0" max="18" nls="BTN37069819"/>
+  </editor>
+
+  <editor id="Btn37069909">
+    <range uom="25" min="0" max="-1" nls="BTN37069909"/>
+  </editor>
+
+  <editor id="Btn25080143">
+    <range uom="25" min="0" max="58" nls="BTN25080143"/>
+  </editor>
+
+  <editor id="Btn28519632">
+    <range uom="25" min="0" max="41" nls="BTN28519632"/>
+  </editor>
+
+  <editor id="Btn31595151">
+    <range uom="25" min="0" max="10" nls="BTN31595151"/>
+  </editor>
+
+  <editor id="Btn25080142">
+    <range uom="25" min="0" max="46" nls="BTN25080142"/>
+  </editor>
+
+  <editor id="Btn25080141">
+    <range uom="25" min="0" max="13" nls="BTN25080141"/>
+  </editor>
+
+  <editor id="Btn25080146">
+    <range uom="25" min="0" max="125" nls="BTN25080146"/>
+  </editor>
+</editors>

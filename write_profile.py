@@ -14,11 +14,11 @@ config_file.close
 #    # use what the user has defined.
 #    this_host = config['host']
 
-NODEDEF_TMPL = """
-  <nodeDef id="%s" nodeType="139" nls="HARMONYHUB">
+NODEDEF_TMPL_A = """
+  <nodeDef id="%s" nodeType="139" nls="%s">
     <sts>
       <st id="ST" editor="HUBST" />
-      <st id="GV3" editor="Act%s" />
+      <st id="GV3" editor="%s" />
     </sts>
     <cmds>
       <sends>
@@ -26,10 +26,23 @@ NODEDEF_TMPL = """
       </sends>
       <accepts>
         <cmd id="SET_ACTIVITY">
-          <p id="" editor="Act%s" init="GV3"/>
+          <p id="" editor="%s" init="%s"/>
         </cmd>
 	<cmd id="REBOOT" />
 	<cmd id="QUERY" />
+      </accepts>
+    </cmds>
+  </nodeDef>
+"""
+NODEDEF_TMPL_D = """
+  <nodeDef id="%s" nodeType="139" nls="%s">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="%s"/>
+        </cmd>
       </accepts>
     </cmds>
   </nodeDef>
@@ -47,16 +60,25 @@ EDITOR_TMPL_MM = """
 # The NLS entries for the node definition
 NLS_NODE_TMPL = """
 ND-%s-NAME = %s
-ND-%s-ICON = Input"""
+ND-%s-ICON = Input
+"""
 # The NLS entry for each indexed item
-NLS_TMPL = "%s-%d = %s"
+NLS_TMPL = "%s-%d = %s\n"
+
+nodedef = open("profile/nodedef/custom.xml", "w")
+editor  = open("profile/editor/custom.xml", "w")
+nls     = open("profile/nls/en_US_c.txt", "w")
+
+editor.write("<editors>\n")
+nodedef.write("<nodeDefs>\n")
 
 for key in config_data:
     if key != "server":
         host = config_data[key]['host']
         name = config_data[key]['name']
-        print NODEDEF_TMPL % (key, key, key)
-        print NLS_NODE_TMPL % (key, name, key)
+        nodedef.write("\n  <!-- === Hub: %s '%s' -->\n" % (key,name))
+        nodedef.write(NODEDEF_TMPL_A % (key, 'HARMONYHUB', 'Act' + key, 'Act' + key, 'GV3'))
+        nls.write(NLS_NODE_TMPL % (key, name, key))
         print(pfx + " Initializing Client")
         port = 5222;
         token  = ha_get_token(host, port)
@@ -70,22 +92,29 @@ for key in config_data:
             print("%s Activity: %s  Id: %s" % (pfx, a['label'], a['id']))
             if a['id'] != "-1":
                 ids.append(int(a['id']))
-                print NLS_TMPL % (key.upper(), int(a['id']), a['label'])
+                nls.write(NLS_TMPL % (key.upper(), int(a['id']), a['label']))
         ids.sort()                
-        print EDITOR_TMPL_S % ('Act'+key,",".join(map(str,ids)),key.upper())
+        editor.write(EDITOR_TMPL_S % ('Act'+key,",".join(map(str,ids)),key.upper()))
         for d in harmony_config['device']:
-            print NLS_NODE_TMPL % ('d' + d['id'], d['label'], 'd' + d['id'])
+            nodedef.write("\n  <!-- === Harmony Hub '%s' Device '%s' (Type=%s, Manufacturer=%s, Model=%s)-->\n" %
+                          (key,d['label'],d['type'],d['manufacturer'],d['model']))
+            nodedef.write(NODEDEF_TMPL_D % ('d' + d['id'], 'D' + d['id'], 'Btn' + d['id']))
+            nls.write(NLS_NODE_TMPL % ('d' + d['id'], d['label'], 'd' + d['id']))
             print("%s   Device: %s  Id: %s" % (pfx, d['label'], d['id']))
-            #print d
-            #print d['controlGroup']
             i = -1
             for cg in d['controlGroup']:
-                #print cg
                 for f in cg['function']:
                     i += 1
                     print("%s     Function: Name: %s  Label: %s" % (pfx, f['name'], f['label']))
-                    print NLS_TMPL % ('BTN' + d['id'], i, f['label'])
-            print EDITOR_TMPL_MM % ('Btn' + d['id'], 0, i, 'BTN' + d['id'])
+                    nls.write(NLS_TMPL % ('BTN' + d['id'], i, f['label']))
+            editor.write(EDITOR_TMPL_MM % ('Btn' + d['id'], 0, i, 'BTN' + d['id']))
+
+editor.write("</editors>")
+nodedef.write("</nodeDefs>")
+            
+nodedef.close()
+editor.close()
+nls.close()
 
 print(pfx + " done.")
 exit
