@@ -1,0 +1,304 @@
+<nodeDefs>
+
+  <!-- === Hub: MasterBedroom 'HarmonyHub MasterBedroom' -->
+
+  <nodeDef id="MasterBedroom" nodeType="139" nls="HARMONYHUB">
+    <sts>
+      <st id="ST" editor="HUBST" />
+      <st id="GV3" editor="ActMasterBedroom" />
+    </sts>
+    <cmds>
+      <sends>
+	<cmd id="DON" />
+      </sends>
+      <accepts>
+        <cmd id="SET_ACTIVITY">
+          <p id="" editor="ActMasterBedroom" init="GV3"/>
+        </cmd>
+	<cmd id="REBOOT" />
+	<cmd id="QUERY" />
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Pioneer TV', Type=Television, Manufacturer=Pioneer, Model=PDP-5070HD -->
+  <nodeDef id="d31347323" nodeType="139" nls="D31347323">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn31347323"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Sony Amp', Type=Amplifier, Manufacturer=Sony, Model=HT-CT150 -->
+  <nodeDef id="d31347557" nodeType="139" nls="D31347557">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn31347557"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Amazon Fire TV', Type=Default, Manufacturer=Amazon, Model=Fire TV -->
+  <nodeDef id="d41336071" nodeType="139" nls="D41336071">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn41336071"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Sony DVD', Type=DVD, Manufacturer=Sony, Model=BDP-S580 -->
+  <nodeDef id="d31347379" nodeType="139" nls="D31347379">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn31347379"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'IQAir Climate Control', Type=ClimateControl, Manufacturer=IQAir, Model=HealthPro -->
+  <nodeDef id="d34201219" nodeType="139" nls="D34201219">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn34201219"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Kinivo AV Switch', Type=AudioVideoSwitch, Manufacturer=Kinivo, Model=K500 -->
+  <nodeDef id="d33416282" nodeType="139" nls="D33416282">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn33416282"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Google Media Player', Type=MediaCenterPC, Manufacturer=Google, Model=Chromecast -->
+  <nodeDef id="d31347642" nodeType="139" nls="D31347642">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn31347642"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'TiVo DVR', Type=PVR, Manufacturer=TiVo, Model=TCDA93000 -->
+  <nodeDef id="d31347608" nodeType="139" nls="D31347608">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn31347608"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Hub: FamilyRoom 'HarmonyHub FamilyRoom' -->
+
+  <nodeDef id="FamilyRoom" nodeType="139" nls="HARMONYHUB">
+    <sts>
+      <st id="ST" editor="HUBST" />
+      <st id="GV3" editor="ActFamilyRoom" />
+    </sts>
+    <cmds>
+      <sends>
+	<cmd id="DON" />
+      </sends>
+      <accepts>
+        <cmd id="SET_ACTIVITY">
+          <p id="" editor="ActFamilyRoom" init="GV3"/>
+        </cmd>
+	<cmd id="REBOOT" />
+	<cmd id="QUERY" />
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'TV', Type=Television, Manufacturer=Sharp, Model=LC-70C8470U -->
+  <nodeDef id="d25080145" nodeType="139" nls="D25080145">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn25080145"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'ISY', Type=LightController, Manufacturer=Universal Devices, Model=ISY994i -->
+  <nodeDef id="d25399622" nodeType="139" nls="D25399622">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn25399622"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Google Chromecast', Type=MediaCenterPC, Manufacturer=Google, Model=Chromecast -->
+  <nodeDef id="d25082844" nodeType="139" nls="D25082844">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn25082844"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'iPod', Type=DigitalMusicServer, Manufacturer=Apple, Model=Apple Universal Dock -->
+  <nodeDef id="d25080140" nodeType="139" nls="D25080140">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn25080140"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Denon AV Receiver 2', Type=StereoReceiver, Manufacturer=Denon, Model=AVR-4306 (Zone 2) -->
+  <nodeDef id="d37069819" nodeType="139" nls="D37069819">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn37069819"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Google Media Player', Type=MediaCenterPC, Manufacturer=Google, Model=Chromecast Audio -->
+  <nodeDef id="d37069909" nodeType="139" nls="D37069909">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn37069909"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Game Console (With DVD)', Type=GameConsoleWithDvd, Manufacturer=Sony, Model=Playstation 3 -->
+  <nodeDef id="d25080143" nodeType="139" nls="D25080143">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn25080143"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'TiVo Roamio Pro', Type=PVR, Manufacturer=TiVo, Model=Roamio Pro -->
+  <nodeDef id="d28519632" nodeType="139" nls="D28519632">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn28519632"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Kinivo AV Switch', Type=AudioVideoSwitch, Manufacturer=Kinivo, Model=K500 -->
+  <nodeDef id="d31595151" nodeType="139" nls="D31595151">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn31595151"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'DVD', Type=DVD, Manufacturer=Samsung, Model=bdem59c -->
+  <nodeDef id="d25080142" nodeType="139" nls="D25080142">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn25080142"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Game Console', Type=GameConsole, Manufacturer=Nintendo, Model=Wii -->
+  <nodeDef id="d25080141" nodeType="139" nls="D25080141">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn25080141"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'AV Receiver', Type=StereoReceiver, Manufacturer=Denon, Model=AVR-4306 -->
+  <nodeDef id="d25080146" nodeType="139" nls="D25080146">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn25080146"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+</nodeDefs>
