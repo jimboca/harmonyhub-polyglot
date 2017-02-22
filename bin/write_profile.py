@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import yaml,collections
+import yaml,collections,re
 
 pfx = "write_profile:"
 
@@ -64,9 +64,28 @@ ND-%s-ICON = Input
 # The NLS entry for each indexed item
 NLS_TMPL = "%s-%d = %s\n"
 
-nodedef = open("profile/nodedef/custom2.xml", "w")
-editor  = open("profile/editor/custom2.xml", "w")
-nls     = open("profile/nls/en_US_c2.txt", "w")
+#
+# Remove our old data from the nls file if present
+#
+nls_file = "en_US.txt"
+nls = open("profile/nodedef/"+nls_file, "r")
+found = False
+nls_lines = []
+split_line = "# Below is generated from the harmony hubs"
+p = re.compile(split_line)
+for line in file:
+    if not found:
+        if p.match(line):
+            found = True
+        else:
+            nls_lines.append(line)
+nls.close()
+
+nodedef = open("profile/nodedef/custom.xml", "w")
+editor  = open("profile/editor/custom.xml", "w")
+nls     = open("profile/nls/"+nls_file, "w")
+for line in nls_lines:
+    nls.write(line)
 
 editor.write("<editors>\n")
 nodedef.write("<nodeDefs>\n")
