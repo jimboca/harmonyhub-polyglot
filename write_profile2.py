@@ -117,10 +117,23 @@ for key in config_data:
                     print("%s     Function: Index: %d, Name: %s,  Label: %s" % (pfx, cb, f['name'], f['label']))
                     #nls.write("# Button name: %s, label: %s\n" % (f['name'], f['label']))
                     subset.append(cb)
+            subset_str = ""
             subset.sort()
-            editor.write("\n  <!-- === %s -->" % info)
-            editor.write(EDITOR_TMPL_S % ('Btn' + d['id'], ",".join(map(str,subset)), 'BTN'))
+            editor.write("\n  <!-- === %s -->\n" % info)
+            editor.write("  <!-- full subset = %s -->" % ",".join(map(str,subset)))
+            while len(subset) > 0:
+                x = subset.pop(0)
+                if subset_str != "":
+                    subset_str += ","
+                subset_str += str(x)
+                y = False
+                while len(subset) > 0 and (y == False or y == subset[0] - 1):
+                    y = subset.pop(0)
+                if y is not False:
+                    subset_str += "-" + str(y)
+            editor.write(EDITOR_TMPL_S % ('Btn' + d['id'], subset_str, 'BTN'))
 
+    
 nls.write("\n\n")
 for key in buttons:
     nls.write(NLS_TMPL % ('BTN', buttons[key], key))
