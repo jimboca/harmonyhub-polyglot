@@ -36,15 +36,39 @@ class HarmonyDevice(Node):
             self.name      = config_data['name']
             self.address   = config_data['address'].lower()
             self.node_def_id = self.address
+            # Device id in harmony is everything except the leading first character.
+            self.id          = self.address[1:]
         else:
             self.parent.send_error("HarmonyDevice:init:%s: One of manifest or config_data must be passed in." % (address))
             return False
         # Add the Device
         self.parent.logger.info("HarmonyDevice:init: Adding %s, %s, %s" % (self.name,self.address,self.node_def_id))
         super(HarmonyDevice, self).__init__(parent, self.address, self.name, primary, manifest)
-        # Call query to pull in the params before adding the motion node.
-        self.query();
         self.parent.logger.info("HarmonyDevice:init: Added hub device '%s', %s, %s" % (self.name,self.address,self.node_def_id))
+
+    def _get_button_name(self,index):
+        """
+        Convert from button/function index from nls to real name
+        """
+        self.parent.logger.debug("HarmonyDevice:_get_button_number:%s: %d" % (self.address,index))
+        return self.parent.poly.nodeserver_config['info']['functions'][index]['name']
+        
+    def _cmd_set_button(self, **kwargs):
+        """ 
+        This runs when ISY calls set button
+        """
+        index = myint(kwargs.get("value"))
+        self.parent.logger.debug("HarmonyDevice:_cmd_set_button:%s: %d" % (self.address,index))
+        name = self._get_button_name(index)
+        self.parent.logger.debug("HarmonyDevice:_cmd_set_button:%s: %s" % (self.address,name))
+        # Push it to the Hub
+        if self.primary.client is None:
+            self.parent.logger.error("HarmonyHub:_cmd_set_button:%s: No Client" % (self.address))
+            ret = False
+        else:
+            ret = self.primary.client.send_command(self.id,name)
+            self.parent.logger.debug("HarmonyHub:_cmd_set_button:%s: send_command=%s result=%s" % (self.address,name,str(ret)))
+        return ret
 
     def poll(self):
         return
@@ -55,6 +79,7 @@ class HarmonyDevice(Node):
     _drivers = {
     }
     _commands = {
+        'SET_BUTTON': _cmd_set_button,
     }
 
     # The nodeDef id of this camers.
