@@ -1,0 +1,2 @@
+pyaml     >= 15.8.2
+pyharmony >= 1.0.12
