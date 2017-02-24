@@ -1,0 +1,13 @@
+
+# The simple name of your hub, this is used as the
+# ISY node address, so must be less than 19 characters
+MyHub1:
+  # ip address or host name of your hub, make sure it's a
+  # reserved or static IP in your router!
+  host: 192.168.1.10
+  # The full name you want to call your hub, can be any string
+  name: HarmonyHub MyHub1
+  
+MyHub2:
+  host: 192.168.1.11
+  name: HarmonyHub MyHub2

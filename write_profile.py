@@ -1,10 +1,12 @@
 #!/usr/bin/python
 
 import yaml,collections,re
+from harmony_hub_funcs import harmony_hub_client
 
 pfx = "write_profile:"
 
-config_file = open('config.yaml', 'r')
+config_file_name = 'config.yaml'
+config_file = open(config_file_name, 'r')
 config_data = yaml.load(config_file)
 config_file.close
 
@@ -67,13 +69,13 @@ NLS_TMPL = "%s-%d = %s\n"
 #
 # Remove our old data from the nls file if present
 #
-nls_file = "en_US.txt"
-nls = open("profile/nodedef/"+nls_file, "r")
+nls_file = "profile/nls/en_US.txt"
+nls = open(nls_file, "r")
 found = False
 nls_lines = []
-split_line = "# Below is generated from the harmony hubs"
+split_line = "# Below is generated from the harmony hubs by write_profile.py"
 p = re.compile(split_line)
-for line in file:
+for line in nls:
     if not found:
         if p.match(line):
             found = True
@@ -83,10 +85,10 @@ nls.close()
 
 nodedef = open("profile/nodedef/custom.xml", "w")
 editor  = open("profile/editor/custom.xml", "w")
-nls     = open("profile/nls/"+nls_file, "w")
+nls     = open(nls_file, "w")
 for line in nls_lines:
     nls.write(line)
-
+nls.write(split_line+"\n")
 editor.write("<editors>\n")
 nodedef.write("<nodeDefs>\n")
 
@@ -103,9 +105,12 @@ bi = 0
 #
 # Loop over each Hub in the config data.
 #
+config_data['info'] = dict()
+config_data['info']['activities'] = list()
+config_data['info']['functions'] = list()
 for key in config_data:
     # Ignore server.
-    if key != "server":
+    if key != 'server' and key != 'info':
         #
         # Process this hub.
         #
@@ -130,11 +135,12 @@ for key in config_data:
         for a in harmony_config['activity']:
             # Print the Harmony Activities to the log
             print("%s Activity: %s  Id: %s" % (pfx, a['label'], a['id']))
-            if a['id'] != "-1":
-                aname = "%s (%s)" % (a['label'],a['id'])
-                nls.write(NLS_TMPL % (key.upper(), ai, aname))
-                ai += 1
-        editor.write(EDITOR_TMPL_S % ('Act'+key, "%d-%d" % (ais, ai-1)),key.upper()))
+            #aname = "%s (%s)" % (a['label'],a['id'])
+            aname = str(a['label'])
+            config_data['info']['activities'].append({'label':aname,'id':int(a['id'])});
+            nls.write(NLS_TMPL % (key.upper(), ai, aname))
+            ai += 1
+        editor.write(EDITOR_TMPL_S % ('Act'+key, "%d-%d" % (ais, ai-1),key.upper()))
         #
         # Build all the devices
         #
@@ -155,6 +161,7 @@ for key in config_data:
                     if not bname in buttons:
                         buttons[bname] = bi
                         bi += 1
+                        config_data['info']['functions'].append({'label':str(f['label']),'name':str(f['name'])});
                     cb = buttons[bname]
                     print("%s     Function: Index: %d, Name: %s,  Label: %s" % (pfx, cb, f['name'], f['label']))
                     #nls.write("# Button name: %s, label: %s\n" % (f['name'], f['label']))
@@ -191,5 +198,8 @@ nodedef.close()
 editor.close()
 nls.close()
 
+with open(config_file_name, 'w') as outfile:
+    yaml.dump(config_data, outfile, default_flow_style=False)
+    
 print(pfx + " done.")
 exit

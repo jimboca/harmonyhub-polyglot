@@ -24,7 +24,6 @@ class HarmonyHubNodeServer(SimpleNodeServer):
         self.logger.info('HarmonyHubNodeServer: Version=%s.%s starting up.' % (VERSION_MAJOR,VERSION_MINOR))
         self.logger.info("HarmonyHubNodeServer: Sandbox=%s" % (self.poly.sandbox))
         self.logger.info("HarmonyHubNodeServer: Config=%s" % (self.config))
-        self.logger.info("HarmonyHubNodeServer: Config=%s" % (self.config))
         # Setup the config data.
         self.get_hub_config()
         # define nodes for settings

@@ -35,15 +35,16 @@ class HarmonyDevice(Node):
         elif config_data is not None:
             self.name      = config_data['name']
             self.address   = config_data['address'].lower()
+            self.node_def_id = self.address
         else:
             self.parent.send_error("HarmonyDevice:init:%s: One of manifest or config_data must be passed in." % (address))
             return False
         # Add the Device
-        self.parent.logger.info("HarmonyDevice:init: Adding %s %s" % (self.name,self.address))
+        self.parent.logger.info("HarmonyDevice:init: Adding %s, %s, %s" % (self.name,self.address,self.node_def_id))
         super(HarmonyDevice, self).__init__(parent, self.address, self.name, primary, manifest)
         # Call query to pull in the params before adding the motion node.
         self.query();
-        self.parent.logger.info("HarmonyDevice:init: Added hub device '%s' %s" % (self.name,self.address))
+        self.parent.logger.info("HarmonyDevice:init: Added hub device '%s', %s, %s" % (self.name,self.address,self.node_def_id))
 
     def poll(self):
         return
@@ -57,4 +58,4 @@ class HarmonyDevice(Node):
     }
 
     # The nodeDef id of this camers.
-    node_def_id = 'd25080146'
+    node_def_id = 'DeviceDefault'

@@ -43,7 +43,7 @@ class HarmonyHubServer(Node):
 
     def _add_hubs(self,manifest,config_data):
         for key in config_data:
-            if key != "server":
+            if key != 'server' and key != 'info':
                 hub = HarmonyHub(self.parent, True, address=key, manifest=None, config_data=config_data[key])
                 self._set_num_hubs(self.num_hubs + 1)
         return

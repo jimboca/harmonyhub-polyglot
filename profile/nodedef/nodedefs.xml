@@ -30,4 +30,35 @@
     </cmds>
   </nodeDef>
 
+  <nodeDef id="HubDefault" nodeType="139" nls="HARMONYHUB">
+    <sts>
+      <st id="ST" editor="HUBST" />
+      <st id="GV3" editor="ActDefault" />
+    </sts>
+    <cmds>
+      <sends>
+	<cmd id="DON" />
+      </sends>
+      <accepts>
+        <cmd id="SET_ACTIVITY">
+          <p id="" editor="ActDefault" init="GV3"/>
+        </cmd>
+	<cmd id="REBOOT" />
+	<cmd id="QUERY" />
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <nodeDef id="DeviceDefault" nodeType="139" nls="DEVICEDEFAULT">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="BtnDefault"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
 </nodeDefs>

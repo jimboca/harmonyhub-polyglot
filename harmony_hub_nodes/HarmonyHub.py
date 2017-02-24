@@ -77,60 +77,86 @@ class HarmonyHub(Node):
             self.token  = ha_get_token(self.host, self.port)
             self.client = ha_get_client(self.token, self.host, self.port)
             self.parent.logger.info("HarmonyHub:query: PyHarmony Client: " + str(self.client))
-        self.parent.logger.debug("HarmonyHub:query:start:%s" % (self.name))
+            # Need to call this to get the activities dict
+            self.init_activities_and_devices()
+        self.parent.logger.debug("HarmonyHub:query:start:%s" % (self.address))
         self.set_driver('ST', 1, uom=2, report=True)
-        # TODO: Poll the hub to get the activity and set it.
         ca = self.client.get_current_activity()
-        if int(ca) != self.current_activity:
-            self._set_current_activity(ca)
-        self.parent.logger.debug("HarmonyHub:query:done:%s" % (self.name))
+        self._set_current_activity(ca)
+        self.parent.logger.debug("HarmonyHub:query:done:%s" % (self.address))
         return True
 
     def poll(self):
-        self.parent.logger.debug("HarmonyHub:poll:%s:" % (self.name))
+        self.parent.logger.debug("HarmonyHub:poll:%s:" % (self.address))
         self.query()
         return
 
     def long_poll(self):
-        self.parent.logger.debug("HarmonyHub:long_poll:%s:" % (self.name))
+        self.parent.logger.debug("HarmonyHub:long_poll:%s:" % (self.address))
         # get_status handles properly setting self.connected and the driver
         # so just call it.
         #self._get_status()
-    
-    def add_device(self,config_data):
-        return HarmonyDevice(self.parent, self, manifest=None, config_data=config_data)
 
+    def init_activities_and_devices(self):
+        harmony_config = self.client.get_config()
+        for d in harmony_config['device']:
+            self.parent.logger.info("Device '%s' '%s', Type=%s, Manufacturer=%s, Model=%s" % (d['id'],d['label'],d['type'],d['manufacturer'],d['model']))
+            self.add_device(d['label'],'d'+d['id'])
+            
+    def add_device(self,name,address):
+        return HarmonyDevice(self.parent, self, manifest=None, config_data={'name': name, 'address': address})
+
+    def _get_activity_number(self,index):
+        """
+        Convert from activity index from nls, to real activity number
+        """
+        self.parent.logger.debug("HarmonyHub:_get_activity_number:%s: %d" % (self.address,index))
+        return self.parent.poly.nodeserver_config['info']['activities'][index]['id']
+    
+    def _get_activity_index(self,value):
+        """
+        Convert from activity index from nls, to real activity number
+        """
+        self.parent.logger.debug("HarmonyHub:_get_activity_index:%s: %d" % (self.address,value))
+        cnt = 0
+        for a in self.parent.poly.nodeserver_config['info']['activities']:
+            if a['id'] == value:
+                return cnt
+            cnt += 1
+        self.parent.logger.error("HarmonyHub:_get_activity_index:%s: No activity id %d found." % (self.address,value))
+        return False
+    
     def _set_current_activity(self, value):
         """ 
         Update Polyglot with the current activity.
         """
-        val = myint(value)
-        if val == -1:
-            val = 0
+        val   = myint(value)
+        index = self._get_activity_index(val)
+        # The harmony activity number based on the name.
         self.current_activity = val
-        self.parent.logger.debug("HarmonyHub:_set_current_activity:%s: %d" % (self.name,self.current_activity))
-        self.set_driver('GV3', 0, uom=25, report=True)
-        self.set_driver('GV3', self.current_activity, uom=25, report=True)
-        self.parent.logger.debug("HarmonyHub:_set_current_activity:%s: get=%s" % (self.name,self.get_driver('GV3')[0]))
+        self.parent.logger.debug("HarmonyHub:_set_current_activity:%s: %d=%d" % (self.address,self.current_activity,index))
+        self.set_driver('GV3', index, uom=25, report=True)
+        self.parent.logger.debug("HarmonyHub:_set_current_activity:%s: get=%s" % (self.address,self.get_driver('GV3')[0]))
         return True
 
     def _cmd_set_current_activity(self, **kwargs):
         """ 
         This runs when ISY changes the current current activity
         """
-        val = myint(kwargs.get("value"))
-        self.parent.logger.debug("HarmonyHub:_cmd_set_current_activity:%s: %d" % (self.name,val))
+        index = myint(kwargs.get("value"))
+        self.parent.logger.debug("HarmonyHub:_cmd_set_current_activity:%s: %d" % (self.address,index))
         sv = self.current_activity
-        self._set_current_activity(val)
+        number = self._get_activity_number(index)
+        self.parent.logger.debug("HarmonyHub:_cmd_set_current_activity:%s: %d" % (self.address,number))
+        self.set_driver('GV3', index, uom=25, report=True)
+        self.parent.logger.debug("HarmonyHub:_cmd_set_current_activity:%s: get=%s" % (self.address,self.get_driver('GV3')[0]))
         # Push it to the Hub
         if self.client is None:
-            self.parent.logger.error("HarmonyHub:_cmd_set_activity:%s: No Client" % (self.name))
+            self.parent.logger.error("HarmonyHub:_cmd_set_activity:%s: No Client" % (self.address))
             ret = False
         else:
-            if val == 0:
-                val = -1
-            ret = self.client.start_activity(val)
-            self.parent.logger.debug("HarmonyHub:_cmd_set_activity:%s: %d result=%s" % (self.name,val,str(ret)))
+            ret = self.client.start_activity(number)
+            self.parent.logger.debug("HarmonyHub:_cmd_set_activity:%s: start_activity=%d result=%s" % (self.address,number,str(ret)))
         if not ret:
             # Was not able to update the hub, tell polyglot.
             self._set_current_activity(sv)
