@@ -45,10 +45,10 @@ CMD-SET_BUTTON-NAME = Command
 # Hub: MasterBedroom 'HarmonyHub MasterBedroom'
 ND-MasterBedroom-NAME = HarmonyHub MasterBedroom
 ND-MasterBedroom-ICON = Input
-MASTERBEDROOM-0 = TiVo
-MASTERBEDROOM-1 = Fire TV
-MASTERBEDROOM-2 = Chromecast
-MASTERBEDROOM-3 = PowerOff
+MASTERBEDROOM-0 = Power Off
+MASTERBEDROOM-1 = TiVo
+MASTERBEDROOM-2 = Fire TV
+MASTERBEDROOM-3 = Chromecast
 MASTERBEDROOM-4 = DVD
 
 # Device 'Pioneer TV', Type=Television, Manufacturer=Pioneer, Model=PDP-5070HD
@@ -86,12 +86,12 @@ ND-d31347608-ICON = Input
 # Hub: FamilyRoom 'HarmonyHub FamilyRoom'
 ND-FamilyRoom-NAME = HarmonyHub FamilyRoom
 ND-FamilyRoom-ICON = Input
-FAMILYROOM-5 = Outside Chromecast Audio
-FAMILYROOM-6 = Watch a DVD
-FAMILYROOM-7 = Listen To iPod
-FAMILYROOM-8 = Play Wii
-FAMILYROOM-9 = Play PS3
-FAMILYROOM-10 = PowerOff
+FAMILYROOM-5 = Power Off
+FAMILYROOM-6 = Outside Chromecast Audio
+FAMILYROOM-7 = Watch a DVD
+FAMILYROOM-8 = Listen To iPod
+FAMILYROOM-9 = Play Wii
+FAMILYROOM-10 = Play PS3
 FAMILYROOM-11 = Chromecast Video
 FAMILYROOM-12 = Tivo
 FAMILYROOM-13 = Chromecast Audio

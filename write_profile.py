@@ -131,15 +131,20 @@ for key in config_data:
         #
         # Build the activities
         #
+        # PowerOff is always first
         ais = ai
+        config_data['info']['activities'].append({'label':'Power Off','id':-1});
+        nls.write(NLS_TMPL % (key.upper(), ai, 'Power Off'))
+        ai += 1
         for a in harmony_config['activity']:
-            # Print the Harmony Activities to the log
-            print("%s Activity: %s  Id: %s" % (pfx, a['label'], a['id']))
-            #aname = "%s (%s)" % (a['label'],a['id'])
-            aname = str(a['label'])
-            config_data['info']['activities'].append({'label':aname,'id':int(a['id'])});
-            nls.write(NLS_TMPL % (key.upper(), ai, aname))
-            ai += 1
+            if a['id'] != '-1':
+                # Print the Harmony Activities to the log
+                print("%s Activity: %s  Id: %s" % (pfx, a['label'], a['id']))
+                #aname = "%s (%s)" % (a['label'],a['id'])
+                aname = str(a['label'])
+                config_data['info']['activities'].append({'label':aname,'id':int(a['id'])});
+                nls.write(NLS_TMPL % (key.upper(), ai, aname))
+                ai += 1
         editor.write(EDITOR_TMPL_S % ('Act'+key, "%d-%d" % (ais, ai-1),key.upper()))
         #
         # Build all the devices
@@ -179,10 +184,10 @@ for key in config_data:
                 if subset_str != "":
                     subset_str += ","
                 subset_str += str(x)
-                y = False
-                while len(subset) > 0 and (y == False or y == subset[0] - 1):
+                if len(subset) > 0 and x == subset[0] - 1:
                     y = subset.pop(0)
-                if y is not False:
+                    while len(subset) > 0 and y == subset[0] - 1:
+                        y = subset.pop(0)
                     subset_str += "-" + str(y)
             editor.write(EDITOR_TMPL_S % ('Btn' + d['id'], subset_str, 'BTN'))
 

@@ -5,6 +5,8 @@
 # This is the main Harmony Hub Node Server.  
 #
 # TODO:
+#  - Need ability to re-read the config if it changes?  But that also means the
+#    ISY needs to be restarted if the activities changed?
 #
 
 from polyglot.nodeserver_api import Node
