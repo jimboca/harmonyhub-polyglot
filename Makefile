@@ -26,6 +26,6 @@ check:
 ${ZIP_FILE}: ${ZIP_FILES}
 	cd profile ; f=`echo $? | sed -e 's/profile\///g'` ; zip -r ../$@ $$f
 
-
+.PHONY: ${CONFIG_FILE}
 ${CONFIG_FILE}:
 	./write_profile.py

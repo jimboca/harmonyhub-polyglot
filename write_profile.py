@@ -129,6 +129,11 @@ for key in config_data:
         harmony_config = client.get_config()
         client.disconnect(send_close=True)
         #
+        # Save the config for reference.
+        harmony_config_file = key + ".yaml"
+        with open(harmony_config_file, 'w') as outfile:
+            yaml.dump(harmony_config, outfile, default_flow_style=False)
+        #
         # Build the activities
         #
         # PowerOff is always first

@@ -21,19 +21,6 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Device 'Pioneer TV', Type=Television, Manufacturer=Pioneer, Model=PDP-5070HD -->
-  <nodeDef id="d31347323" nodeType="139" nls="D31347323">
-    <sts />
-    <cmds>
-      <sends />
-      <accepts>
-        <cmd id="SET_BUTTON">
-          <p id="" editor="Btn31347323"/>
-        </cmd>
-      </accepts>
-    </cmds>
-  </nodeDef>
-
   <!-- === Device 'Sony Amp', Type=Amplifier, Manufacturer=Sony, Model=HT-CT150 -->
   <nodeDef id="d31347557" nodeType="139" nls="D31347557">
     <sts />
@@ -47,40 +34,14 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Device 'Amazon Fire TV', Type=Default, Manufacturer=Amazon, Model=Fire TV -->
-  <nodeDef id="d41336071" nodeType="139" nls="D41336071">
+  <!-- === Device 'TiVo DVR', Type=PVR, Manufacturer=TiVo, Model=TCDA93000 -->
+  <nodeDef id="d31347608" nodeType="139" nls="D31347608">
     <sts />
     <cmds>
       <sends />
       <accepts>
         <cmd id="SET_BUTTON">
-          <p id="" editor="Btn41336071"/>
-        </cmd>
-      </accepts>
-    </cmds>
-  </nodeDef>
-
-  <!-- === Device 'Sony DVD', Type=DVD, Manufacturer=Sony, Model=BDP-S580 -->
-  <nodeDef id="d31347379" nodeType="139" nls="D31347379">
-    <sts />
-    <cmds>
-      <sends />
-      <accepts>
-        <cmd id="SET_BUTTON">
-          <p id="" editor="Btn31347379"/>
-        </cmd>
-      </accepts>
-    </cmds>
-  </nodeDef>
-
-  <!-- === Device 'IQAir Climate Control', Type=ClimateControl, Manufacturer=IQAir, Model=HealthPro -->
-  <nodeDef id="d34201219" nodeType="139" nls="D34201219">
-    <sts />
-    <cmds>
-      <sends />
-      <accepts>
-        <cmd id="SET_BUTTON">
-          <p id="" editor="Btn34201219"/>
+          <p id="" editor="Btn31347608"/>
         </cmd>
       </accepts>
     </cmds>
@@ -99,6 +60,58 @@
     </cmds>
   </nodeDef>
 
+  <!-- === Device 'Hampton Bay Climate Control', Type=ClimateControl, Manufacturer=Hampton Bay, Model=Fan -->
+  <nodeDef id="d43041192" nodeType="139" nls="D43041192">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn43041192"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Sony DVD', Type=DVD, Manufacturer=Sony, Model=BDP-S580 -->
+  <nodeDef id="d31347379" nodeType="139" nls="D31347379">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn31347379"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Pioneer TV', Type=Television, Manufacturer=Pioneer, Model=PDP-5070HD -->
+  <nodeDef id="d31347323" nodeType="139" nls="D31347323">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn31347323"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Amazon Fire TV', Type=Default, Manufacturer=Amazon, Model=Fire TV -->
+  <nodeDef id="d41336071" nodeType="139" nls="D41336071">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn41336071"/>
+        </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
   <!-- === Device 'Google Media Player', Type=MediaCenterPC, Manufacturer=Google, Model=Chromecast -->
   <nodeDef id="d31347642" nodeType="139" nls="D31347642">
     <sts />
@@ -112,14 +125,14 @@
     </cmds>
   </nodeDef>
 
-  <!-- === Device 'TiVo DVR', Type=PVR, Manufacturer=TiVo, Model=TCDA93000 -->
-  <nodeDef id="d31347608" nodeType="139" nls="D31347608">
+  <!-- === Device 'IQAir Climate Control', Type=ClimateControl, Manufacturer=IQAir, Model=HealthPro -->
+  <nodeDef id="d34201219" nodeType="139" nls="D34201219">
     <sts />
     <cmds>
       <sends />
       <accepts>
         <cmd id="SET_BUTTON">
-          <p id="" editor="Btn31347608"/>
+          <p id="" editor="Btn34201219"/>
         </cmd>
       </accepts>
     </cmds>
