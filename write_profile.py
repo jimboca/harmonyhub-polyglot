@@ -132,7 +132,7 @@ for key in config_data:
         # Save the config for reference.
         harmony_config_file = key + ".yaml"
         with open(harmony_config_file, 'w') as outfile:
-            yaml.dump(harmony_config, outfile, default_flow_style=False)
+            yaml.safe_dump(harmony_config, outfile, default_flow_style=False)
         #
         # Build the activities
         #
@@ -150,7 +150,12 @@ for key in config_data:
                 config_data['info']['activities'].append({'label':aname,'id':int(a['id'])});
                 nls.write(NLS_TMPL % (key.upper(), ai, aname))
                 ai += 1
-        editor.write(EDITOR_TMPL_S % ('Act'+key, "%d-%d" % (ais, ai-1),key.upper()))
+        # All activities contain zero whic is power off...
+        if ais == 0:
+            subset = "%d-%d" % (ais, ai-1)
+        else:
+            subset = "0,%d-%d" % (ais, ai-1)
+        editor.write(EDITOR_TMPL_S % ('Act'+key, subset,key.upper()))
         #
         # Build all the devices
         #

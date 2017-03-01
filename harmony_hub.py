@@ -11,7 +11,7 @@ from polyglot.nodeserver_api import SimpleNodeServer, PolyglotConnector
 #from collections import defaultdict, OrderedDict
 #import os, json, logging, requests, threading, SocketServer, re, socket, yaml
 #from requests.auth import HTTPDigestAuth,HTTPBasicAuth
-from harmony_hub_nodes import HarmonyHubServer
+from harmony_hub_nodes import HarmonyServer
 from harmony_hub_polyglot_version import VERSION_MAJOR,VERSION_MINOR
 
 
@@ -29,8 +29,8 @@ class HarmonyHubNodeServer(SimpleNodeServer):
         # define nodes for settings
         self.manifest = self.config.get('manifest', {})
         # Add the top level camera server node.
-        HarmonyHubServer(self, self.poly.nodeserver_config['server']['node'],
-                         self.poly.nodeserver_config['server']['name'], self.manifest, self.poly.nodeserver_config)
+        HarmonyServer(self, self.poly.nodeserver_config['server']['node'],
+                      self.poly.nodeserver_config['server']['name'], self.manifest, self.poly.nodeserver_config)
         self.update_config()
 
     # TODO: Convert this to use new polyglot config?

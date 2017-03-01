@@ -2,7 +2,7 @@
 
   <!-- === Harmony Nub Server Holds all Hub Nodes ========================================  -->
 
-  <nodeDef id="HarmonyHubServer" nodeType="139" nls="HARMONYHUBSERVER">
+  <nodeDef id="HarmonyServer" nodeType="139" nls="HARMONYSERVER">
     <sts>
       <!-- Device Status -->
       <st id="ST" editor="INTEGER" />
@@ -14,18 +14,29 @@
       <st id="GV3" editor="INTEGER" />
       <!-- Debug Mode -->
       <st id="GV4" editor="DEBUGMODE" />
+      <!-- shortpoll -->
+      <st id="GV5" editor="INTEGER" />
+      <!-- longpoll -->
+      <st id="GV6" editor="INTEGER" />
     </sts>
     <cmds>
       <sends>
 	<cmd id="DON" />
+	<cmd id="DOF" />
       </sends>
       <accepts>
-	<cmd id="QUERY" />
-	<cmd id="REFRESH_CONFIG" />
-	<cmd id="BUILD_PROFILES" />
         <cmd id="SET_DEBUGMODE">
           <p id="" editor="DEBUGMODE" init="GV4"/>
         </cmd>
+        <cmd id="SET_SHORTPOLL">
+          <p id="" editor="INTEGER" init="GV5"/>
+        </cmd>
+        <cmd id="SET_LONGPOLL">
+          <p id="" editor="INTEGER" init="GV6"/>
+        </cmd>
+	<cmd id="QUERY" />
+	<cmd id="REFRESH_CONFIG" />
+	<cmd id="BUILD_PROFILES" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -57,6 +68,24 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="BtnDefault"/>
         </cmd>
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <nodeDef id="HarmonyActivity" nodeType="139" nls="HARMONYACTIVITY">
+    <sts>
+      <!-- Device Status -->
+      <st id="ST" editor="ACTST" />
+    </sts>
+    <cmds>
+      <sends>
+	<cmd id="DON" />
+	<cmd id="DOF" />
+      </sends>
+      <accepts>
+        <cmd id="ON" />
+        <cmd id="OFF" />
+        <cmd id="QUERY" />
       </accepts>
     </cmds>
   </nodeDef>

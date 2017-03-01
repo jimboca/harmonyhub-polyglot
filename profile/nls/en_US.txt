@@ -1,16 +1,20 @@
 #
 # Main Harmony Hub Server
 #
-ND-HarmonyHubServer-NAME = Harmony Hub Server 0.0.1
-ND-HarmonyHubServer-ICON = Input
-ST-HARMONYHUBSERVER-ST-NAME = Status
-ST-HARMONYHUBSERVER-GV1-NAME = Version Major
-ST-HARMONYHUBSERVER-GV2-NAME = Version Minor
-ST-HARMONYHUBSERVER-GV3-NAME = Hubs
-ST-HARMONYHUBSERVER-GV4-NAME = Debug Mode
+ND-HarmonyServer-NAME = Harmony Hub Server 0.0.1
+ND-HarmonyServer-ICON = Input
+ST-HARMONYSERVER-ST-NAME = Status
+ST-HARMONYSERVER-GV1-NAME = Version Major
+ST-HARMONYSERVER-GV2-NAME = Version Minor
+ST-HARMONYSERVER-GV3-NAME = Hubs
+ST-HARMONYSERVER-GV4-NAME = Debug Mode
+ST-HARMONYSERVER-GV5-NAME = Short Poll
+ST-HARMONYSERVER-GV6-NAME = Long Poll
 
 CMD-REFRESH_CONFIG-NAME = Refresh Config
 CMD-BUILD_PROFILES-NAME = Build Profiles
+CMD-HARMONYSERVER-SET_SHORTPOLL-NAME = Short Poll
+CMD-HARMONYSERVER-SET_LONGPOLL-NAME = Long Poll
 
 HUBST-0 = False
 HUBST-1 = True
@@ -39,6 +43,17 @@ CMD-HARMONYHUB-SET_ACTIVITY-NAME = Set Activity
 
 # Device Command
 CMD-SET_BUTTON-NAME = Command
+
+# Default Hub
+ND-HarmonyActivity-NAME = Harmony Activity
+ND-HarmonyActivity-ICON = Output
+
+CMD-HARMONYACTIVITY-ON-NAME = Start
+CMD-HARMONYACTIVITY-OFF-NAME = End
+
+ACTST-0 = False
+ACTST-1 = True
+
 
 # Below is generated from the harmony hubs by write_profile.py
 
