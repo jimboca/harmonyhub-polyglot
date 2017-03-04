@@ -108,12 +108,12 @@ class HarmonyHub(Node):
         for d in harmony_config['device']:
             self.parent.logger.info("Device '%s' '%s', Type=%s, Manufacturer=%s, Model=%s" % (d['id'],d['label'],d['type'],d['manufacturer'],d['model']))
             # TODO: Remove the d, and let Device add it back.
-            self.add_device(d['label'],'d'+d['id'])
+            self.add_device(d['label'],d['id'])
             
-    def add_device(self,name,address):
+    def add_device(self,name,id):
         # TODO: Pass in name and address as optional args.
-        node = HarmonyDevice(self.parent, self, manifest=None, config_data={'name': name, 'address': address})
-        self.device_nodes[name] = node
+        node = HarmonyDevice(self.parent, self, manifest=None, name=name, id=id)
+        self.device_nodes[node.address] = node
         return node;
 
     def add_activity(self,name,number):

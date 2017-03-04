@@ -14,60 +14,46 @@ class HarmonyDevice(Node):
     The Main Node for a single Harmony Hub
     """
 
-    def __init__(self, parent, primary, manifest=None, config_data=None, address=None):
-        self.parent      = parent
-        self.parent.logger.info("HarmonyDevice:init: Adding manifest=%s config_data=%s" % (manifest,config_data))
-        self.status = {}
-        # Use manifest values if passed in.
-        if manifest is not None:
-            self.name  = manifest['name']
-            if address is None:
-                # TODO: Look up node address in config data.
-                self.parent.send_error("HarmonyDevice:init:%s: address must be passed in when using manifest for: " % (name,manifest))
-                return False
-            self.address = address
-            # TODO: It's ok to not have drivers?  Just let query fill out the info? 
-            if not 'drivers' in manifest:
-                self.parent.send_error("HarmonyDevice:init:%s: no drivers in manifest: " % (name,manifest))
-                return False
-            drivers = manifest['drivers']
-            # Get the things we need from the drivers, the rest will be queried.
-        elif config_data is not None:
-            self.name      = config_data['name']
-            self.address   = config_data['address'].lower()
-            self.node_def_id = self.address
-            # Device id in harmony is everything except the leading first character.
-            self.id          = self.address[1:]
-        else:
-            self.parent.send_error("HarmonyDevice:init:%s: One of manifest or config_data must be passed in." % (address))
-            return False
+    def __init__(self, parent, primary, manifest=None, name=None, id=None):
+        self.parent    = parent
+        self.primary   = primary
+        # Device id in harmony is everything except the leading first character.
+        self.id        = id
+        self.name      = name
+        # Add the d prefix for the node address
+        self.address   = 'd'+id
+        self.node_def_id = self.address
         # Add the Device
-        self.parent.logger.info("HarmonyDevice:init: Adding %s, %s, %s" % (self.name,self.address,self.node_def_id))
+        self.l_info("init","Adding device name=%s, address=%s, node_def_id=%s" % (self.name,self.address,self.node_def_id))
         super(HarmonyDevice, self).__init__(parent, self.address, self.name, primary, manifest)
-        self.parent.logger.info("HarmonyDevice:init: Added hub device '%s', %s, %s" % (self.name,self.address,self.node_def_id))
+        self.l_info("init","Added device name=%s, address=%s, node_def_id=%s" % (self.name,self.address,self.node_def_id))
 
     def _get_button_name(self,index):
         """
         Convert from button/function index from nls to real name
+        because pyharmony needs the name.
         """
-        self.parent.logger.debug("HarmonyDevice:_get_button_number:%s: %d" % (self.address,index))
+        self.l_debug("_get_button_name","index=%d" % (index))
+        # TODO: Make sure it's a valid index?
         return self.parent.poly.nodeserver_config['info']['functions'][index]['name']
         
     def _cmd_set_button(self, **kwargs):
         """ 
-        This runs when ISY calls set button
+        This runs when ISY calls set button which passes the button index
         """
         index = myint(kwargs.get("value"))
-        self.parent.logger.debug("HarmonyDevice:_cmd_set_button:%s: %d" % (self.address,index))
+        self.l_debug("_cmd_set_button","index=%d" % (index))
         name = self._get_button_name(index)
-        self.parent.logger.debug("HarmonyDevice:_cmd_set_button:%s: %s" % (self.address,name))
+        self.l_debug("_cmd_set_button","name=%s" % (name))
         # Push it to the Hub
         if self.primary.client is None:
-            self.parent.logger.error("HarmonyHub:_cmd_set_button:%s: No Client" % (self.address))
+            self.l_error("_cmd_set_button","No Client?")
             ret = False
         else:
             ret = self.primary.client.send_command(self.id,name)
-            self.parent.logger.debug("HarmonyHub:_cmd_set_button:%s: send_command=%s result=%s" % (self.address,name,str(ret)))
+            self.l_debug("_cmd_set_button","send_command=%s result=%s" % (name,str(ret)))
+            # TODO: This always returns None :(
+            ret = True
         return ret
 
     def poll(self):
@@ -76,6 +62,18 @@ class HarmonyDevice(Node):
     def long_poll(self):
         return
     
+    def l_info(self, name, string):
+        self.parent.logger.info("Dev:%s:%s:%s:%s: %s"    % (self.primary.node_def_id,self.node_def_id,self.address,name,string))
+        
+    def l_error(self, name, string):
+        self.parent.logger.error("Dev:%s:%s:%s:%s: %s"   % (self.primary.node_def_id,self.node_def_id,self.address,name,string))
+        
+    def l_warning(self, name, string):
+        self.parent.logger.warning("Dev:%s:%s:%s:%s: %s" % (self.primary.node_def_id,self.node_def_id,self.address,name,string))
+        
+    def l_debug(self, name, string):
+        self.parent.logger.debug("Dev:%s:%s:%s:%s: %s"   % (self.primary.node_def_id,self.node_def_id,self.address,name,string))
+        
     _drivers = {
     }
     _commands = {
