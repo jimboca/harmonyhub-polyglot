@@ -12,6 +12,7 @@ ZIP_FILES = profile/version.txt profile/nls/*.txt ${XML_FiLES}
 
 all: ${ZIP_FILE}
 config: ${CONFIG_FILE}
+profile: ${ZIP_FILE}
 
 #
 # Run xmlint on all xml files

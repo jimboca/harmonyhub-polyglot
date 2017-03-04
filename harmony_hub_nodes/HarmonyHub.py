@@ -19,7 +19,7 @@ class HarmonyHub(Node):
     def __init__(self, parent, primary, manifest=None, config_data=None, address=None):
         self.parent      = parent
         self.connected   = 0
-        self.current_activity = -1
+        self.current_activity = -2
         if config_data is None:
             self.parent.send_error("%s config_data must be passed in." % (address))
             self.l_error("init","config_data must be passed in.")
@@ -83,16 +83,16 @@ class HarmonyHub(Node):
         return True
         
     def l_info(self, name, string):
-        self.parent.logger.info("Hub:%s:%s:%s: %s" %  (self.node_def_id,self.address,name,string))
+        self.parent.logger.info("Hub:%s:%s: %s" %  (self.node_def_id,name,string))
         
     def l_error(self, name, string):
-        self.parent.logger.error("Hub:%s:%s:%s: %s" % (self.node_def_id,self.address,name,string))
+        self.parent.logger.error("Hub:%s:%s: %s" % (self.node_def_id,name,string))
         
     def l_warning(self, name, string):
-        self.parent.logger.warning("Hub:%s:%s:%s: %s" % (self.node_def_id,self.address,name,string))
+        self.parent.logger.warning("Hub:%s:%s: %s" % (self.node_def_id,name,string))
         
     def l_debug(self, name, string):
-        self.parent.logger.debug("Hub:%s:%s:%s: %s" % (self.node_def_id,self.address,name,string))
+        self.parent.logger.debug("Hub:%s:%s: %s" % (self.node_def_id,name,string))
         
     def _set_st(self, value):
         return self.set_driver('ST', value, report=True)
@@ -117,7 +117,7 @@ class HarmonyHub(Node):
         return node;
 
     def add_activity(self,name,number):
-        node = HarmonyActivity(self.parent, self, manifest=None, name=name, number=number)
+        node = HarmonyActivity(self.parent, self, name=name, number=number)
         self.activity_nodes[number] = node
         return node;
 
@@ -166,10 +166,10 @@ class HarmonyHub(Node):
         # All other activities are no longer current
         for nid in self.activity_nodes:
             if ignore_id is False:
-                self.activity_nodes[nid].set_st(val)
+                self.activity_nodes[nid]._set_st(val)
             else:
                 if int(nid) != int(ignore_id):
-                    self.activity_nodes[nid].set_st(val)
+                    self.activity_nodes[nid]._set_st(val)
         
     def _get_activity_id(self,index):
         """
@@ -191,20 +191,22 @@ class HarmonyHub(Node):
         self.l_error("_get_activity_index","No activity id %s found." % (str(id)))
         return False
     
-    def _set_current_activity(self, id):
+    def _set_current_activity(self, id, force=False):
         """ 
         Update Polyglot with the current activity.
         """
         val   = myint(id)
-        index = self._get_activity_index(val)
-        # The harmony activity number based on the name.
+        if self.current_activity == val:
+            return True
+        # The harmony activity number
         self.current_activity = val
+        index = self._get_activity_index(val)
         self.l_debug("_set_current_activity","activity=%d, index=%d" % (self.current_activity,index))
         self.set_driver('GV3', index, uom=25, report=True)
-        # Make the activity node current
+        # Make the activity node current, unless it's -1 which is poweroff
         ignore_id=False
         if id != -1:
-            self.activity_nodes[str(id)].set_st(1)
+            self.activity_nodes[str(id)]._set_st(1)
             ignore_id=id
         # Update all the other activities to not be the current.
         self._set_all_activities(0,ignore_id=ignore_id)

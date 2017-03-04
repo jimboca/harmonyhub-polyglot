@@ -13,62 +13,77 @@ class HarmonyActivity(Node):
     """
 
     def __init__(self, parent, primary, manifest=None, name=None, number=None):
-        self.parent      = parent
-        self.parent.logger.info("HarmonyActivity:init: Adding manifest=%s name=%s number=%s" % (manifest,name,str(number)))
-        self.status = {}
-        # Use manifest values if passed in.
-        if manifest is not None:
-            # TODO: Support manifest
-            self.name  = manifest['name']
-        else:
-            self.name      = name
-            self.number    = number
-            # Address is the activity number
-            self.address   = 'a' + str(number)
+        self.parent    = parent
+        self.primary   = primary
+        self.name      = name
+        self.number    = number
+        # Address is the activity number
+        self.address   = 'a' + str(number)
         # Add the Activity
-        self.parent.logger.info("HarmonyActivity:init: Adding %s, %s, %s" % (self.name,self.address,self.node_def_id))
+        self.l_info("init","Adding activity name=%s, address=%s" % (self.name,self.address))
         super(HarmonyActivity, self).__init__(parent, self.address, self.name, primary, manifest)
-        self.set_driver('ST',   0, uom=25, report=True)
-        self.parent.logger.info("HarmonyActivity:init: Added hub activity '%s', %s, %s" % (self.name,self.address,self.node_def_id))
+        # TODO: Hack, to force a state change on startup.
+        self._set_st(1)
+        self._set_st(0)
+        self.l_info("init","Added activity name=%s adress=%s" % (self.name,self.address))
 
-    def set_st(self, st):
-        self.set_driver('ST',   int(st), uom=25, report=True)
-        self.parent.logger.debug("HarmonyActivity:set_st:%s: set=%s, get=%s" % (self.name,st,self.get_driver('ST')[0]))
+    def query(self, **kwargs):
+        self._set_st(self.st)
+        return True
+        
+    def poll(self):
+        # Poll on a activity does nothing, the Hub is responsible for our settings.
+        return
+
+    def long_poll(self):
+        return
+    
+    def l_info(self, name, string):
+        self.parent.logger.info("Act:%s:%s:%s: %s" %  (self.primary.node_def_id,self.address,name,string))
+        
+    def l_error(self, name, string):
+        self.parent.logger.error("Act:%s:%s:%s: %s" % (self.primary.node_def_id,self.address,name,string))
+        
+    def l_warning(self, name, string):
+        self.parent.logger.warning("Act:%s:%s:%s: %s" % (self.primary.node_def_id,self.address,name,string))
+        
+    def l_debug(self, name, string):
+        self.parent.logger.debug("Act:%s:%s:%s: %s" % (self.primary.node_def_id,self.address,name,string))
+        
+    def _set_st(self, st):
+        self.st = st
+        self.set_driver('ST', int(st), uom=25, report=True)
+        self.l_debug("_set_st","set=%s, get=%s" % (st,self.get_driver('ST')[0]))
         
     def _cmd_on(self, **kwargs):
         """ 
         This runs when ISY calls on button
         """
-        self.parent.logger.debug("HarmonyActivity:_cmd_on:%s:" % (self.address))
+        self.l_debug("_cmd_on","")
         # Push it to the Hub
         ret = self.primary.start_activity(id=self.number)
-        self.parent.logger.debug("HarmonyActivity:_cmd_on:%s: ret=%s" % (self.address,str(ret)))
+        self.l_debug("_cmd_on","ret=%s" % (str(ret)))
         if ret:
-            self.set_st(1)
+            self._set_st(1)
         return ret
 
     def _cmd_off(self, **kwargs):
         """ 
         This runs when ISY calls on button
         """
-        self.parent.logger.debug("HarmonyActivity:_cmd_off:%s:" % (self.address))
+        self.l_debug("_cmd_off","")
         # Push it to the Hub
         ret = self.primary.end_activity(id=self.number)
-        self.parent.logger.debug("HarmonyActivity:_cmd_off:%s: ret=%s" % (self.address,str(ret)))
+        self.l_debug("_cmd_off","ret=%s" % (str(ret)))
         if ret:
-            self.set_st(0)
+            self._set_st(0)
         return ret
 
-    def poll(self):
-        return
-
-    def long_poll(self):
-        return
-    
     _drivers = {
         'ST':  [0, 25,  myint],
     }
     _commands = {
+        'QUERY': query,
         'ON': _cmd_on,
         'OFF': _cmd_off,
     }

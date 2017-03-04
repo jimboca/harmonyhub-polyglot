@@ -59,7 +59,7 @@
   </editor>
 
   <editor id="ActFamilyRoom">
-    <range uom="25" subset="0,5-14" nls="FAMILYROOM"/>
+    <range uom="25" subset="0,5-13" nls="FAMILYROOM"/>
   </editor>
 
   <!-- === Device 'TV', Type=Television, Manufacturer=Sharp, Model=LC-70C8470U -->

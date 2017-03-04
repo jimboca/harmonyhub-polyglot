@@ -138,11 +138,15 @@ for key in config_data:
         #
         # PowerOff is always first
         ais = ai
-        config_data['info']['activities'].append({'label':'Power Off','id':-1});
-        nls.write(NLS_TMPL % (key.upper(), ai, 'Power Off'))
-        ai += 1
+        nls.write("# The index number is the matching list info->activities index\n")
+        nls.write("# The activity id's are uniq across all hubs so we share the same list\n")
+        nls.write(NLS_TMPL % (key.upper(), 0, 'Power Off'))
+        if ais == 0:
+            config_data['info']['activities'].append({'label':'Power Off','id':-1});
+            ai += 1
         for a in harmony_config['activity']:
-            if a['id'] != '-1':
+            # Skip -1 since we printed it already.
+            if int(a['id']) != -1:
                 # Print the Harmony Activities to the log
                 print("%s Activity: %s  Id: %s" % (pfx, a['label'], a['id']))
                 #aname = "%s (%s)" % (a['label'],a['id'])
