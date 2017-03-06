@@ -17,6 +17,7 @@ class HarmonyActivity(Node):
         self.primary   = primary
         self.name      = name
         self.number    = number
+        self.do_poll   = False
         # Address is the activity number
         self.address   = 'a' + str(number)
         # Add the Activity
@@ -31,13 +32,6 @@ class HarmonyActivity(Node):
         self._set_st(self.st)
         return True
         
-    def poll(self):
-        # Poll on a activity does nothing, the Hub is responsible for our settings.
-        return
-
-    def long_poll(self):
-        return
-    
     def l_info(self, name, string):
         self.parent.logger.info("Act:%s:%s:%s: %s" %  (self.primary.node_def_id,self.address,name,string))
         
@@ -84,8 +78,8 @@ class HarmonyActivity(Node):
     }
     _commands = {
         'QUERY': query,
-        'ON': _cmd_on,
-        'OFF': _cmd_off,
+        'DON': _cmd_on,
+        'DOF': _cmd_off,
     }
 
     # The nodeDef id of this activity.

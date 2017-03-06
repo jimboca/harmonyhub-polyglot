@@ -83,8 +83,8 @@
 	<cmd id="DOF" />
       </sends>
       <accepts>
-        <cmd id="ON" />
-        <cmd id="OFF" />
+        <cmd id="DON" />
+        <cmd id="DOF" />
         <cmd id="QUERY" />
       </accepts>
     </cmds>

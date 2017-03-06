@@ -10,6 +10,7 @@
     <cmds>
       <sends>
 	<cmd id="DON" />
+	<cmd id="DOF" />
       </sends>
       <accepts>
         <cmd id="SET_ACTIVITY">
@@ -30,6 +31,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn31347557"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -43,6 +46,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn31347608"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -56,6 +61,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn33416282"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -69,6 +76,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn43041192"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -82,6 +91,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn31347379"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -95,6 +106,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn31347323"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -108,6 +121,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn41336071"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -121,6 +136,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn31347642"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -134,6 +151,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn34201219"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -148,6 +167,7 @@
     <cmds>
       <sends>
 	<cmd id="DON" />
+	<cmd id="DOF" />
       </sends>
       <accepts>
         <cmd id="SET_ACTIVITY">
@@ -168,6 +188,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn25080145"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -181,6 +203,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn25399622"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -194,6 +218,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn25082844"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -207,6 +233,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn25080140"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -220,6 +248,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn37069819"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -233,6 +263,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn37069909"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -246,6 +278,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn25080143"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -259,6 +293,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn28519632"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -272,6 +308,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn31595151"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -285,6 +323,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn25080142"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -298,6 +338,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn25080141"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -311,6 +353,8 @@
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn25080146"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>

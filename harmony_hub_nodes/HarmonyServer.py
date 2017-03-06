@@ -24,6 +24,7 @@ class HarmonyServer(Node):
         self.parent   = parent
         self.address  = address
         self.name     = name
+        self.do_poll  = True
         self.l_info("init","address=%s, name='%s', manifest=%s" % (self.address, self.name, manifest))
         #
         # Set defaults.
@@ -32,7 +33,7 @@ class HarmonyServer(Node):
         self.num_hubs     = 0
         # Logger debug mode
         self.debug_mode   = 10
-        # Polyglot long/short poll times come from parent.
+        # Polyglot long/short poll time defaults come from parent.
         self.shortpoll = parent.shortpoll
         self.longpoll  = parent.longpoll
         self._next_beat_t = 0
@@ -59,23 +60,27 @@ class HarmonyServer(Node):
         self._set_num_hubs(self.num_hubs)
         self._set_debug_mode(self.debug_mode)
         self._set_st(time.time())
+        self.poll()
         self.report_driver()
         self.l_info("query","done")
         return True
 
     def poll(self):
-        """ Poll Send DON every 60 seconds or so  """
-        now = time.time()
-        if now > self._next_beat_t:
-            self._next_beat_t = now + 60
-            self._set_st(now)
-            self.report_isycmd('DON')
+        """ Poll Does nothing  """
+        #self.l_debug("poll","")
         return True
 
     def long_poll(self):
-        """ Long Poll Does Nothing  """
+        """ Long Poll Send DON """
+        now = time.time()
+        self.l_debug("long_poll","now=%d" % (now))
+        self._set_st(now)
+        self.report_isycmd('DON')
         return
 
+    def on_exit(self):
+        return True
+    
     def l_info(self, name, string):
         self.parent.logger.info("%s:%s:%s: %s" %  (self.node_def_id,self.address,name,string))
         
@@ -121,12 +126,14 @@ class HarmonyServer(Node):
     
     def _set_shortpoll(self, value):
         self.shortpoll = value
+        self.parent.shortpoll = self.shortpoll
         self.l_info("_set_shortpoll","%d" % (self.shortpoll))
         self.set_driver('GV5', self.shortpoll, uom=25, report=True)
         return True
     
     def _set_longpoll(self, value):
         self.longpoll = value
+        self.parent.longpoll = self.longpoll
         self.l_info("_set_longpoll","%d" % (self.longpoll))
         self.set_driver('GV6', self.longpoll, uom=25, report=True)
         return True

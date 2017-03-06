@@ -43,13 +43,16 @@ CMD-HARMONYHUB-SET_ACTIVITY-NAME = Set Activity
 
 # Device Command
 CMD-SET_BUTTON-NAME = Command
+CMD-POWER_ON-NAME = Power On
+CMD-POWER_OFF-NAME = Power Off
+CMD-POWER_TOGGLE-NAME = Power Toggle
 
 # Default Hub
 ND-HarmonyActivity-NAME = Harmony Activity
 ND-HarmonyActivity-ICON = Output
 
-CMD-HARMONYACTIVITY-ON-NAME = Start
-CMD-HARMONYACTIVITY-OFF-NAME = End
+CMD-HARMONYACTIVITY-DON-NAME = Start
+CMD-HARMONYACTIVITY-DOF-NAME = End
 
 ACTST-0 = False
 ACTST-1 = True

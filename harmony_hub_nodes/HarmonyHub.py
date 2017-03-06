@@ -19,6 +19,7 @@ class HarmonyHub(Node):
     def __init__(self, parent, primary, manifest=None, config_data=None, address=None):
         self.parent      = parent
         self.connected   = 0
+        self.do_poll     = False
         self.current_activity = -2
         if config_data is None:
             self.parent.send_error("%s config_data must be passed in." % (address))
@@ -47,6 +48,8 @@ class HarmonyHub(Node):
         self._set_st(0)
         # Call query to initialize and pull the info from the hub.
         self.query();
+        # Only Hub devices are polled.
+        self.do_poll     = True
         self.l_info("init","done adding hub '%s' '%s' %s" % (self.address, self.name, self.host))
 
     def query(self, **kwargs):
@@ -81,7 +84,11 @@ class HarmonyHub(Node):
 
     def long_poll(self):
         return True
-        
+
+    def on_exit(self):
+        if self.client is not None:
+            self.client.disconnect(send_close=True)
+
     def l_info(self, name, string):
         self.parent.logger.info("Hub:%s:%s: %s" %  (self.node_def_id,name,string))
         

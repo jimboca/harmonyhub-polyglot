@@ -15,7 +15,7 @@ config_file.close
 #    # use what the user has defined.
 #    this_host = config['host']
 
-NODEDEF_TMPL_A = """
+NODEDEF_TMPL_ACTIVITY = """
   <nodeDef id="%s" nodeType="139" nls="%s">
     <sts>
       <st id="ST" editor="HUBST" />
@@ -24,6 +24,7 @@ NODEDEF_TMPL_A = """
     <cmds>
       <sends>
 	<cmd id="DON" />
+	<cmd id="DOF" />
       </sends>
       <accepts>
         <cmd id="SET_ACTIVITY">
@@ -35,7 +36,7 @@ NODEDEF_TMPL_A = """
     </cmds>
   </nodeDef>
 """
-NODEDEF_TMPL_D = """
+NODEDEF_TMPL_DEVICE = """
   <nodeDef id="%s" nodeType="139" nls="%s">
     <sts />
     <cmds>
@@ -44,6 +45,8 @@ NODEDEF_TMPL_D = """
         <cmd id="SET_BUTTON">
           <p id="" editor="%s"/>
         </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -118,7 +121,7 @@ for key in config_data:
         name = config_data[key]['name']
         info = "Hub: %s '%s'" % (key,name)
         nodedef.write("\n  <!-- === %s -->\n" % (info))
-        nodedef.write(NODEDEF_TMPL_A % (key, 'HARMONYHUB', 'Act' + key, 'Act' + key, 'GV3'))
+        nodedef.write(NODEDEF_TMPL_ACTIVITY % (key, 'HARMONYHUB', 'Act' + key, 'Act' + key, 'GV3'))
         nls.write("\n# %s" % (info))
         nls.write(NLS_NODE_TMPL % (key, name, key))
         #
@@ -167,7 +170,7 @@ for key in config_data:
             info = "Device '%s', Type=%s, Manufacturer=%s, Model=%s" % (d['label'],d['type'],d['manufacturer'],d['model'])
             subset = []
             nodedef.write("\n  <!-- === %s -->" % info)
-            nodedef.write(NODEDEF_TMPL_D % ('d' + d['id'], 'D' + d['id'], 'Btn' + d['id']))
+            nodedef.write(NODEDEF_TMPL_DEVICE % ('d' + d['id'], 'D' + d['id'], 'Btn' + d['id']))
             nls.write("\n# %s" % info)
             nls.write(NLS_NODE_TMPL % ('d' + d['id'], d['label'], 'd' + d['id']))
             print("%s   Device: %s  Id: %s" % (pfx, d['label'], d['id']))
