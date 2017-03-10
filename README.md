@@ -177,5 +177,6 @@ CameraServer Status: ${var.2.155}
 
 # Release Notes:
 
-- 0.0.2:
-   - First public release.
+- 0.0.0:
+   - This code is not officially released yet.  Consider it pre-alpha.
+
