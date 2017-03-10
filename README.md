@@ -7,6 +7,7 @@ MIT license.
 
 This node server is intended to support the Logitech Harmony Hub http://www.logitech.com/en-us/product/harmony-hub
 
+*IMPORTANT:*  We have had reports that pulling in this node servers profile may mess up other node servers, like isylink.  Until this issue is resolved you may want to wait if that is an issue for you.
 
 # Requirements
 
@@ -17,6 +18,8 @@ This node server is intended to support the Logitech Harmony Hub http://www.logi
 
 # Install
 
+1. Backup Your ISY in case of problems!
+  * Really, do the backup, please
 1. Pull the harmonyhub-polyglot into Polyglot
   * `cd polyglot/config/node_servers`
   * `git clone https://github.com/jimboca/harmonyhub-polyglot.git`
