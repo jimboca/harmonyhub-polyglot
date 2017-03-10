@@ -1,4 +1,11 @@
 
+# Your ISY Hub Server name's
+# These can be whatever you want
+# node must be <19 characters
+server:
+  name: HarmonyHub Server
+  node: harmonyhub
+
 # The simple name of your hub, this is used as the
 # ISY node address, so must be less than 19 characters
 MyHub1:
