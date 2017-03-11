@@ -10,6 +10,7 @@ from harmony_hub_nodes import *
 from harmony_hub_funcs import myint,myfloat,ip2long,long2ip
 from harmony_hub_polyglot_version import VERSION_MAJOR,VERSION_MINOR
 from pyharmony import ha_get_token,ha_get_client
+from traceback import format_exception
 
 class HarmonyHub(Node):
     """ 
@@ -46,6 +47,10 @@ class HarmonyHub(Node):
         self.token  = None
         self.client = None
         self._set_st(0)
+        # Connect to the hub
+        self._get_client()
+        # Setup activities and devices
+        self.init_activities_and_devices()
         # Call query to initialize and pull the info from the hub.
         self.query();
         # Only Hub devices are polled.
@@ -58,27 +63,17 @@ class HarmonyHub(Node):
         # TODO: Trap ip2long failure when bad address is specified.
         self.set_driver('GV1',  ip2long(self.host), uom=56, report=True)
         self.set_driver('GV2',  self.port, uom=56, report=True)
-        if self.client is None:
-            self.l_info("query","Initializing PyHarmony Client")
-            # TODO: Fail if get_token fails
-            self.token  = ha_get_token(self.host, self.port)
-            self.l_info("query","PyHarmony token= " + str(self.token))
-            self.client = ha_get_client(self.token, self.host, self.port)
-            self.l_info("query","PyHarmony client= " + str(self.client))
-            # Need to call this to get the activities dict
-            self.init_activities_and_devices()
         self.poll()
         self.l_debug("query","done")
         return True
 
     def poll(self):
         self.l_debug("poll","start")
-        # TODO: What happens when get_current_activity fails?
-        # TODO: When it does we need to set st=0
-        self._set_st(1)
-        ca = self.client.get_current_activity()
-        self.l_debug("poll","client.get_current_activity=%s" % str(ca))
-        self._set_current_activity(ca)
+        # If we had a connection issue previously, try to fix it.
+        if self.st == 0:
+            self.l_debug("poll","Calling get_client st=%d" % (self.st))
+            self._get_client()
+        self._get_current_activity()
         self.l_debug("poll","done")
         return True
 
@@ -100,8 +95,44 @@ class HarmonyHub(Node):
         
     def l_debug(self, name, string):
         self.parent.logger.debug("Hub:%s:%s: %s" % (self.node_def_id,name,string))
+
+    def _get_client(self):
+        self.l_info("get_client","Initializing PyHarmony Client")
+        try:
+            self.token  = ha_get_token(self.host, self.port)
+        except:
+            exc_type, exc_value, exc_traceback = sys.exc_info()
+            err_str = ''.join(format_exception(exc_type, exc_value, exc_traceback))
+            self.l_error("get_client",err_str)
+            self._set_st(0)
+            return False
+        self.l_info("get_client","PyHarmony token= " + str(self.token))
+        try:
+            self.client = ha_get_client(self.token, self.host, self.port)
+        except:
+            exc_type, exc_value, exc_traceback = sys.exc_info()
+            err_str = ''.join(format_exception(exc_type, exc_value, exc_traceback))
+            self.l_error("get_client",err_str)
+            self._set_st(0)
+            return False
+        self._set_st(1)
+        self.l_info("get_client","PyHarmony client= " + str(self.client))
+
+    def _get_current_activity(self):
+        try:
+            ca = self.client.get_current_activity()
+        except:
+            exc_type, exc_value, exc_traceback = sys.exc_info()
+            err_str = ''.join(format_exception(exc_type, exc_value, exc_traceback))
+            self.l_error("get_current_activity",err_str)
+            self._set_st(0)
+            return False
+        self._set_st(1)
+        self.l_debug("poll","client.get_current_activity=%s" % str(ca))
+        self._set_current_activity(ca)
         
     def _set_st(self, value):
+        self.st = value
         return self.set_driver('ST', value, report=True)
 
     def init_activities_and_devices(self):

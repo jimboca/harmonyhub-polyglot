@@ -30,7 +30,6 @@ NODEDEF_TMPL_ACTIVITY = """
         <cmd id="SET_ACTIVITY">
           <p id="" editor="%s" init="%s"/>
         </cmd>
-	<cmd id="REBOOT" />
 	<cmd id="QUERY" />
       </accepts>
     </cmds>
