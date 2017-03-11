@@ -63,6 +63,9 @@ class HarmonyHub(Node):
         # TODO: Trap ip2long failure when bad address is specified.
         self.set_driver('GV1',  ip2long(self.host), uom=56, report=True)
         self.set_driver('GV2',  self.port, uom=56, report=True)
+        # This forces current activity to update.
+        self.current_activity = -2
+        self._set_st(self.st)
         self.poll()
         self.l_debug("query","done")
         return True
@@ -72,7 +75,8 @@ class HarmonyHub(Node):
         # If we had a connection issue previously, try to fix it.
         if self.st == 0:
             self.l_debug("poll","Calling get_client st=%d" % (self.st))
-            self._get_client()
+            if not self._get_client():
+                return False
         self._get_current_activity()
         self.l_debug("poll","done")
         return True
@@ -117,6 +121,7 @@ class HarmonyHub(Node):
             return False
         self._set_st(1)
         self.l_info("get_client","PyHarmony client= " + str(self.client))
+        return True
 
     def _get_current_activity(self):
         try:
