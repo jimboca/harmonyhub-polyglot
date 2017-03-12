@@ -1,11 +1,11 @@
 # harmony-polyglot
 
-This is the Harmony Hub Poly for the ISY Polyglot interface.  
+This is the Harmony Hub Poly for the [Universal Devices ISY994i](https://www.universal-devices.com/residential/ISY) [Polyglot interface](http://www.universal-devices.com/developers/polyglot/docs/).  
 (c) JimBoCA aka Jim Searle
 MIT license. 
 
 
-This node server is intended to support the Logitech Harmony Hub http://www.logitech.com/en-us/product/harmony-hub
+This node server is intended to support the [Logitech Harmony Hub](http://www.logitech.com/en-us/product/harmony-hub) using the [pyharmony Python Library](https://pypi.python.org/pypi/pyharmony).
 
 *IMPORTANT:*  We have had reports that pulling in this node servers profile may mess up other node servers, like isylink.  Until this issue is resolved you may want to wait if that is an issue for you.
 
@@ -20,18 +20,18 @@ This node server is intended to support the Logitech Harmony Hub http://www.logi
 
 1. Backup Your ISY in case of problems!
   * Really, do the backup, please
-1. Pull the harmonyhub-polyglot into Polyglot
+2. Pull the harmonyhub-polyglot into Polyglot
   * `cd polyglot/config/node_servers`
   * `git clone https://github.com/jimboca/harmonyhub-polyglot.git`
   * `cd harmonyhub-polyglot`
   * `sudo pip install -r requirements.txt`
-2. Create your config file
+3. Create your config file
   * cp config_template.yaml config.yaml
   * leafpad config.yaml
-3. Build the config and profile
+4. Build the config and profile
   * make config
   * make profile.zip
-4. From the polyglot web page: http://your.pi.ip:8080
+5. From the polyglot web page: http://your.pi.ip:8080
   * Refresh the page
   * Select 'Add Node Server'
   * Select 'Harmony Hub' as the 'Node Server Type'
@@ -40,22 +40,48 @@ This node server is intended to support the Logitech Harmony Hub http://www.logi
   * Click Add, and it should show up on the left hand side and show 'Running', click on it.
   * Click on the 'Download profile' icon.
   * Select and Copy the 'Base URL' from that page, which you will need for Pasting later.
-5. Add as NodeServer in ISY by selecting the empty slot that matches 'Node Server ID' you used in Step 4.
+6. Add as NodeServer in ISY by selecting the empty slot that matches 'Node Server ID' you used in Step 4.
   * Set 'Profile Name' to whatever you want, but might as well be the same as the name used in Step 4.
   * Set the Polyglot 'User Id' and Password.  Default: admin & admin.
   * Paste the 'Base URL' you copied in Step 4.
   * Set Host Name or IP of your machine running Polyglot
   * Set Port to the Polyglot port, default=8080
-6. Click 'Upload Profile'
+7. Click 'Upload Profile'
   * Browse to where the 'harmonynub_profile.zip' from Step 4 is located and select it.
-7. Reboot ISY
-8. Upload Profile again in the node server (quirk of ISY)
-9. Reboot ISY again (quirk of ISY)
-10. Once ISY is back up, go to Polyglot and restart the Harmony Hub server.
-11. You should start to see your Harmony Hub and it's devices show up in the ISY
+8. Reboot ISY
+9. Upload Profile again in the node server (quirk of ISY)
+10. Reboot ISY again (quirk of ISY)
+11. Once ISY is back up, go to Polyglot and restart the Harmony Hub server.
+12. You should start to see your Harmony Hub and it's devices show up in the ISY
   * Select the Hub
   * Right click on the Hub and select 'Group Devices'
-12. Write programs and enjoy.
+13. Write programs and enjoy.
+
+# Settings
+
+## Server Node
+
+The server node is the main node controlling the polyglot server.
+
+* Status: Is updated with the UNIX Epoch time.
+* Version Major: The major version number of this program.
+* Version Minor: The minor version number of this program.
+* Hubs: The number of hubs the server is mananging
+* Debug Mode: The Logging debug mode.
+* Short Poll: The number of seconds between each time the Hub Nodes are polled to determine the current activity
+* Long Poll: The number of seconds between each time the Hub Nodes send a DON which can be used to verify it is alive.
+
+## Hub Node
+
+The Hub node, one for each hub you define in the configuration.
+
+## Activity Node
+
+A Node for each activity in each hub.
+
+## Device Node
+
+A Node for each device defined in each hub.
 
 # Debugging
 
@@ -63,7 +89,7 @@ This node server creates a log file as Polyglot/config/harmonyhub-polyglot/harmo
 
 # Programs
 
-THIS NEEDS TO BE UPDATE For the Harmony Hub Server
+THIS NEEDS TO BE UPDATE For the Harmony Hub Server, but the general idea is the same.
 
 Create programs on the ISY to monitor the Camera Server.
 

@@ -244,7 +244,7 @@ class HarmonyHub(Node):
         # The harmony activity number
         self.current_activity = val
         index = self._get_activity_index(val)
-        self.l_debug("_set_current_activity","activity=%d, index=%d" % (self.current_activity,index))
+        self.l_info("_set_current_activity","activity=%d, index=%d" % (self.current_activity,index))
         self.set_driver('GV3', index, uom=25, report=True)
         # Make the activity node current, unless it's -1 which is poweroff
         ignore_id=False
