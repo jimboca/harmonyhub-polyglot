@@ -57,6 +57,16 @@ This node server is intended to support the [Logitech Harmony Hub](http://www.lo
   * Right click on the Hub and select 'Group Devices'
 13. Write programs and enjoy.
 
+# Update
+
+1. `cd polyglot/config/node_servers/harmonyhub-polyglot`
+2. `git pull`
+  * If there are changes you should see them update
+3. Go to your polyglot web page: http://your.pi.ip:8080
+4. Select the harmony hub server on the left side
+5. Click the restart button near the upper right.
+6. Open the ISY admin console and check the version major and minor are correct for the HarmonyHub Server
+
 # Settings
 
 ## Server Node
@@ -86,6 +96,8 @@ A Node for each device defined in each hub.
 # Debugging
 
 This node server creates a log file as Polyglot/config/harmonyhub-polyglot/harmonyhub.log, where 'harmonyhub' is what you called the node server in Polyglot.  If you have any issues, first review that file, and also look for Errors with 'grep ERROR harmonyhub.log'.
+
+The 'Debug level' of your HarmonyHub Servier in the ISY controls how much information shows up in this log.  To see more info set it to 'Debug'.  (Dont' use 'All', it is not currently working) 
 
 # Programs
 
