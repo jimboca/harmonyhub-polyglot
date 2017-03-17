@@ -7,12 +7,12 @@
     "notice": "Put a notice here",
     "credits": [
         {
-            "title": "Libary: Library Name",
-            "author": "Author",
-            "version": "0.0",
-            "date": "Feb 18, 2017",
-            "source": "https://github.com/",
-            "license": "MIT"
+            "title": "Library: pyharmony",
+            "author": "Author: Ian Day",
+            "version": "1.0.12",
+            "date": "2016-11-26",
+            "source": "https://github.com/iandday/pyharmony",
+            "license": "BSD-3-Clause"
         }
     ]
 }

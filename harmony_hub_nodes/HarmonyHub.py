@@ -149,7 +149,7 @@ class HarmonyHub(Node):
                 self.l_info("init","Activity: %s  Id: %s" % (a['label'], a['id']))
                 self.add_activity(a['label'], a['id'])
         for d in harmony_config['device']:
-            self.parent.logger.info("Device '%s' '%s', Type=%s, Manufacturer=%s, Model=%s" % (d['id'],d['label'],d['type'],d['manufacturer'],d['model']))
+            self.l_info("init","Device '%s' '%s', Type=%s, Manufacturer=%s, Model=%s" % (d['id'],d['label'],d['type'],d['manufacturer'],d['model']))
             # TODO: Remove the d, and let Device add it back.
             self.add_device(d['label'],d['id'])
             
@@ -228,10 +228,13 @@ class HarmonyHub(Node):
         self.l_debug("_get_activity_index", str(id))
         cnt = 0
         for a in self.parent.poly.nodeserver_config['info']['activities']:
-            if a['id'] == id:
+            if int(a['id']) == int(id):
                 return cnt
             cnt += 1
         self.l_error("_get_activity_index","No activity id %s found." % (str(id)))
+        # Print them out for debug
+        for a in self.parent.poly.nodeserver_config['info']['activities']:
+            self.l_error("_get_activity_index","  From: label=%s, id=%s" % (a['label'],a['id']))
         return False
     
     def _set_current_activity(self, id, force=False):

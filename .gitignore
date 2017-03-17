@@ -63,3 +63,7 @@ target/
 
 #Emacs backup file
 *~
+
+.AppleDouble
+*.sublime-*
+

@@ -11,23 +11,24 @@ This node server is intended to support the [Logitech Harmony Hub](http://www.lo
 
 # Requirements
 
-1. Currently you must be running at least the 0.0.4 release of Polyglot
-   http://forum.universal-devices.com/topic/19091-polyglot-version-004-release
+1. Currently you must be running at least the 0.0.4 release of Polyglot, put preferebly you should be on the latest release.
+   http://ud-polyglot.readthedocs.io/en/development/usage.html#installation
 2. This has only been tested on the ISY 5.0.4 Firmware, but should work with anything above 5.0.2
-3. Install required python modules as instructed in Install Step #1
+3. The required python modules are installed in Step 2 below.
 
-# Install
+# Install harmonyhub-polyglot
 
 1. Backup Your ISY in case of problems!
   * Really, do the backup, please
-2. Pull the harmonyhub-polyglot into Polyglot
+2. Pull the harmonyhub-polyglot into Polyglot diretory on your RPi
   * `cd polyglot/config/node_servers`
   * `git clone https://github.com/jimboca/harmonyhub-polyglot.git`
   * `cd harmonyhub-polyglot`
   * `sudo pip install -r requirements.txt`
 3. Create your config file
-  * cp config_template.yaml config.yaml
-  * leafpad config.yaml
+  * `cp config_template.yaml config.yaml`
+  * `leafpad config.yaml`
+  * Set the info about your Hub.
 4. Build the config and profile
   * make config
   * make profile.zip
@@ -48,16 +49,16 @@ This node server is intended to support the [Logitech Harmony Hub](http://www.lo
   * Set Port to the Polyglot port, default=8080
 7. Click 'Upload Profile'
   * Browse to where the 'harmonynub_profile.zip' from Step 4 is located and select it.
-8. Reboot ISY
+8. Reboot ISY by selecting the tab Configuration -> Reboot
 9. Upload Profile again in the node server (quirk of ISY)
 10. Reboot ISY again (quirk of ISY)
 11. Once ISY is back up, go to Polyglot and restart the Harmony Hub server.
 12. You should start to see your Harmony Hub and it's devices show up in the ISY
-  * Select the Hub
+  * Select your Hub in the Left Pain
   * Right click on the Hub and select 'Group Devices'
 13. Write programs and enjoy.
 
-# Update
+# Update harmonyhub-polyglot
 
 1. `cd polyglot/config/node_servers/harmonyhub-polyglot`
 2. `git pull`
@@ -73,7 +74,7 @@ This node server is intended to support the [Logitech Harmony Hub](http://www.lo
 
 The server node is the main node controlling the polyglot server.
 
-* Status: Is updated with the UNIX Epoch time.
+* Status: Updated with the UNIX Epoch time.
 * Version Major: The major version number of this program.
 * Version Minor: The minor version number of this program.
 * Hubs: The number of hubs the server is mananging
@@ -101,120 +102,32 @@ The 'Debug level' of your HarmonyHub Servier in the ISY controls how much inform
 
 # Programs
 
-THIS NEEDS TO BE UPDATE For the Harmony Hub Server, but the general idea is the same.
+Monitoring can be done in the same way as detailed in the [Camera Server](https://github.com/jimboca/camera-polyglot#programs)
 
-Create programs on the ISY to monitor the Camera Server.
+# Update Hub configurations
 
-1. First create a state variable s.Polyglot.HubServer, or whatever you want to call it.
-2. Create all the following programs
+Whenever you add activities or devices to your Harmony Hub(s) you will need to rebuild the config.
+1. On your machine running Polyglot
+  * `cd polyglot/config/node_servers/harmonyhub-polyglot`
+  * make config
+  * make profile.zip
+2. From any machine, open polyglot web page: http://your.pi.ip:8080
+  * Select your harmonyhub on the left
+  * Click on the 'Download profile' icon near the top right
+3. Open the ISY Admin Console
+  * Select Menu: Node Servers -> Configure -> YourHarmonyServer
+  * Click 'Upload Profile'
+  * Browse to where the 'harmonynub_profile.zip' from Step 2 is located and select it.
+  * Click OK in the Node Server Configuration
+8. Reboot ISY by selecting the tab Configuration -> Reboot
 
-   * I put them all in a subfolder:
-<pre>
-    ===========================================
-    Polyglot - [ID 025B][Parent 0001]
-
-    Folder Conditions for 'Polyglot'
-
-    If
-       - No Conditions - (To add one, press 'Schedule' or 'Condition')
- 
-    Then
-       Allow the programs in this folder to run.
-</pre>
-
-   * Heartbeat Monitor
-<pre>
-    -------------------------------------------
-    CamS - [ID 025C][Parent 025B]
-
-    If
-        'Camera Server' is switched On
- 
-    Then
-        $s.Polyglot.HubServer  = 1
-        Wait  5 minutes 
-        $s.Polyglot.HubServer  = 2
- 
-    Else
-        $s.Polyglot.HubServer  = 2
- 
-    Watch for CamS DON, wait 5 minutes and set error if not seen.
-</pre>
-
-  * Okay notification
-<pre>
-    -------------------------------------------
-    CamS Okay - [ID 0260][Parent 025B]
-
-    If
-        $s.Polyglot.HubServer is 1
- 
-    Then
-        Send Notification to 'Pushover-P1' content 'Polyglot Status'
- 
-    This will be sent when CamS status is changed from anything to 1.
-    Which means it will be sent when a problem is fixed, or ISY is starting up.
-</pre>
-
-   * Problem Notification
-<pre>
-    -------------------------------------------
-    CamS Problem - [ID 025D][Parent 025B]
-
-    If
-        $s.Polyglot.HubServer is 2
- 
-    Then
-        Send Notification to 'Pushover-P1' content 'Polyglot Status'
- 
-    CamS status 2 is a problem, send notification.
-</pre>
-
-   * Daily Problem reminder
-<pre>
-    -------------------------------------------
-    CamS Problem Reminder - [ID 025F][Parent 025B]
-
-    If
-        $s.Polyglot.HubServer is 2
-    And (
-             Time is  8:00:00AM
-          Or Time is  6:00:00PM
-        )
- 
-    Then
-        Send Notification to 'Pushover-P1' content 'Polyglot Status'
- 
-    CamS status 2 is a problem, send notification every day.
-</pre>
-
-   * Startup action
-<pre>
-    -------------------------------------------
-    CamS Startup - [ID 025E][Parent 025B]
-
-    If
-        $s.Polyglot.HubServer is 0
- 
-    Then
-        Run Program 'CamS' (Then Path)
- 
-    CamS init is zero, which only happens at startup, so start watching the CamS.
-</pre>
-
-3. Create a custom notification 'Polyglot Status':
-<pre>
-Subject: ISY: Polyglot Status
-Body:
-CameraServer Status: ${var.2.155}
-0: Not initialized
-1: Okay
-2: Not responding
-
-</pre>
 
 # Release Notes:
 
+- 0.1.0:
+   - First official release
+- 0.0.2:
+   - Never officially released, but was being used by some that like to live on the edge.
 - 0.0.0:
    - This code is not officially released yet.  Consider it pre-alpha.
 
