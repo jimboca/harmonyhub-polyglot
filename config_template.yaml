@@ -1,3 +1,8 @@
+#
+# This file is YAML format so please keep it formated as shown.
+# Make sure to keep the indentation as is, and keep the spaces
+# that are after the items like 'name: '
+#
 
 # Your ISY Hub Server name's
 # These can be whatever you want
@@ -8,6 +13,8 @@ server:
 
 # The simple name of your hub, this is used as the
 # ISY node address, so must be less than 19 characters
+# Change 'MyHub1' to what you want the node address to be.
+# Don't add anything after the ':'.
 MyHub1:
   # ip address or host name of your hub, make sure it's a
   # reserved or static IP in your router!
