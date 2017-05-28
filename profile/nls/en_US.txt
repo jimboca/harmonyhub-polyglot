@@ -40,6 +40,7 @@ ST-HARMONYHUB-GV3-NAME = Current Activity
 CMD-HARMONYHUB-QUERY-NAME = Query
 CMD-HARMONYHUB-REBOOT-NAME = Reboot
 CMD-HARMONYHUB-SET_ACTIVITY-NAME = Set Activity
+CMD-HARMONYHUB-CHANGE_CHANNEL-NAME = Channel
 
 # Device Command
 CMD-SET_BUTTON-NAME = Command
@@ -113,7 +114,7 @@ FAMILYROOM-5 = Outside Chromecast Audio
 FAMILYROOM-6 = Watch a DVD
 FAMILYROOM-7 = Listen To iPod
 FAMILYROOM-8 = Play Wii
-FAMILYROOM-9 = Play PS3
+FAMILYROOM-9 = Watch Fire TV
 FAMILYROOM-10 = Chromecast Video
 FAMILYROOM-11 = Tivo
 FAMILYROOM-12 = Chromecast Audio
@@ -138,6 +139,10 @@ ND-d25080140-ICON = Input
 # Device 'Denon AV Receiver 2', Type=StereoReceiver, Manufacturer=Denon, Model=AVR-4306 (Zone 2)
 ND-d37069819-NAME = Denon AV Receiver 2
 ND-d37069819-ICON = Input
+
+# Device 'Amazon Fire TV', Type=Default, Manufacturer=Amazon, Model=Fire TV
+ND-d43722714-NAME = Amazon Fire TV
+ND-d43722714-ICON = Input
 
 # Device 'Google Media Player', Type=MediaCenterPC, Manufacturer=Google, Model=Chromecast Audio
 ND-d37069909-NAME = Google Media Player

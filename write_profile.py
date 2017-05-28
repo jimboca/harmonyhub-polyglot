@@ -30,6 +30,9 @@ NODEDEF_TMPL_ACTIVITY = """
         <cmd id="SET_ACTIVITY">
           <p id="" editor="%s" init="%s"/>
         </cmd>
+        <cmd id="CHANGE_CHANNEL">
+          <p id="" editor="CHANNEL"/>
+        </cmd>
 	<cmd id="QUERY" />
       </accepts>
     </cmds>

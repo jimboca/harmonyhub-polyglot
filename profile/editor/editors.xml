@@ -13,6 +13,10 @@
     <range uom="25" min="0" max="1000" prec="0" />
   </editor>
 
+  <editor id="CHANNEL">
+    <range uom="25" min="0" max="9999" prec="0" />
+  </editor>
+
   <editor id="FLOAT">
     <range uom="56" min="0.1" max="999.999"/>
   </editor>

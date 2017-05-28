@@ -54,6 +54,9 @@
         <cmd id="SET_ACTIVITY">
           <p id="" editor="ActDefault" init="GV3"/>
         </cmd>
+        <cmd id="CHANGE_CHANNEL">
+          <p id="" editor="CHANNEL"/>
+        </cmd>
 	<cmd id="REBOOT" />
 	<cmd id="QUERY" />
       </accepts>
@@ -67,6 +70,9 @@
       <accepts>
         <cmd id="SET_BUTTON">
           <p id="" editor="BtnDefault"/>
+        </cmd>
+        <cmd id="CHANGE_CHANNEL">
+          <p id="" editor="CHANNEL"/>
         </cmd>
       </accepts>
     </cmds>

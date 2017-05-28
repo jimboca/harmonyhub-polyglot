@@ -59,16 +59,6 @@ This node server is intended to support the [Logitech Harmony Hub](http://www.lo
   * Right click on the Hub and select 'Group Devices'
 13. Write programs and enjoy.
 
-# Update harmonyhub-polyglot
-
-1. `cd polyglot/config/node_servers/harmonyhub-polyglot`
-2. `git pull`
-  * If there are changes you should see them update
-3. Go to your polyglot web page: http://your.pi.ip:8080
-4. Select the harmony hub server on the left side
-5. Click the restart button near the upper right.
-6. Open the ISY admin console and check the version major and minor are correct for the HarmonyHub Server
-
 # Settings
 
 ## Server Node
@@ -105,9 +95,11 @@ The 'Debug level' of your HarmonyHub Servier in the ISY controls how much inform
 
 Monitoring can be done in the same way as detailed in the [Camera Server](https://github.com/jimboca/camera-polyglot#programs)
 
-# Update Hub configurations
+# Update Profile
 
 Whenever you add activities or devices to your Harmony Hub(s) you will need to rebuild the config.
+This must also be run sometimes when a new version of this program is released.
+
 1. On your machine running Polyglot
   * `cd polyglot/config/node_servers/harmonyhub-polyglot`
   * make config
@@ -122,7 +114,6 @@ Whenever you add activities or devices to your Harmony Hub(s) you will need to r
   * Click OK in the Node Server Configuration
 8. Reboot ISY by selecting the tab Configuration -> Reboot
 
-
 # Upgrading
 
 1. On your machine running Polyglot
@@ -133,8 +124,12 @@ Whenever you add activities or devices to your Harmony Hub(s) you will need to r
   * Select your harmonyhub on the left
   * Click the 'Restart Server' button nar the top right of the page.
 
-# Release Notes:
 
+# Release Notes
+
+- 0.3.0:
+   - Add Change Channel to Hub which calls pyharmony change_channel
+   - Must do the "Update Profile" steps!
 - 0.2.0:
    - Fix to use label for send_command instead of name.
 - 0.1.0:

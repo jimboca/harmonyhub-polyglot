@@ -63,7 +63,7 @@ class HarmonyDevice(Node):
             ret = False
         else:
             ret = self.primary.client.send_command(self.id,name)
-            self.l_debug("_send_command","send_command %s,%s result=%s" % (str(self.id),name,str(ret)))
+            self.l_debug("_send_command","%s,%s result=%s" % (str(self.id),name,str(ret)))
             # TODO: This always returns None :(
             ret = True
         return ret

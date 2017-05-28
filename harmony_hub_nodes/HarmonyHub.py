@@ -237,6 +237,19 @@ class HarmonyHub(Node):
             self.l_error("_get_activity_index","  From: label=%s, id=%s" % (a['label'],a['id']))
         return False
     
+    def change_channel(self,channel):
+        self.l_debug("change_channel","channel=%s" % (channel))
+        # Push it to the Hub
+        if self.client is None:
+            self.l_error("change_channel","No Client for channel '%s'." % (channel))
+            ret = False
+        else:
+            ret = self.client.change_channel(channel)
+            self.l_debug("change_channel","%s result=%s" % (channel,str(ret)))
+            # TODO: This always returns False :(
+            ret = True
+        return ret
+
     def _set_current_activity(self, id, force=False):
         """ 
         Update Polyglot with the current activity.
@@ -265,6 +278,14 @@ class HarmonyHub(Node):
         index = myint(kwargs.get("value"))
         return self.start_activity(index=index)
         
+    def _cmd_change_channel(self, **kwargs):
+        """ 
+        This runs when ISY calls set button which passes the button index
+        """
+        channel = myint(kwargs.get("value"))
+        self.l_debug("_cmd_change_channel","channel=%d" % (channel))
+        return self.change_channel(channel)
+    
     _drivers = {
         'ST':  [0, 2,  myint],
         'GV1': [0, 56, myint],
@@ -282,6 +303,7 @@ class HarmonyHub(Node):
     _commands = {
         'QUERY': query,
         'SET_ACTIVITY': _cmd_set_current_activity,
+        'CHANGE_CHANNEL': _cmd_change_channel,
     }
 
     # The nodeDef id of this camers.

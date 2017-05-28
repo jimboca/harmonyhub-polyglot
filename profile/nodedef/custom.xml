@@ -16,6 +16,9 @@
         <cmd id="SET_ACTIVITY">
           <p id="" editor="ActMasterBedroom" init="GV3"/>
         </cmd>
+        <cmd id="CHANGE_CHANNEL">
+          <p id="" editor="CHANNEL"/>
+        </cmd>
 	<cmd id="QUERY" />
       </accepts>
     </cmds>
@@ -157,6 +160,9 @@
         <cmd id="SET_ACTIVITY">
           <p id="" editor="ActFamilyRoom" init="GV3"/>
         </cmd>
+        <cmd id="CHANGE_CHANNEL">
+          <p id="" editor="CHANNEL"/>
+        </cmd>
 	<cmd id="QUERY" />
       </accepts>
     </cmds>
@@ -230,6 +236,21 @@
       <accepts>
         <cmd id="SET_BUTTON">
           <p id="" editor="Btn37069819"/>
+        </cmd>
+	<cmd id="DON" />
+	<cmd id="DOF" />
+      </accepts>
+    </cmds>
+  </nodeDef>
+
+  <!-- === Device 'Amazon Fire TV', Type=Default, Manufacturer=Amazon, Model=Fire TV -->
+  <nodeDef id="d43722714" nodeType="139" nls="D43722714">
+    <sts />
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="SET_BUTTON">
+          <p id="" editor="Btn43722714"/>
         </cmd>
 	<cmd id="DON" />
 	<cmd id="DOF" />
