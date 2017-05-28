@@ -135,7 +135,7 @@ Whenever you add activities or devices to your Harmony Hub(s) you will need to r
 
 # Release Notes:
 
-- 0.1.1:
+- 0.2.0:
    - Fix to use label for send_command instead of name.
 - 0.1.0:
    - First official release
