@@ -95,10 +95,22 @@ The 'Debug level' of your HarmonyHub Servier in the ISY controls how much inform
 
 Monitoring can be done in the same way as detailed in the [Camera Server](https://github.com/jimboca/camera-polyglot#programs)
 
+# Upgrading
+
+1. On your machine running Polyglot
+  * `cd polyglot/config/node_servers/harmonyhub-polyglot`
+  * git pull
+  * sudo pip install -r requirements.txt
+2. From any machine, open polyglot web page: http://your.pi.ip:8080
+  * Select your harmonyhub on the left
+  * Click the 'Restart Server' button nar the top right of the page.
+3. If required for this release, you may also need to 'Update Profile' below.
+
 # Update Profile
 
 Whenever you add activities or devices to your Harmony Hub(s) you will need to rebuild the config.
-This must also be run sometimes when a new version of this program is released.
+This must also be run sometimes when a new version of this program is released after running
+the Upgrading steps above.
 
 1. On your machine running Polyglot
   * `cd polyglot/config/node_servers/harmonyhub-polyglot`
@@ -114,22 +126,11 @@ This must also be run sometimes when a new version of this program is released.
   * Click OK in the Node Server Configuration
 8. Reboot ISY by selecting the tab Configuration -> Reboot
 
-# Upgrading
-
-1. On your machine running Polyglot
-  * `cd polyglot/config/node_servers/harmonyhub-polyglot`
-  * git pull
-  * sudo pip install -r requirements.txt
-2. From any machine, open polyglot web page: http://your.pi.ip:8080
-  * Select your harmonyhub on the left
-  * Click the 'Restart Server' button nar the top right of the page.
-
-
 # Release Notes
 
 - 0.3.0:
    - Add Change Channel to Hub which calls pyharmony change_channel
-   - Must do the "Update Profile" steps!
+   - Must do the Upgrading and Update Profile steps!
 - 0.2.0:
    - Fix to use label for send_command instead of name.
 - 0.1.0:
