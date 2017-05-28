@@ -25,6 +25,7 @@ This node server is intended to support the [Logitech Harmony Hub](http://www.lo
   * `git clone https://github.com/jimboca/harmonyhub-polyglot.git`
   * `cd harmonyhub-polyglot`
   * `sudo pip install -r requirements.txt`
+  * `sudo apt-get install zip unzip`
 3. Create your config file
   * `cp config_template.yaml config.yaml`
   * `leafpad config.yaml`
@@ -124,6 +125,8 @@ Whenever you add activities or devices to your Harmony Hub(s) you will need to r
 
 # Release Notes:
 
+- 0.1.1:
+   - Fix to use label for send_command instead of name.
 - 0.1.0:
    - First official release
 - 0.0.2:

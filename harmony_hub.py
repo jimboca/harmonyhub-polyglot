@@ -9,9 +9,6 @@
 """ Harmony Hub Node Server for ISY """
 
 from polyglot.nodeserver_api import SimpleNodeServer, PolyglotConnector
-#from collections import defaultdict, OrderedDict
-#import os, json, logging, requests, threading, SocketServer, re, socket, yaml
-#from requests.auth import HTTPDigestAuth,HTTPBasicAuth
 from harmony_hub_nodes import HarmonyServer
 from harmony_hub_polyglot_version import VERSION_MAJOR,VERSION_MINOR
 
@@ -24,7 +21,13 @@ class HarmonyHubNodeServer(SimpleNodeServer):
         super(SimpleNodeServer, self).setup()
         self.l_info('init','Version=%s.%s starting up.' % (VERSION_MAJOR,VERSION_MINOR))
         self.l_info('init',"Sandbox=%s" % (self.poly.sandbox))
-        self.l_info('init',"Config=%s" % (self.config))
+        if int(self.poly.pgapiver) < 1:
+            msg = "Polyglot version %s api version %s is to old, must be api version >= 1" % (self.poly.pgver,self.poly.pgapiver);
+            self.l_error("init",msg)
+            raise ValueError(msg)
+        self.l_info('init',"pgver=%s" % (self.poly.pgver))
+        self.l_info('init',"pgapiver=%s" % (self.poly.pgapiver))
+        #self.l_debug('init',"Config=%s" % (self.config))
         # Setup the config data.
         self.get_hub_config()
         # define nodes for settings

@@ -41,29 +41,29 @@ class HarmonyDevice(Node):
     def l_debug(self, name, string):
         self.parent.logger.debug("Dev:%s:%s:%s:%s: %s"   % (self.primary.node_def_id,self.node_def_id,self.address,name,string))
         
-    def _get_button_name(self,index):
+    def _get_button_label(self,index):
         """
-        Convert from button/function index from nls to real name
-        because pyharmony needs the name.
+        Convert from button/function index from nls to real label
+        because pyharmony needs the label.
         """
-        self.l_debug("_get_button_name","index=%d" % (index))
+        self.l_debug("_get_button_label","index=%d" % (index))
         # TODO: Make sure it's a valid index?
-        return self.parent.poly.nodeserver_config['info']['functions'][index]['name']
+        return self.parent.poly.nodeserver_config['info']['functions'][index]['label']
 
     def _send_command_by_index(self,index):
-        name = self._get_button_name(index)
+        name = self._get_button_label(index)
         self.l_debug("_send_command_by_index","index=%d, name=%s" % (index,name))
         return self._send_command(name)
 
     def _send_command(self,name):
-        self.l_debug("_send_command_by_name","name=%s" % (name))
+        self.l_debug("_send_command","name=%s" % (name))
         # Push it to the Hub
         if self.primary.client is None:
-            self.l_error("_send_command_by_index","No Client for command '%s'." % (name))
+            self.l_error("_send_command","No Client for command '%s'." % (name))
             ret = False
         else:
             ret = self.primary.client.send_command(self.id,name)
-            self.l_debug("_send_command_by_name","send_command %s,%s result=%s" % (str(self.id),name,str(ret)))
+            self.l_debug("_send_command","send_command %s,%s result=%s" % (str(self.id),name,str(ret)))
             # TODO: This always returns None :(
             ret = True
         return ret
