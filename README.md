@@ -123,6 +123,16 @@ Whenever you add activities or devices to your Harmony Hub(s) you will need to r
 8. Reboot ISY by selecting the tab Configuration -> Reboot
 
 
+# Upgrading
+
+1. On your machine running Polyglot
+  * `cd polyglot/config/node_servers/harmonyhub-polyglot`
+  * git pull
+  * sudo pip install -r requirements.txt
+2. From any machine, open polyglot web page: http://your.pi.ip:8080
+  * Select your harmonyhub on the left
+  * Click the 'Restart Server' button nar the top right of the page.
+
 # Release Notes:
 
 - 0.1.1:
