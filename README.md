@@ -129,6 +129,8 @@ the Upgrading steps above.
 
 # Release Notes
 
+- 0.3.1:
+   - Fix to call power_off so it only does set_activity(-1) if it's not powered off so devices don't toggle power.
 - 0.3.0:
    - Add Change Channel to Hub which calls pyharmony change_channel
    - Must do the Upgrading and Update Profile steps!
