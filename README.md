@@ -99,6 +99,7 @@ Monitoring can be done in the same way as detailed in the [Camera Server](https:
 
 1. On your machine running Polyglot
   * `cd polyglot/config/node_servers/harmonyhub-polyglot`
+  * rm -f profile/*/*
   * git pull
   * sudo pip install -r requirements.txt
 2. From any machine, open polyglot web page: http://your.pi.ip:8080

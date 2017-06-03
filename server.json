@@ -3,7 +3,7 @@
     "docs": "https://www.google.com",
     "type": "python",
     "executable": "harmony_hub.py",
-    "description": "Connect Harmony Hub's to the ISY994. Version 0.3.0",
+    "description": "Connect Harmony Hub's to the ISY994. Version 0.3.1",
     "notice": "Put a notice here",
     "credits": [
         {

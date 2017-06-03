@@ -180,8 +180,12 @@ class HarmonyHub(Node):
             self.l_error("start_activity","No Client" )
             ret = False
         else:
-            ret = self.client.start_activity(id)
-            self.l_debug("start_activity","id=%s result=%s" % (str(id),str(ret)))
+            if id != -1:
+                ret = self.client.start_activity(id)
+                self.l_debug("start_activity","id=%s result=%s" % (str(id),str(ret)))
+            else:
+                ret = self.client.power_off()
+                self.l_debug("start_activity","power_off result=%s" % (str(ret)))
             if ret:
                 # it worked, push it back to polyglot
                 self._set_current_activity(id)
