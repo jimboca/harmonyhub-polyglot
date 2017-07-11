@@ -36,7 +36,6 @@ class HarmonyServer(Node):
         # Polyglot long/short poll time defaults come from parent.
         self.shortpoll = parent.shortpoll
         self.longpoll  = parent.longpoll
-        self._next_beat_t = 0
         if address in manifest:
             drivers = manifest[address]['drivers']
             if 'GV4' in drivers:
