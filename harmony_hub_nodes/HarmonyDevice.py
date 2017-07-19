@@ -50,8 +50,17 @@ class HarmonyDevice(Node):
         # TODO: Make sure it's a valid index?
         return self.parent.poly.nodeserver_config['info']['functions'][index]['label']
 
+    def _get_button_command(self,index):
+        """
+        Convert from button/function index from nls to real label
+        because pyharmony needs the label.
+        """
+        self.l_debug("_get_button_command","index=%d" % (index))
+        # TODO: Make sure it's a valid index?
+        return self.parent.poly.nodeserver_config['info']['functions'][index]['command'][self.id]
+
     def _send_command_by_index(self,index):
-        name = self._get_button_label(index)
+        name = self._get_button_command(index)
         self.l_debug("_send_command_by_index","index=%d, name=%s" % (index,name))
         return self._send_command(name)
 

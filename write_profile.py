@@ -113,6 +113,7 @@ bi = 0
 config_data['info'] = dict()
 config_data['info']['activities'] = list()
 config_data['info']['functions'] = list()
+warn_string_1 = ""
 for key in config_data:
     # Ignore server.
     if key != 'server' and key != 'info':
@@ -159,7 +160,7 @@ for key in config_data:
                 config_data['info']['activities'].append({'label':aname,'id':int(a['id'])});
                 nls.write(NLS_TMPL % (key.upper(), ai, aname))
                 ai += 1
-        # All activities contain zero whic is power off...
+        # All activities contain zero which is power off...
         if ais == 0:
             subset = "%d-%d" % (ais, ai-1)
         else:
@@ -181,13 +182,21 @@ for key in config_data:
             #
             for cg in d['controlGroup']:
                 for f in cg['function']:
+                    a = f['action']
+                    ay = yaml.load(a.replace('\\',''))
                     bname = f['name']
                     if not bname in buttons:
+                        cb = bi
                         buttons[bname] = bi
                         bi += 1
-                        config_data['info']['functions'].append({'label':str(f['label']),'name':str(f['name'])});
-                    cb = buttons[bname]
-                    print("%s     Function: Index: %d, Name: %s,  Label: %s" % (pfx, cb, f['name'], f['label']))
+                        config_data['info']['functions'].append({'label':str(f['label']),'name':str(f['name']),'command':{str(d['id']):str(ay['command'])}});
+                    else:
+                        cb = buttons[bname]
+                        config_data['info']['functions'][cb]['command'][str(d['id'])] = ay['command']
+                    print("%s     Function: Index: %d, Name: %s,  Label: %s, Command: %s" % (pfx, cb, f['name'], f['label'], ay['command']))
+
+                    if bname != f['name']:
+                        warn_string_1 += " device %s has button with label=%s, command=%s\n" % (d['label'],f['label'],ay['command'])
                     #nls.write("# Button name: %s, label: %s\n" % (f['name'], f['label']))
                     # This is the list of button numbers in this device.
                     subset.append(cb)
@@ -226,4 +235,9 @@ with open(config_file_name, 'w') as outfile:
     yaml.dump(config_data, outfile, default_flow_style=False)
     
 print(pfx + " done.")
+
+#if warn_string_1 != "":
+#    print "WARNING: If you are upgrading from 0.3.x and using any of the following in an ISY program, you will need to fix them"
+#    print warn_string_1
+
 exit
