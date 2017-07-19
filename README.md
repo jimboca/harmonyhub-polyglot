@@ -109,7 +109,7 @@ Monitoring can be done in the same way as detailed in the [Camera Server](https:
 
 # Update Profile
 
-Whenever you add activities or devices to your Harmony Hub(s) you will need to rebuild the config.
+Whenever you edit the config file to add a Harmony Hub, or add activities or devices to your existing Harmony Hub(s) you will need to rebuild the config.
 This must also be run sometimes when a new version of this program is released after running
 the Upgrading steps above.
 
