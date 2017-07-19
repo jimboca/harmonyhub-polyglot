@@ -129,6 +129,8 @@ the Upgrading steps above.
 
 # Release Notes
 
+- 0.3.2:
+   - Fix to always call proper command when device function name does not match the command. Thank to Toddimus for finding the issue and helping to debug.
 - 0.3.1:
    - Fix to call power_off so it only does set_activity(-1) if it's not powered off so devices don't toggle power.
 - 0.3.0:
