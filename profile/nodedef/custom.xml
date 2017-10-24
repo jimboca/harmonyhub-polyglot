@@ -20,6 +20,9 @@
           <p id="" editor="CHANNEL"/>
         </cmd>
 	<cmd id="QUERY" />
+    <cmd id="DOF" />
+    <cmd id="DFOF" />
+    <cmd id="REBOOT" />
       </accepts>
     </cmds>
   </nodeDef>

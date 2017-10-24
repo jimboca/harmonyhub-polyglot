@@ -33,7 +33,9 @@ NODEDEF_TMPL_ACTIVITY = """
         <cmd id="CHANGE_CHANNEL">
           <p id="" editor="CHANNEL"/>
         </cmd>
-	<cmd id="QUERY" />
+	    <cmd id="QUERY" />
+        <cmd id="DOF" />
+        <cmd id="DFOF" />
       </accepts>
     </cmds>
   </nodeDef>

@@ -57,6 +57,8 @@
         <cmd id="CHANGE_CHANNEL">
           <p id="" editor="CHANNEL"/>
         </cmd>
+        <cmd id="DOF" />
+        <cmd id="DFOF" />
 	<cmd id="REBOOT" />
 	<cmd id="QUERY" />
       </accepts>
