@@ -67,3 +67,9 @@ target/
 .AppleDouble
 *.sublime-*
 
+# Extra yaml files
+*.yaml
+!config_template.yaml
+
+# Profile zip file
+profile.zip

@@ -63,7 +63,7 @@ class HarmonyActivity(Node):
 
     def _cmd_off(self, **kwargs):
         """ 
-        This runs when ISY calls on button
+        This runs when ISY calls off/fast off button
         """
         self.l_debug("_cmd_off","")
         # Push it to the Hub
@@ -80,6 +80,8 @@ class HarmonyActivity(Node):
         'QUERY': query,
         'DON': _cmd_on,
         'DOF': _cmd_off,
+        'DFON': _cmd_on,
+        'DFOF': _cmd_off,
     }
 
     # The nodeDef id of this activity.

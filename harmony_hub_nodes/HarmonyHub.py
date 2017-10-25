@@ -289,6 +289,13 @@ class HarmonyHub(Node):
         channel = myint(kwargs.get("value"))
         self.l_debug("_cmd_change_channel","channel=%d" % (channel))
         return self.change_channel(channel)
+
+    def _cmd_off(self, **kwargs):
+        """
+        This runs when ISY calls Off or Fast Off and sets the activity to poweroff
+        """
+        self.l_debug("_cmd_off","activity=%d" % (self.current_activity))
+        return self.end_activity()
     
     _drivers = {
         'ST':  [0, 2,  myint],
@@ -308,6 +315,8 @@ class HarmonyHub(Node):
         'QUERY': query,
         'SET_ACTIVITY': _cmd_set_current_activity,
         'CHANGE_CHANNEL': _cmd_change_channel,
+        'DOF': _cmd_off,
+        'DFOF': _cmd_off,
     }
 
     # The nodeDef id of this camers.

@@ -23,8 +23,8 @@ NODEDEF_TMPL_ACTIVITY = """
     </sts>
     <cmds>
       <sends>
-	<cmd id="DON" />
-	<cmd id="DOF" />
+    <cmd id="DON" />
+    <cmd id="DOF" />
       </sends>
       <accepts>
         <cmd id="SET_ACTIVITY">
@@ -33,7 +33,9 @@ NODEDEF_TMPL_ACTIVITY = """
         <cmd id="CHANGE_CHANNEL">
           <p id="" editor="CHANNEL"/>
         </cmd>
-	<cmd id="QUERY" />
+        <cmd id="QUERY" />
+        <cmd id="DOF" />
+        <cmd id="DFOF" />
       </accepts>
     </cmds>
   </nodeDef>
@@ -47,8 +49,8 @@ NODEDEF_TMPL_DEVICE = """
         <cmd id="SET_BUTTON">
           <p id="" editor="%s"/>
         </cmd>
-	<cmd id="DON" />
-	<cmd id="DOF" />
+        <cmd id="DON" />
+        <cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
