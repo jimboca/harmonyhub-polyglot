@@ -129,6 +129,8 @@ the Upgrading steps above.
 
 # Release Notes
 
+- 0.3.3:
+   - Add Off command for a Hub https://github.com/jimboca/harmonyhub-polyglot/issues/11
 - 0.3.2:
    - Fix to always call proper command when device function name does not match the command. Thank to Toddimus for finding the issue and helping to debug.
 - 0.3.1:
