@@ -1,7 +1,5 @@
 <nodeDefs>
-
   <!-- === Harmony Nub Server Holds all Hub Nodes ========================================  -->
-
   <nodeDef id="HarmonyServer" nodeType="139" nls="HARMONYSERVER">
     <sts>
       <!-- Device Status -->
@@ -21,26 +19,25 @@
     </sts>
     <cmds>
       <sends>
-  <cmd id="DON" />
-  <cmd id="DOF" />
+        <cmd id="DON" />
+        <cmd id="DOF" />
       </sends>
       <accepts>
         <cmd id="SET_DEBUGMODE">
-          <p id="" editor="DEBUGMODE" init="GV4"/>
+          <p id="" editor="DEBUGMODE" init="GV4" />
         </cmd>
         <cmd id="SET_SHORTPOLL">
-          <p id="" editor="INTEGER" init="GV5"/>
+          <p id="" editor="INTEGER" init="GV5" />
         </cmd>
         <cmd id="SET_LONGPOLL">
-          <p id="" editor="INTEGER" init="GV6"/>
+          <p id="" editor="INTEGER" init="GV6" />
         </cmd>
-  <cmd id="QUERY" />
-  <cmd id="REFRESH_CONFIG" />
-  <cmd id="BUILD_PROFILES" />
+        <cmd id="QUERY" />
+        <cmd id="REFRESH_CONFIG" />
+        <cmd id="BUILD_PROFILES" />
       </accepts>
     </cmds>
   </nodeDef>
-
   <nodeDef id="HubDefault" nodeType="139" nls="HARMONYHUB">
     <sts>
       <st id="ST" editor="HUBST" />
@@ -48,38 +45,36 @@
     </sts>
     <cmds>
       <sends>
-  <cmd id="DON" />
+        <cmd id="DON" />
       </sends>
       <accepts>
         <cmd id="SET_ACTIVITY">
-          <p id="" editor="ActDefault" init="GV3"/>
+          <p id="" editor="ActDefault" init="GV3" />
         </cmd>
         <cmd id="CHANGE_CHANNEL">
-          <p id="" editor="CHANNEL"/>
+          <p id="" editor="CHANNEL" />
         </cmd>
         <cmd id="DOF" />
         <cmd id="DFOF" />
-  <cmd id="REBOOT" />
-  <cmd id="QUERY" />
+        <cmd id="REBOOT" />
+        <cmd id="QUERY" />
       </accepts>
     </cmds>
   </nodeDef>
-
   <nodeDef id="DeviceDefault" nodeType="139" nls="DEVICEDEFAULT">
     <sts />
     <cmds>
       <sends />
       <accepts>
         <cmd id="SET_BUTTON">
-          <p id="" editor="BtnDefault"/>
+          <p id="" editor="BtnDefault" />
         </cmd>
         <cmd id="CHANGE_CHANNEL">
-          <p id="" editor="CHANNEL"/>
+          <p id="" editor="CHANNEL" />
         </cmd>
       </accepts>
     </cmds>
   </nodeDef>
-
   <nodeDef id="HarmonyActivity" nodeType="139" nls="HARMONYACTIVITY">
     <sts>
       <!-- Device Status -->
@@ -87,8 +82,8 @@
     </sts>
     <cmds>
       <sends>
-  <cmd id="DON" />
-  <cmd id="DOF" />
+        <cmd id="DON" />
+        <cmd id="DOF" />
       </sends>
       <accepts>
         <cmd id="DON" />
@@ -97,5 +92,4 @@
       </accepts>
     </cmds>
   </nodeDef>
-
 </nodeDefs>

@@ -49,8 +49,8 @@ NODEDEF_TMPL_DEVICE = """
         <cmd id="SET_BUTTON">
           <p id="" editor="%s"/>
         </cmd>
-    <cmd id="DON" />
-    <cmd id="DOF" />
+        <cmd id="DON" />
+        <cmd id="DOF" />
       </accepts>
     </cmds>
   </nodeDef>
